@@ -199,6 +199,44 @@
         </div>
       </div>
 
+      <div class="update-card" data-tags="feature info">
+        <div class="update-icon">🎭</div>
+        <div class="update-body">
+          <div class="update-title">
+            サーバー間ロール同期機能を追加
+            <span class="update-date">2026/11/01</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>
+              <code>/ロール同期グループ</code> コマンドで、連携元サーバーの
+              グループ（同期対象ロール・トークン）を作成できます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <code>/ロール同期設定</code> コマンドで、連携元グループと
+              自サーバーのロールを紐づけたリンクを管理できます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              連携元のロールを持つメンバーが参加すると、対応するロールを
+              自動で付与します（付与のみ・剥奪はしません）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <code>/ロール同期実行</code> で全メンバー／特定メンバーを
+              手動同期できます（進捗表示・中断対応）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              APIレート制限に配慮し、1人ずつ順番に処理するため
+              サーバーへの負荷を抑えます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <!-- ========================================================= -->
       <!-- v1.8.3 — 吊り下げ / プロフィール -->
       <!-- ========================================================= -->

@@ -402,6 +402,26 @@
         <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
       </div>
 
+      <h3>🎭 ロール同期</h3>
+
+      <div class="command-block">
+        <div class="cmd-name">/ロール同期グループ</div>
+        <div class="cmd-desc">サーバー間ロール同期のグループを管理します（連携元用）。グループの作成・対象ロール設定・トークン再発行を行います。</div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
+      <div class="command-block">
+        <div class="cmd-name">/ロール同期設定</div>
+        <div class="cmd-desc">他サーバーのロール同期グループとの紐づけを管理します（連携先用）。トークンでリンクを作成し、ロールを対応付けます。</div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
+      <div class="command-block">
+        <div class="cmd-name">/ロール同期実行</div>
+        <div class="cmd-desc">ロール同期を手動で実行します。メンバーを指定しない場合は全対象メンバーを同期します。</div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
       <h2>📋 共通管理コマンド</h2>
 
       <div class="command-block">
