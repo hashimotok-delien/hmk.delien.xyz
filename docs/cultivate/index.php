@@ -35,7 +35,7 @@
         界隈サーバー運営に必要な機能を1つにまとめて提供します。
       </p>
       <p>
-        バージョン <strong>1.8.1</strong> ／ モジュール: <strong>discord.py</strong>
+        バージョン <strong>1.8.3</strong> ／ モジュール: <strong>discord.py</strong>
         <span style="display: inline-block; margin-left: 16px;">
           <a href="updates" style="font-size: 0.9rem;">📋 更新履歴を見る</a>
         </span>

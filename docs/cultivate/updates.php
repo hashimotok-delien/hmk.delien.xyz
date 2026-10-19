@@ -200,6 +200,175 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v1.8.3 — 吊り下げ / プロフィール -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.8.3</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">📌</div>
+        <div class="update-body">
+          <div class="update-title">
+            吊り下げメッセージ — <code>/unsticky</code> を追加
+            <span class="update-date">2026/10/20</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>
+              実行チャンネルの吊下げメッセージを解除する
+              <code>/unsticky</code> コマンドを追加
+              （プレフィックスコマンド <code>!?unsticky</code> と同等）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature profile">
+        <div class="update-icon">🌐</div>
+        <div class="update-body">
+          <div class="update-title">
+            プロフィール — v2 対応
+            <span class="update-date">2026/10/20</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>
+              <code>/プロフィール保存</code> が、リンク先のチャンネルが
+              プロフィール v2 の対象チャンネルの場合は
+              <strong>v2 のプロフィールとして保存</strong>するように対応
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              <code>/プロフィール再表示</code> が、
+              プロフィール v2 の VCインチャ設定があるサーバーでは
+              <strong>v2 のプロフカードを再表示</strong>するように対応
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              v1 プロフィール設定が無いサーバーでは、
+              プロフィール v2 設定メニューの
+              「🔄 v1から移行」ボタンを<strong>非表示</strong>に
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug profile">
+        <div class="update-icon">🧑‍⚖️</div>
+        <div class="update-body">
+          <div class="update-title">
+            プロフテンプレチェック — 合格時ロール付与の不具合修正
+            <span class="update-date">2026/10/20</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>
+              テンプレチェック合格時に
+              <strong>合格付与ロールが正しく付与されない</strong>
+              不具合を修正
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
+      <!-- v1.8.2 — VCカウンター / ページジャンプ -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.8.2</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">📊</div>
+        <div class="update-body">
+          <div class="update-title">
+            VCカウンター機能 — 設定名を追加
+            <span class="update-date">2026/10/13</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>
+              各設定（プリセット）に<strong>設定名</strong>を
+              付けられるように対応
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              ページジャンプでどの設定か判別できるようにするため、
+              既存プリセットの設定名は VC名テンプレートの文字列へ移行
+              <span class="tag tag-info">システム</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature info">
+        <div class="update-icon">⚙️</div>
+        <div class="update-body">
+          <div class="update-title">
+            ページジャンプの動作改善
+            <span class="update-date">2026/10/13</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>
+              各設定一覧などで実装されているページ切替のジャンプ機能を、
+              <strong>あらゆるページに一気に移動</strong>できるように修正
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug">
+        <div class="update-icon">📌</div>
+        <div class="update-body">
+          <div class="update-title">
+            吊り下げ機能 — プレビュー表示の不具合修正
+            <span class="update-date">2026/10/13</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>
+              吊り下げ設定のプレビューで<strong>投稿者設定</strong>を
+              使用している際に正しく表示されない問題を修正
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug">
+        <div class="update-icon">🐛</div>
+        <div class="update-body">
+          <div class="update-title">
+            埋め込みタイトルの改行によるエラーを修正
+            <span class="update-date">2026/10/13</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>
+              埋め込みのタイトルに改行を設定した際に
+              エラーで処理ができなくなる不具合を修正
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+            <li>
+              Discord の仕様上は可能ですが設計上禁止のため、
+              <strong>改行はすべて削除</strong>されます
+              <span class="tag tag-info">システム</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v1.8.1 — 自動リアクション設定 -->
       <!-- ========================================================= -->
 
