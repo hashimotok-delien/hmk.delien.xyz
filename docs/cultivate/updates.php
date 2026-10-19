@@ -237,6 +237,52 @@
         </div>
       </div>
 
+      <div class="update-card" data-tags="feature info">
+        <div class="update-icon">🗂️</div>
+        <div class="update-body">
+          <div class="update-title">
+            ログ機能を追加
+            <span class="update-date">2026/11/01</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>
+              <code>/ログ設定</code> コマンドで、全30種類の操作ログの
+              取得・送信設定を管理できます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              VC入退室・移動、BAN / KICK / タイムアウト、
+              メッセージ削除・編集・一括削除、
+              ロール付与・剥奪・管理、メンバー操作、
+              チャンネル管理、招待リンク、絵文字・スタンプ管理に対応
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              「全体」「グループ単位」「イベント単位」の3段階で
+              送信先チャンネルを設定可能
+              （個別設定 &gt; グループ設定 &gt; 全体設定の順で適用）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              イベントごとのON/OFF、除外チャンネル・除外ロール
+              （各最大10件）に対応
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              送信先チャンネルごとにWebhookを自動作成し、
+              レート制限に配慮したキューで大量ログを安定送信
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              監査ログから実行者・理由を取得
+              （権限がない場合は「不明」として記録を継続）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <!-- ========================================================= -->
       <!-- v1.8.3 — 吊り下げ / プロフィール -->
       <!-- ========================================================= -->

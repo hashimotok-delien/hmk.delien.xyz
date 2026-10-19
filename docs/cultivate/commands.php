@@ -35,6 +35,12 @@
       </div>
 
       <div class="command-block">
+        <div class="cmd-name">/ログ設定</div>
+        <div class="cmd-desc">各種操作ログの送信設定パネルを開きます。全ログ送信先・グループ別送信先・個別送信先・除外チャンネル／ロール・イベントのON/OFFを設定できます。</div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
+      <div class="command-block">
         <div class="cmd-name">/ウェルカムメッセージ設定</div>
         <div class="cmd-desc">ウェルカムメッセージの設定パネルを開きます。送信チャンネル・日中/深夜メッセージ・カード表示を設定できます。</div>
         <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
