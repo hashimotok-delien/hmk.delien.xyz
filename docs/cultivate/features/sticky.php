@@ -51,6 +51,12 @@
       <h3>削除（プレフィックスコマンド）</h3>
       <pre><code>!?unsticky</code></pre>
 
+      <h3>削除（スラッシュコマンド）</h3>
+      <pre><code>/unsticky</code></pre>
+      <p><code>!?unsticky</code> と同じ動作です。実行チャンネルに
+      設定されている吊下げメッセージを解除します。応答は実行者
+      にのみ表示されます。</p>
+
       <h3>一覧表示（スラッシュコマンド）</h3>
       <pre><code>/sticky list</code></pre>
 
@@ -235,7 +241,7 @@
           </tr>
           <tr>
             <td>🗑️ 削除</td>
-            <td>吊下げメッセージ設定を削除</td>
+            <td>吊下げメッセージ設定を削除（YES/NO 確認あり）</td>
           </tr>
         </tbody>
       </table>

@@ -125,6 +125,12 @@
       </div>
 
       <div class="command-block">
+        <div class="cmd-name">/unsticky</div>
+        <div class="cmd-desc">実行チャンネルの吊下げメッセージを削除します。<code>!?unsticky</code> と同じ動作です。</div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
+      <div class="command-block">
         <div class="cmd-name">/sticky list</div>
         <div class="cmd-desc">サーバー内に設定されている全吊下げメッセージの一覧を表示します。</div>
         <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
