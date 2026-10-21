@@ -175,6 +175,173 @@
         </tbody>
       </table></div>
 
+      <h2>管理メニュー設定</h2>
+      <p>
+        プロフ審査設定には、転送メッセージから実行できる
+        <strong>管理メニュー</strong>を登録できます。
+        審査対象者に対して、ロール操作・KICK・メッセージ送信を
+        ボタン一つで実行できるようになります。
+      </p>
+      <ul>
+        <li>1つのプロフ審査設定につき最大 <strong>20件</strong> まで登録可能</li>
+        <li>転送メッセージに「管理メニュー」ボタンが表示されます（1件以上のとき）</li>
+        <li>ボタンを押すと、実行できる操作がSelectで一覧表示されます</li>
+        <li>操作ごとに「操作可能ロール」「対象者のユーザーロール条件」を設定できます</li>
+      </ul>
+
+      <div class="alert alert-info">
+        <p><strong>💡 既存の「説明会開始」ボタンについて</strong>
+        これまで一部サーバー限定だった「説明会開始」ボタンは、
+        管理メニュー設定へ自動で移行されます。
+        既存メッセージの「説明会開始」ボタンを押した場合も、
+        同じ管理メニューが開きます。</p>
+      </div>
+
+      <h3>設定画面の開き方</h3>
+      <ol class="steps">
+        <li><strong><code>/プロフ審査設定</code> を実行</strong></li>
+        <li><strong>対象の設定を選択して「⚙️ 編集」</strong></li>
+        <li><strong>「🧩 管理メニュー設定」を押す</strong>
+          管理メニューの一覧が表示されます
+        </li>
+      </ol>
+
+      <h3>基本設定</h3>
+      <div class="table-wrapper"><table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>設定名</td>
+            <td>Selectに表示される名前（他の管理メニューと重複不可）</td>
+          </tr>
+          <tr>
+            <td>操作タイプ</td>
+            <td>ロール操作 / KICK / メッセージ送信</td>
+          </tr>
+          <tr>
+            <td>ユーザーロール（ホワイト）</td>
+            <td>
+              いずれかを所持している審査対象者に表示します。
+              空欄の場合は制限なしです。
+            </td>
+          </tr>
+          <tr>
+            <td>ユーザーロール（ブラック）</td>
+            <td>
+              いずれかを所持している審査対象者には表示しません
+              （ホワイトより優先）。
+            </td>
+          </tr>
+          <tr>
+            <td>操作可能ロール</td>
+            <td>
+              このロールを持つか、管理者権限を持つ場合のみ実行できます。
+              未設定の場合は管理者のみ実行できます。
+            </td>
+          </tr>
+        </tbody>
+      </table></div>
+
+      <h3>操作タイプ別の詳細設定</h3>
+
+      <h4>ロール操作</h4>
+      <ul>
+        <li>
+          <strong>無条件操作</strong>:
+          対象者に対して必ず実行する付与ロール・剥奪ロール
+        </li>
+        <li>
+          <strong>条件操作</strong>（最大9件）:
+          対象者の所持ロールに応じて実行する付与・剥奪ロール
+          <ul>
+            <li>所持ロール条件・AND / OR・優先順位を設定</li>
+            <li>条件操作は、成立したもののうち優先順位が最も高い1件のみ実行されます</li>
+            <li>優先順位は数値が小さいほど優先されます</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h4>KICK</h4>
+      <ul>
+        <li>対象メンバーをKICKします</li>
+        <li>理由設定で指定した内容がKICK理由として記録されます</li>
+      </ul>
+
+      <h4>メッセージ送信</h4>
+      <ul>
+        <li>送信先チャンネルと本文を設定します</li>
+        <li>本文では <code>{usermention}</code> <code>{username}</code>
+          <code>{userid}</code> <code>{setting_name}</code>
+          <code>{setting_id}</code> が使用できます</li>
+      </ul>
+
+      <h3>理由設定</h3>
+      <p>
+        操作理由（監査ログ・KICK理由）を設定します。
+        デフォルトは
+        <code>{setting_name}(#{setting_id})の{option_name}(#{option_id})を{ctrl_name}(#{ctrl_id})操作した</code>
+        です。次のプレースホルダーが使用できます。
+      </p>
+      <div class="table-wrapper"><table>
+        <thead>
+          <tr>
+            <th>プレースホルダー</th>
+            <th>置き換え内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>{setting_name}</code> / <code>{setting_id}</code></td>
+            <td>プロフ審査設定の設定名 / 設定ID</td>
+          </tr>
+          <tr>
+            <td><code>{judging_name}</code> / <code>{judging_id}</code></td>
+            <td>上記の別名（後方互換）</td>
+          </tr>
+          <tr>
+            <td><code>{option_name}</code> / <code>{option_id}</code></td>
+            <td>管理メニューの設定名 / 設定ID</td>
+          </tr>
+          <tr>
+            <td><code>{ctrl_name}</code> / <code>{ctrl_id}</code></td>
+            <td>管理メニューを操作したユーザーの表示名 / ID</td>
+          </tr>
+          <tr>
+            <td><code>{ctrl_mention}</code></td>
+            <td>管理メニューを操作したユーザーへのメンション</td>
+          </tr>
+          <tr>
+            <td><code>{user_name}</code> / <code>{user_id}</code> / <code>{user_mention}</code></td>
+            <td>上記（操作したユーザー）の別名</td>
+          </tr>
+          <tr>
+            <td><code>{target_name}</code> / <code>{target_id}</code></td>
+            <td>操作対象のメンバー（プロフ投稿者）の表示名 / ID</td>
+          </tr>
+          <tr>
+            <td><code>{target_mention}</code></td>
+            <td>操作対象のメンバーへのメンション</td>
+          </tr>
+          <tr>
+            <td><code>{action_name}</code></td>
+            <td>操作タイプ（ロール操作 / KICK / メッセージ送信）</td>
+          </tr>
+          <tr>
+            <td><code>{guild_name}</code> / <code>{guild_id}</code></td>
+            <td>サーバー名 / サーバーID</td>
+          </tr>
+          <tr>
+            <td><code>{date}</code> / <code>{time}</code></td>
+            <td>操作日時（<code>YYYY/MM/DD</code> / <code>HH:MM:SS</code>・JST）</td>
+          </tr>
+        </tbody>
+      </table></div>
+
       <h2>審査の流れ</h2>
       <ol class="steps">
         <li>
