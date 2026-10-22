@@ -13,22 +13,14 @@
     <a href="<?= $ROOT ?? '.' ?>/commands"><span class="nav-icon">📜</span>コマンド一覧</a>
     <a href="<?= $ROOT ?? '.' ?>/faq"><span class="nav-icon">❓</span>FAQ</a>
 
-    <div class="nav-section">プロフィール系機能</div>
-    <!-- <a href="<?= $ROOT ?? '.' ?>/features/profile"><span class="nav-icon">📸</span>プロフィール保存</a> -->
-    <!-- <a href="<?= $ROOT ?? '.' ?>/features/my-profile"><span class="nav-icon">🌐</span>マイプロフ（鯖間）</a> -->
-
-    <div class="nav-section">VC系機能</div>
-    <!-- <a href="<?= $ROOT ?? '.' ?>/features/vc-member"><span class="nav-icon">💬</span>交流計測</a> -->
+    <div class="nav-section">交流系機能</div>
+    <a href="<?= $ROOT ?? '.' ?>/features/exchange-measure"><span class="nav-icon">💬</span>交流計測</a>
 
     <div class="nav-section">ランク系機能</div>
     <a href="<?= $ROOT ?? '.' ?>/features/rank"><span class="nav-icon">🏆</span>ランクシステム</a>
 
-    <div class="nav-section">管理系機能</div>
-    <!-- <a href="<?= $ROOT ?? '.' ?>/features/settings"><span class="nav-icon">⚙️</span>設定パネル</a> -->
-    <!-- <a href="<?= $ROOT ?? '.' ?>/features/bot-manage"><span class="nav-icon">🖥️</span>サーバー管理</a> -->
-
     <div class="nav-section">その他</div>
     <a href="<?= $ROOT ?? '.' ?>/updates"><span class="nav-icon">📋</span>更新履歴</a>
-    <!-- <a href="<?= $ROOT ?? '.' ?>/features/command-prefix"><span class="nav-icon">⌨️</span>接頭辞変更</a> -->
+    <a href="<?= $ROOT ?? '.' ?>/known-issues"><span class="nav-icon">⚠️</span>既知の不具合</a>
   </nav>
 </aside>

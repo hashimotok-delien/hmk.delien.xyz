@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '.'; $PAGE_TITLE = '更新履歴 - ねくさす⋆˚ʚɞ ドキュメント'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>更新履歴 - ねくさす⋆˚ʚɞ ドキュメント</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '.'; $PAGE_TITLE = '更新履歴'; ?>
-  <?php include __DIR__ . '/include/sidebar.php'; ?>
+  <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
 
   <main class="main-content">
-    <?php include __DIR__ . '/include/topbar.php'; ?>
+    <?php include __DIR__ . '/assets/include/topbar.php'; ?>
 
     <div class="content">
       <div class="feature-hero">
@@ -48,6 +44,106 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- 2026年10月 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">2026/10</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature info">
+        <div class="update-icon">💬</div>
+        <div class="update-body">
+          <div class="update-title">
+            交流計測v2 を追加
+            <span class="update-date">2026/10/07</span>
+            <span class="tag tag-feature">新機能</span>
+          </div>
+          <ul>
+            <li>
+              在室ファクト（5分バケット）＋定期集計方式の
+              <strong>交流計測v2</strong> を追加
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              設定を変更すると、過去の在室記録から
+              <strong>ランキングを自動で再集計</strong>するように
+            </li>
+            <li>
+              固定ランキング（全員 / 異性 / 同性）と
+              カスタムランキング定義に対応
+            </li>
+            <li>
+              コマンドは <code>/交流計測v2 設定</code> など。
+              現在はベータ導入サーバーのみで提供
+              <span class="tag tag-info">システム</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature rank info">
+        <div class="update-icon">🏆</div>
+        <div class="update-body">
+          <div class="update-title">
+            ランクシステムを刷新（VC専用モード）
+            <span class="update-date">2026/09/28</span>
+            <span class="tag tag-rank">ランク</span>
+          </div>
+          <ul>
+            <li>
+              Cultivate 由来の新しいランクシステムに更新し、
+              ねくさす⋆˚ʚɞ では<strong>VC計測専用</strong>として動作するように
+              <span class="tag tag-rank">ランク</span>
+            </li>
+            <li>
+              チャット系の設定項目（チャット計測・チャットWH/BL・ボーナス・
+              カスタムメッセージ）を非表示にし、
+              VC の設定だけに絞り込み
+            </li>
+            <li>
+              <strong>🎤 VC条件</strong>を拡張 —
+              VC の必要人数に加えて、自分 / 同席者のロール条件と
+              「人数不足時のXP倍率」を設定できるように
+            </li>
+            <li>
+              <strong>🎴 ランクカード設定</strong>を追加 —
+              カードの色と、順位・合計EXP・現在XP・必要XPの非表示を切り替え可能
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <strong>📌 ランク確認パネル</strong>を追加 —
+              チャンネルに設置したパネルのボタンから
+              自分のランクカードを確認可能（吊り下げ対応）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <strong>🎭 ランクロール制御 / 高度制御</strong>を追加 —
+              レベル条件とロールを一覧で管理し、
+              「現在レベルのロール反映」で一括付与
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <strong>📋 ログ機能設定</strong>を追加 —
+              6カテゴリの出力先チャンネルを設定
+              （現在は期間ランキングのみ実際に出力）
+            </li>
+            <li>
+              期間ランキング（週間・月間）を追加 —
+              期間切り替え時に集計結果をログ出力
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              絵文字描画を専用モジュールに分離し、
+              表示名の絵文字・記号をカラーで描画できるように
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v1.0.0 — 初回リリース -->
       <!-- ========================================================= -->
 
@@ -72,7 +168,7 @@
             </li>
             <li>
               <strong>🌐 マイプロフ（鯖間プロフ）</strong> —
-              他鯖のプロフ引用・DM保存・パネル設置によるボタン操作
+              他鯖のプロフ引用・DM / スレッド保存・パネル設置によるボタン操作
               <span class="tag tag-profile">プロフィール</span>
             </li>
             <li>
@@ -81,18 +177,13 @@
               <span class="tag tag-feature">新機能</span>
             </li>
             <li>
-              <strong>🏆 ランクシステム（VC専用）</strong> —
+              <strong>🏆 ランクシステム</strong> —
               VC 滞在時間に応じた XP 獲得・レベルアップ
               <span class="tag tag-rank">ランク</span>
             </li>
             <li>
-              <strong>⚙️ 設定パネル</strong> —
-              コマンド接頭辞の変更などの一元管理パネル
-              <span class="tag tag-info">システム</span>
-            </li>
-            <li>
-              <strong>🖥️ サーバー管理</strong> —
-              導入サーバー一覧の表示・退出管理
+              <strong>🖥️ Bot 管理</strong> —
+              導入サーバー一覧の表示などの管理コマンド
               <span class="tag tag-info">システム</span>
             </li>
           </ul>
@@ -117,18 +208,10 @@
             <span class="tag tag-wip">開発中</span>
           </div>
           <ul>
-            <li>
-              2026年1月 — ねくさす⋆˚ʚɞ プロジェクト始動
-            </li>
-            <li>
-              <strong>VC交流計測機能</strong> の設計・開発
-            </li>
-            <li>
-              <strong>鯖間プロフ取得機能</strong> の設計・開発
-            </li>
-            <li>
-              <strong>VCランクシステム</strong> の設計・開発
-            </li>
+            <li>2026年1月 — ねくさす⋆˚ʚɞ プロジェクト始動</li>
+            <li><strong>VC交流計測機能</strong>の設計・開発</li>
+            <li><strong>鯖間プロフ取得機能</strong>の設計・開発</li>
+            <li><strong>VCランクシステム</strong>の設計・開発</li>
           </ul>
         </div>
       </div>
@@ -146,9 +229,9 @@
         <span class="tag tag-info">システム</span>
       </div>
 
-      <?php include __DIR__ . '/include/footer.php'; ?>
+      <?php include __DIR__ . '/assets/include/footer.php'; ?>
     </div>
   </main>
-  <script src="js/main.js?v=<?= @filemtime(__DIR__ . '/js/main.js') ?: time() ?>"></script>
+
 </body>
 </html>

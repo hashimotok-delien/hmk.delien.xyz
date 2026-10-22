@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '.'; $PAGE_TITLE = 'ねくさす⋆˚ʚɞ ドキュメント'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ねくさす⋆˚ʚɞ ドキュメント</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '.'; $PAGE_TITLE = 'トップ'; ?>
 
-  <?php include __DIR__ . '/include/sidebar.php'; ?>
+  <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
 
   <!-- Main Content -->
   <main class="main-content">
-    <?php include __DIR__ . '/include/topbar.php'; ?>
+    <?php include __DIR__ . '/assets/include/topbar.php'; ?>
 
     <div class="content">
       <!-- Hero -->
@@ -30,9 +26,10 @@
       <!-- About -->
       <h2>ねくさす⋆˚ʚɞ とは</h2>
       <p>
-        ねくさす⋆˚ʚɞ は、Discord サーバーの交流を活性化するために開発された多機能 Bot です。
-        プロフィール保存・鯖間プロフ取得、VC 交流計測ランキング、VC 滞在時間のランクシステムなど、
-        界隈サーバー運営に必要な機能を1つにまとめて提供します。
+        ねくさす⋆˚ʚɞ は、界隈サーバーの運営に必要な機能を1つにまとめた
+        Discord Bot です。
+        プロフィールの保存・鯖間プロフ、VC 交流計測、
+        VC 滞在時間のランクシステムなどを、サーバーごとに設定して利用できます。
       </p>
       <p>
         バージョン <strong>1.0.0</strong> ／ モジュール: <strong>discord.py</strong>
@@ -52,28 +49,24 @@
 
         <div class="card">
           <h3>🌐 マイプロフ（鯖間プロフ）</h3>
-          <p>イベ鯖で残っているプロフを他鯖から引用、またはDMに保存して持ち運べます。パネル設置でボタン操作。</p>
+          <p>他鯖のプロフを引用したり、DM・プライベートスレッドに保存して持ち運べます。パネル設置でボタン操作。</p>
         </div>
 
         <div class="card">
           <h3>💬 交流計測</h3>
-          <p>VC の同席記録から「たくさんの人と喋った人」を計測。総合・異性間・同性間のランキングを表示できます。</p>
+          <p>VC の同席状況を記録し、「たくさんの人と交流した人」をランキング化。性別や同性・異性などで絞り込めます。</p>
+          <a href="features/exchange-measure">詳しく見る →</a>
         </div>
 
         <div class="card">
           <h3>🏆 ランクシステム</h3>
-          <p>VC 滞在時間に応じて XP を獲得しレベルアップ。ミュート勢も安心の設計で、数式自由設定・画像ランクカード対応。</p>
+          <p>VC 滞在時間に応じて XP を獲得してレベルアップ。ミュート勢も安心の設計で、成長曲線も自由に設定できます。</p>
           <a href="features/rank">詳しく見る →</a>
         </div>
 
         <div class="card">
-          <h3>⚙️ 設定パネル</h3>
-          <p>プリセットの有効化・メイン設定など、ランクシステムの各種設定を一元的に管理できるパネル。</p>
-        </div>
-
-        <div class="card">
-          <h3>🖥️ サーバー管理</h3>
-          <p>管理コマンド（/bot管理）から Bot の導入サーバー一覧や動作状況の確認などができます。</p>
+          <h3>🖥️ Bot 管理</h3>
+          <p>Bot 所有者向けの管理コマンド。導入サーバー一覧の確認などができます。</p>
         </div>
 
       </div>
@@ -85,10 +78,9 @@
       </p>
       <a href="https://discord.gg/AmMkFhhD2D" class="btn btn-outline" target="_blank">💬 サポートサーバーに参加</a>
 
-      <?php include __DIR__ . '/include/footer.php'; ?>
+      <?php include __DIR__ . '/assets/include/footer.php'; ?>
     </div>
   </main>
 
-  <script src="js/main.js?v=<?= @filemtime(__DIR__ . '/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

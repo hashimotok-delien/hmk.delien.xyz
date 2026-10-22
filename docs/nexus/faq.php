@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '.'; $PAGE_TITLE = 'FAQ - ねくさす⋆˚ʚɞ ドキュメント'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ - ねくさす⋆˚ʚɞ ドキュメント</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '.'; $PAGE_TITLE = 'FAQ'; ?>
-  <?php include __DIR__ . '/include/sidebar.php'; ?>
+  <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
 
   <main class="main-content">
-    <?php include __DIR__ . '/include/topbar.php'; ?>
+    <?php include __DIR__ . '/assets/include/topbar.php'; ?>
 
     <div class="content">
       <h1>❓ FAQ</h1>
@@ -24,12 +20,15 @@
 
       <h3>Q. ねくさす⋆˚ʚɞ は無料で使えますか？</h3>
       <p>
-        <strong>A.</strong> はい、無料で基本利用できます。𝐌𝐚𝐠𝐢𝐜 𝐏𝐨𝐫𝐭𝐚𝐥専用の無料 Bot です。ただし，サーバーのストレージを圧迫するような機能やDiscordとの通信を多用する機能は制限されており，将来的に有料プランが導入される可能性があります。
+        <strong>A.</strong> はい、𝐌𝐚𝐠𝐢𝐜 𝐏𝐨𝐫𝐭𝐚𝐥 専用の無料 Bot です。
+        ただし、サーバーのストレージを圧迫する機能や Discord との通信を多用する機能には
+        制限を設けています。
       </p>
 
       <h3>Q. 導入には何が必要ですか？</h3>
       <p>
-        <strong>A.</strong> サーバーの管理者権限が必要です。サポートサーバーに参加し、チケットから導入リクエストを送信してください。
+        <strong>A.</strong> サーバーの管理者権限が必要です。
+        𝐌𝐚𝐠𝐢𝐜 𝐏𝐨𝐫𝐭𝐚𝐥 に導入をご依頼ください。
       </p>
 
       <h3>Q. 複数のサーバーで使用できますか？</h3>
@@ -39,59 +38,111 @@
 
       <h2>機能について</h2>
 
+      <h3>Q. ランクシステムはチャットの投稿でもレベルが上がりますか？</h3>
+      <p>
+        <strong>A.</strong> いいえ。ねくさす⋆˚ʚɞ のランクシステムは
+        <strong>VC 滞在時間のみ</strong>を計測します。
+        チャット・インチャットの XP 計測は行わないため、
+        設定パネルにもチャット関連の項目は表示されません。
+        ミュート中でも VC に接続していれば XP を獲得できます。
+      </p>
+
+      <h3>Q. ランクのプリセットは同時にいくつ有効化できますか？</h3>
+      <p>
+        <strong>A.</strong> 無料のサーバーでは<strong>最大3つ</strong>、
+        プレミアムが有効なサーバーでは<strong>最大10個</strong>までです。
+        上限に達した場合は、いずれかのプリセットを無効化してください。
+      </p>
+
+      <h3>Q. <code>/ランク</code> で「メインに設定されたプリセットがありません」と出ます</h3>
+      <p>
+        <strong>A.</strong> <code>/ランク設定</code> からプリセットのエディタを開き、
+        「⭐ メイン設定」を ON にしてください。
+        <code>/ランク</code> はメイン設定のプリセットのみを表示します。
+      </p>
+
+      <h3>Q. ランキングに自分が表示されません</h3>
+      <p>
+        <strong>A.</strong> ランキングは<strong>XP が 0 のユーザーを表示しません</strong>。
+        また、VC 条件（自分以外の必要人数・ロール条件）や VC フィルターを満たしていない場合は
+        XP が付与されません。条件を確認してください。
+      </p>
+
       <h3>Q. マイプロフのプロフ送信方法はどのようなものがありますか？</h3>
       <p>
-        <strong>A.</strong> 「DM」と「プライベートスレッド」の2種類から選択できます。DMが送信できない場合はプライベートスレッドで送信するといった設定も可能です。
+        <strong>A.</strong> 「DM」と「プライベートスレッド」から選択できます。
+        DM が送信できない場合にプライベートスレッドを使う、といった設定も可能です。
       </p>
 
       <h3>Q. 交流計測のプリセットはいくつまで作成できますか？</h3>
       <p>
-        <strong>A.</strong> 特に上限は設定されていません。サーバーの規模や用途に応じて複数のプリセットを作成できます。
+        <strong>A.</strong> 上限は設けていません。サーバーの規模や用途に応じて作成できます。
       </p>
 
-      <h3>Q. ランクシステムのプリセットは同時にいくつ有効化できますか？</h3>
+      <h3>Q. 交流計測v2 のコマンドが表示されません</h3>
       <p>
-        <strong>A.</strong> 同時に有効化できるプリセットは<strong>最大3つまで</strong>です。4つ目以降を有効化するには、先に他のプリセットを無効化してください。
+        <strong>A.</strong> 交流計測v2 は現在<strong>ベータ導入サーバーでのみ</strong>提供しています。
+        それ以外のサーバーでは従来版の <code>/交流計測設定</code> などをご利用ください。
+      </p>
+
+      <h3>Q. 期間ランキングはいつリセットされますか？</h3>
+      <p>
+        <strong>A.</strong> 週間ランキングは<strong>月曜 0 時</strong>、
+        月間ランキングは<strong>月初 0 時</strong>に切り替わります。
+        切り替え時に、ログ出力先が設定されていれば前の期間の集計結果がログに出力されます。
       </p>
 
       <h2>トラブルシューティング</h2>
 
       <h3>Q. Bot が反応しません</h3>
-      <p>
-        <strong>A.</strong> 以下の点をご確認ください。
-      </p>
+      <p><strong>A.</strong> 以下をご確認ください。</p>
       <ul>
         <li>Bot がサーバーにオンラインで参加しているか</li>
-        <li>コマンドを実行するチャンネルで Bot の権限が適切に設定されているか</li>
-        <li>必要な権限（メッセージ管理、ロール管理など）が付与されているか</li>
+        <li>コマンドを実行するチャンネルで Bot が閲覧・送信できるか</li>
+        <li>必要な権限（VC の閲覧、メッセージの送信、ロールの管理など）があるか</li>
       </ul>
 
       <h3>Q. 設定パネルが表示されません</h3>
       <p>
-        <strong>A.</strong> 管理者権限を持っているか確認してください。また、パネルの設置チャンネルが適切かどうかもご確認ください。
+        <strong>A.</strong> 設定コマンドは<strong>管理者権限</strong>が必要です
+        （交流計測は権限ロールでも操作できます）。
+        権限を確認しても表示されない場合は、サポートサーバーまでご報告ください。
       </p>
+
+      <h3>Q. VC に接続しているのに XP が増えません</h3>
+      <p><strong>A.</strong> 次のいずれかに該当していないか確認してください。</p>
+      <ul>
+        <li>プリセットが<strong>有効化</strong>されていない</li>
+        <li>VC フィルター（WH / BL）で対象外になっている</li>
+        <li>VC 条件（自分以外の必要人数・ロール条件）を満たしていない</li>
+        <li>有効期間（開始・終了日時）の外になっている</li>
+        <li>VC 最小接続時間に満たないまま切断した</li>
+      </ul>
 
       <h3>Q. エラーが発生した場合の対処法は？</h3>
       <p>
-        <strong>A.</strong> エラーメッセージに記載されているエラーコード（例: C0, C1）をメモして、サポートサーバーまでご報告ください。
+        <strong>A.</strong> 表示されたエラーメッセージと、実行したコマンド・発生時刻を控えて
+        サポートサーバーまでご報告ください。
       </p>
 
       <h2>その他</h2>
 
       <h3>Q. 機能のリクエストはできますか？</h3>
       <p>
-        <strong>A.</strong> サポートサーバーにて機能リクエストを受け付けています。ただし、すべてのリクエストにお応えできるとは限りません。
+        <strong>A.</strong> サポートサーバーにて受け付けています。
+        すべてのリクエストにお応えできるとは限りません。
       </p>
 
       <h3>Q. バグ報告はどこにすればいいですか？</h3>
       <p>
-        <strong>A.</strong> サポートサーバーまでご連絡ください。可能であれば、発生した状況やエラーメッセージのスクリーンショットなどを添付していただけると助かります。
+        <strong>A.</strong> サポートサーバーまでご連絡ください。
+        発生状況やスクリーンショットを添えていただけると助かります。
+        既知の不具合は<a href="known-issues">既知の不具合</a>にまとめています。
       </p>
 
-      <?php include __DIR__ . '/include/footer.php'; ?>
+      <?php include __DIR__ . '/assets/include/footer.php'; ?>
     </div>
   </main>
 
-  <script src="js/main.js?v=<?= @filemtime(__DIR__ . '/js/main.js') ?: time() ?>"></script>
 </body>
 </html>
