@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '..'; $PAGE_TITLE = 'ランクシステム - Cultivate ドキュメント'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ランクシステム - Cultivate ドキュメント</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '..'; $PAGE_TITLE = 'ランクシステム'; ?>
-  <?php include __DIR__ . '/../include/sidebar.php'; ?>
+  <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
-    <?php include __DIR__ . '/../include/topbar.php'; ?>
+    <?php include __DIR__ . '/../assets/include/topbar.php'; ?>
 
     <div class="content">
       <div class="feature-hero">
@@ -511,6 +507,13 @@ max(100, 50 * L ** 1.5)
         <strong>下のSelect</strong>: 各項目の詳細設定<br>
         設定項目を選ぶとModalが開くか、直接値が切り替わります。
       </p>
+      <p>
+        プリセット一覧の<strong>現在レベルのロール反映</strong>を押すと、
+        そのプリセットの経験値データがあるメンバーを対象に、
+        現在のレベルまでに設定されたレベルロールを付与します。
+        ロール設定を後から追加した場合に使用してください。
+        既存ロールの剥奪は行いません。
+      </p>
       <p>以下が設定可能な全項目です：</p>
 
       <div class="table-wrapper"><table>
@@ -637,13 +640,13 @@ max(100, 50 * L ** 1.5)
       </p>
 
       <h3>全体モード（combined・メーター1本）</h3>
-      <p><img src="../img/rank_card_combined.png" alt="ランクカード（全体モード）" style="max-width:100%;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><img src="../assets/img/rank_card_combined.png" alt="ランクカード（全体モード）" style="max-width:100%;border:1px solid #ccc;border-radius:8px;"></p>
 
       <h3>VC/チャットモード（separate・メーター2本）</h3>
-      <p><img src="../img/rank_card_separate.png" alt="ランクカード（VC/チャットモード）" style="max-width:100%;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><img src="../assets/img/rank_card_separate.png" alt="ランクカード（VC/チャットモード）" style="max-width:100%;border:1px solid #ccc;border-radius:8px;"></p>
 
       <h3>インチャットモード（inchat・メーター3本）</h3>
-      <p><img src="../img/rank_card_inchat.png" alt="ランクカード（インチャットモード）" style="max-width:100%;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><img src="../assets/img/rank_card_inchat.png" alt="ランクカード（インチャットモード）" style="max-width:100%;border:1px solid #ccc;border-radius:8px;"></p>
 
       <div class="alert alert-info">
         <p><strong>💡 ランクカードの内容:</strong></p>
@@ -698,7 +701,7 @@ max(100, 50 * L ** 1.5)
         <li>レベルは保存されず、全てXPからその場計算されます。数式を変更しても過去データとの整合性は保たれます</li>
       </ul>
 
-      <?php include __DIR__ . '/../include/footer.php'; ?>
+      <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -812,6 +815,5 @@ max(100, 50 * L ** 1.5)
       });
     })();
   </script>
-  <script src="../js/main.js?v=<?= @filemtime(__DIR__ . '/../js/main.js') ?: time() ?>"></script>
 </body>
 </html>

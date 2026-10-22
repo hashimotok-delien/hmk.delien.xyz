@@ -1,72 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '..'; $PAGE_TITLE = 'ランク成長計算 - Cultivate ドキュメント'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ランク成長計算 - Cultivate ドキュメント</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
-  <style>
-    .calculator-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin: 20px 0;
-    }
-    .calculator-grid label {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      font-weight: 600;
-    }
-    .calculator-grid input,
-    .calculator-grid select {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 10px 12px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      background: #fff;
-      color: #1e293b;
-      font: inherit;
-    }
-    .calculator-results {
-      overflow-x: auto;
-      margin-top: 20px;
-    }
-    .calculator-results table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .calculator-results th,
-    .calculator-results td {
-      padding: 12px;
-      border: 1px solid #dbe2ea;
-      text-align: right;
-      white-space: nowrap;
-    }
-    .calculator-results th:first-child,
-    .calculator-results td:first-child {
-      text-align: left;
-    }
-    .calculator-note {
-      color: #64748b;
-      font-size: 0.92em;
-    }
-    #calculator-error {
-      color: #b91c1c;
-      font-weight: 600;
-    }
-  </style>
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '..'; $PAGE_TITLE = 'ランク成長計算'; ?>
-  <?php include __DIR__ . '/../include/sidebar.php'; ?>
+  <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
-    <?php include __DIR__ . '/../include/topbar.php'; ?>
+    <?php include __DIR__ . '/../assets/include/topbar.php'; ?>
 
     <div class="content">
       <div class="feature-hero">
@@ -164,10 +108,9 @@
       </p>
       <p><a href="rank">← ランクシステムの説明へ戻る</a></p>
 
-      <?php include __DIR__ . '/../include/footer.php'; ?>
+      <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
-  <script src="../js/main.js?v=<?= @filemtime(__DIR__ . '/../js/main.js') ?: time() ?>"></script>
   <script>
     (function() {
       const templates = {

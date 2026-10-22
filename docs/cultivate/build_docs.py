@@ -16,21 +16,27 @@ CSS/JS のキャッシュ破棄用 PHP タグは、dist/ 内の該当ファイ�
 import os
 import re
 import shutil
+from html import escape
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-INCLUDE_DIR = os.path.join(SCRIPT_DIR, "include")
+INCLUDE_DIR = os.path.join(SCRIPT_DIR, "assets", "include")
 DIST_DIR = os.path.join(SCRIPT_DIR, "dist")
 SRC_DIRS = [SCRIPT_DIR, os.path.join(SCRIPT_DIR, "features")]
 
 
-MTIME_TAG_RE = re.compile(r"<\?= @filemtime\(__DIR__ \. '/([^']+)'\) \?: time\(\) \?>")
+MTIME_TAG_RE = re.compile(
+    r"<\?= @filemtime\(__DIR__ \. '([^']+)'\) \?: time\(\) \?>"
+)
 
 # ページ先頭で定義する変数ブロック
 PAGE_VARS_RE = re.compile(
     r"<\?php\s+\$ROOT = '([^']*)';\s*\$PAGE_TITLE = '([^']*)';\s*\?>"
 )
-# <?php include __DIR__ . '/include/sidebar.php'; ?>
-INCLUDE_RE = re.compile(r"<\?php\s+include __DIR__ \. '[^']*?include/(\w+)\.php';\s*\?>")
+# <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
+INCLUDE_RE = re.compile(
+    r"<\?php\s+include __DIR__ \. "
+    r"'[^']*?assets/include/(\w+)\.php';\s*\?>"
+)
 # include パーツ内の変数参照
 ROOT_TOKEN = "<?= $ROOT ?? '.' ?>"
 TITLE_TOKEN = "<?= $PAGE_TITLE ?? '' ?>"
@@ -46,12 +52,13 @@ def load_include(name: str) -> str:
         return f.read()
 
 
-def resolve_cache_busting(html: str, dst_path: str) -> str:
+def resolve_cache_busting(html: str) -> str:
     """dist 出力では PHP タグを静的値に置換し、ブラウザで直接開けるようにする"""
-    page_dir = os.path.dirname(dst_path)
-
     def repl(match):
-        target = os.path.normpath(os.path.join(page_dir, match.group(1)))
+        relative_path = match.group(1).replace("../", "")
+        if relative_path.startswith("assets/"):
+            relative_path = relative_path[len("assets/"):]
+        target = os.path.join(DIST_DIR, "assets", relative_path)
         if os.path.exists(target):
             return str(int(os.path.getmtime(target)))
         return "0"
@@ -75,6 +82,34 @@ def build_file(src_path: str):
         content = load_include(match.group(1))
         content = content.replace(ROOT_TOKEN, root)
         content = content.replace(TITLE_TOKEN, title)
+        if match.group(1) == "header":
+            description = (
+                title
+                + "。Cultivate Bot の機能・設定方法を紹介する"
+                + "ドキュメントです。"
+            )
+            relative_path = os.path.relpath(src_path, SCRIPT_DIR)
+            page_url = (
+                "https://hmk.delien.xyz/cultivate/"
+                + os.path.splitext(relative_path)[0]
+            )
+            page_image = (
+                "https://hmk.delien.xyz/cultivate/"
+                + "assets/img/social-preview.png"
+            )
+            values = {
+                "<?= $escapeMeta($pageTitle) ?>": escape(title, quote=True),
+                "<?= $escapeMeta($pageDescription) ?>": escape(
+                    description, quote=True
+                ),
+                "<?= $escapeMeta($pageUrl) ?>": escape(page_url, quote=True),
+                "<?= $escapeMeta($pageImage) ?>": escape(
+                    page_image, quote=True
+                ),
+            }
+            for token, value in values.items():
+                content = content.replace(token, value)
+            content = re.sub(r"<\?php.*?\?>", "", content, flags=re.S)
         return content
 
     html = INCLUDE_RE.sub(replace_include, html)
@@ -84,7 +119,7 @@ def build_file(src_path: str):
     dst_path = os.path.join(DIST_DIR, rel_path)
 
     # PHP タグを静的値へ置換（dist をブラウザで直接開けるようにする）
-    html = resolve_cache_busting(html, dst_path)
+    html = resolve_cache_busting(html)
 
     # 未展開の PHP が残っていないか確認
     if "<?php" in html or "<?=" in html:
@@ -103,13 +138,14 @@ def main():
     if os.path.exists(DIST_DIR):
         shutil.rmtree(DIST_DIR)
 
-    # CSS/JS をコピー
-    for item in ["css", "js"]:
-        src = os.path.join(SCRIPT_DIR, item)
-        dst = os.path.join(DIST_DIR, item)
-        if os.path.exists(src):
-            shutil.copytree(src, dst)
-            print(f"  ✓ copied {item}/")
+    assets_dir = os.path.join(SCRIPT_DIR, "assets")
+    for item in ("css", "img", "js"):
+        source = os.path.join(assets_dir, item)
+        if os.path.exists(source):
+            shutil.copytree(
+                source, os.path.join(DIST_DIR, "assets", item)
+            )
+    print("  ✓ copied assets/css, assets/img, assets/js")
 
     # PHP ページをビルド
     html_files = []
