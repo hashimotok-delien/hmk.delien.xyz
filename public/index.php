@@ -5,10 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>けい🤖 Portfolio</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+JP&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Noto+Sans+JP&display=swap"></noscript>
+
 
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
@@ -16,6 +13,28 @@
 <link rel="apple-touch-icon" href="favicon.png">
 
 <style>
+/* セルフホストフォント（日本語サブセット） */
+@font-face{
+  font-family:'Noto Sans JP';
+  src:url("./assets/fonts/noto-sans-jp-400.woff2?v=<?= @filemtime(__DIR__ . '/assets/fonts/noto-sans-jp-400.woff2') ?: time() ?>") format("woff2");
+  font-weight:400;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:'Noto Sans JP';
+  src:url("./assets/fonts/noto-sans-jp-700.woff2?v=<?= @filemtime(__DIR__ . '/assets/fonts/noto-sans-jp-700.woff2') ?: time() ?>") format("woff2");
+  font-weight:700;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:'Orbitron';
+  src:url("./assets/fonts/orbitron.woff2?v=<?= @filemtime(__DIR__ . '/assets/fonts/orbitron.woff2') ?: time() ?>") format("woff2");
+  font-weight:400 900;
+  font-style:normal;
+  font-display:swap;
+}
 html{
   background:#0a0a0f;
 }
