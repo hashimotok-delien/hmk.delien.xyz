@@ -307,6 +307,40 @@ h2{
   </div>
 </section>
 
+<!-- 📅 DeLien Calendar -->
+<section>
+  <h2>📅 DeLien Calendar</h2>
+
+  <p style="opacity:0.8;">Googleカレンダー風の予定管理システム。グループ（カレンダー）単位で予定を管理し、公開設定・メンバー招待・カレンダー画像出力・Discord通知までこなします。</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>🗓 月 / 週 / 日表示</h3>
+      <p>複数日予定はバー表示。ワンクリックで「予定あり」表示に切替</p>
+    </div>
+
+    <div class="card">
+      <h3>🔐 3段階の公開設定</h3>
+      <p>非公開 / 限定公開 / 公開 +「内容を隠して公開」</p>
+    </div>
+
+    <div class="card">
+      <h3>👥 権限と招待</h3>
+      <p>作成者・管理者・編集者・メンバー・閲覧者の5段階</p>
+    </div>
+
+    <div class="card">
+      <h3>🔔 Discord通知</h3>
+      <p>登録・編集・削除・開始前リマインドをBotが配信</p>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
+    <a class="btn" href="./calendar">詳細を見る</a>
+    <a class="btn" href="https://calendar.delien.xyz" target="_blank" rel="noopener">サービスを開く</a>
+  </div>
+</section>
+
 <section>
   <h2>👤 Profile</h2>
 
@@ -331,6 +365,12 @@ h2{
       <h3>𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮</h3>
       <p>運営自動化Bot</p>
       <a class="btn" href="./cultivate/">見る</a>
+    </div>
+
+    <div class="card">
+      <h3>📅 DeLien Calendar</h3>
+      <p>Googleカレンダー風の予定管理システム（公開設定・メンバー招待・Discord通知連携）</p>
+      <a class="btn" href="./calendar">見る</a>
     </div>
 
     <div class="card">
@@ -445,7 +485,7 @@ document.querySelectorAll("a").forEach(link=>{
       const overlay = document.getElementById("page-transition");
 
       // 🔥 行き先ごとの色
-      if(href.includes("cultivate")){
+      if(href.includes("cultivate") || href.includes("calendar")){
         overlay.style.background =
           "radial-gradient(circle at 20% 20%, rgba(0, 229, 255, 0.15), transparent), " +
           "radial-gradient(circle at 80% 80%, rgba(0, 229, 255, 0.1), transparent)";
