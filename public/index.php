@@ -26,8 +26,6 @@ body{
   background:#0a0a0f;
   color:#e0e0e0;
   overflow-x:hidden;
-  opacity:0;
-  transition:0.6s;
 }
 
 body.fade-in{
