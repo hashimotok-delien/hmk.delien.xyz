@@ -284,7 +284,7 @@ h2{
 <div id="progress-bar"></div>
 
 <header>
-  <img src="./assets/img/kei_icon.gif" alt="けい🤖">
+  <img src="./assets/img/kei_icon.png" alt="けい🤖">
   <h1>けい🤖</h1>
 
   <div class="tagline" id="typing"></div>
