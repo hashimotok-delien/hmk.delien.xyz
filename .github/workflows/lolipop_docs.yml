@@ -1,4 +1,4 @@
-name: lolipop
+name: docs to lolipop
 on:
   push:
     branches:

@@ -1,4 +1,4 @@
-name: lolipop
+name: main web to lolipop
 on:
   push:
     branches:
