@@ -261,7 +261,10 @@ code{
 <div id="progress-bar"></div>
 
 <header>
-  <img src="assets/img/calendar_icon.png" alt="DeLien Calendar">
+  <picture>
+    <source srcset="assets/img/calendar_icon.webp?v=<?= @filemtime(__DIR__ . '/assets/img/calendar_icon.webp') ?: time() ?>" type="image/webp">
+    <img src="assets/img/calendar_icon.png?v=<?= @filemtime(__DIR__ . '/assets/img/calendar_icon.png') ?: time() ?>" alt="DeLien Calendar" width="120" height="120" decoding="async">
+  </picture>
   <h1>DeLien Calendar</h1>
   <div class="tagline">予定管理を、みんなで回せるカレンダーへ</div>
   <div class="benefit">Googleカレンダー風の予定管理システム（calendar.delien.xyz）</div>

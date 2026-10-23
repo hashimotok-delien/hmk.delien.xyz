@@ -32,4 +32,28 @@
   RewriteRule ^(.+)$ $1.php [L]
 </IfModule>
 
+# =========================================================
+#  静的アセットのキャッシュ期間
+#   - CSS/JS は ?v=<更新日時> で参照しているため長期キャッシュ可
+#   - 画像を差し替えるときは ?v= を更新するかファイル名を変える
+# =========================================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 0 seconds"
+
+  ExpiresByType text/css               "access plus 1 year"
+  ExpiresByType text/javascript        "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+
+  ExpiresByType image/png     "access plus 1 year"
+  ExpiresByType image/jpeg    "access plus 1 year"
+  ExpiresByType image/gif     "access plus 1 year"
+  ExpiresByType image/webp    "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon  "access plus 1 year"
+
+  ExpiresByType font/woff2             "access plus 1 year"
+  ExpiresByType application/font-woff2 "access plus 1 year"
+</IfModule>
+
 DirectoryIndex index.php index.html

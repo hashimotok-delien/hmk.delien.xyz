@@ -16,6 +16,10 @@
 <link rel="apple-touch-icon" href="favicon.png">
 
 <style>
+html{
+  background:#0a0a0f;
+}
+
 body{
   margin:0;
   font-family:'Noto Sans JP',sans-serif;
@@ -287,7 +291,10 @@ h2{
 <div id="progress-bar"></div>
 
 <header>
-  <img src="./assets/img/kei_icon.png" alt="けい🤖">
+  <picture>
+    <source srcset="./assets/img/kei_icon.webp?v=<?= @filemtime(__DIR__ . '/assets/img/kei_icon.webp') ?: time() ?>" type="image/webp">
+    <img src="./assets/img/kei_icon.png?v=<?= @filemtime(__DIR__ . '/assets/img/kei_icon.png') ?: time() ?>" alt="けい🤖" width="120" height="120" decoding="async">
+  </picture>
   <h1>けい🤖</h1>
 
   <div class="tagline" id="typing"></div>
