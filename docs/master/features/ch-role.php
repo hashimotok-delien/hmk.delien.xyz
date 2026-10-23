@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>投稿時ロール設定 - master Bot ドキュメント</title>
+  <meta name="description" content="投稿時ロール設定 - master Bot ドキュメント。チャンネルへの投稿時に自動でロールを付与・剥奪">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

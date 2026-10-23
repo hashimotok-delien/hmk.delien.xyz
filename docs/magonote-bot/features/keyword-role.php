@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>キーワードロール - まごの手 ドキュメント</title>
+  <meta name="description" content="キーワードロール - まごの手 ドキュメント。投稿内容に応じて自動でロールを付与・剥奪">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

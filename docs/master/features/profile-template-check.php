@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プロフテンプレートチェック - master Bot ドキュメント</title>
+  <meta name="description" content="プロフテンプレートチェック - master Bot ドキュメント。メッセージが定型フォーマットに沿っているかを自動検証">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

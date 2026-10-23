@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VC操作パネル - まごの手 ドキュメント</title>
+  <meta name="description" content="VC操作パネル - まごの手 ドキュメント。VC操作パネルは、自分が接続している VC のルーム名・人数制限・ステータス・ビットレートなどを ボタン操作で簡単に変更できるパネルです。ルームに接続している全員が操作できます。">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

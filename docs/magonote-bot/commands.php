@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>コマンド一覧 - まごの手 ドキュメント</title>
+  <meta name="description" content="コマンド一覧 - まごの手 ドキュメント。まごの手 で使用できるスラッシュコマンドの一覧です。">
   <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
 </head>
 <body>

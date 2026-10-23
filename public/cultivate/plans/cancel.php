@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>決済がキャンセルされました - Cultivate Premium</title>
+  <meta name="description" content="Cultivate Premium のお申し込み手続きがキャンセルされました。">
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
 </head>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自動リアクション - master Bot ドキュメント</title>
+  <meta name="description" content="自動リアクション - master Bot ドキュメント。メッセージ投稿時に自動でリアクションを付与">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

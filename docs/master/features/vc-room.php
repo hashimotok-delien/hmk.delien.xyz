@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>個室・2shot - master Bot ドキュメント</title>
+  <meta name="description" content="個室・2shot - master Bot ドキュメント。ボタン操作で二人専用の VC を自動生成">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ロールフィルター - まごの手 ドキュメント</title>
+  <meta name="description" content="ロールフィルター - まごの手 ドキュメント。性別ロールなどをフィルタリングするパネル">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

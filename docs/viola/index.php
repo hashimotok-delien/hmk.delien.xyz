@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>master Bot ドキュメント</title>
+  <meta name="description" content="master Bot ドキュメント。サーバー運営に必要な機能を1つにまとめた多機能 Bot">
   <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
 </head>
 <body>

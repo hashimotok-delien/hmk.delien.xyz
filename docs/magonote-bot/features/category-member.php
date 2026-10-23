@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>カテゴリメンバー管理 - まごの手 ドキュメント</title>
+  <meta name="description" content="カテゴリメンバー管理 - まごの手 ドキュメント。カテゴリ単位でメンバーのアクセス権限を管理">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

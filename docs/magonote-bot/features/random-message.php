@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ランダム転載 - まごの手 ドキュメント</title>
+  <meta name="description" content="ランダム転載 - まごの手 ドキュメント。ランダム転載機能は、指定したチャンネルからランダムにメッセージを選び、 現在のチャンネルに転載表示する機能です。過去の面白い会話や有益な情報を 再発見するのに役立ちます。">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

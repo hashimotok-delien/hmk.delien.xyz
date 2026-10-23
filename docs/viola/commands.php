@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>コマンド一覧 - master Bot ドキュメント</title>
+  <meta name="description" content="コマンド一覧 - master Bot ドキュメント。master Bot で使用できる全コマンドの一覧です。 管理者専用 ユーザー用">
   <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
 </head>
 <body>

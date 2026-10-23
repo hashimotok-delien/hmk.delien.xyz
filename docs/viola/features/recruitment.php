@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>募集 - master Bot ドキュメント</title>
+  <meta name="description" content="募集 - master Bot ドキュメント。募集機能は、通話メンバーの募集をパネルから投稿・管理する機能です。 誰でも閲覧できる「表募集」と、条件を満たしたメンバー向けの「裏募集」の2種類があります。">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

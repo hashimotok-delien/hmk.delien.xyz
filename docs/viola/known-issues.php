@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>既知の不具合 - master Bot ドキュメント</title>
+  <meta name="description" content="既知の不具合 - master Bot ドキュメント。現在確認されている既知の不具合と、その回避策・対応状況をまとめています。">
   <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
 </head>
 <body>

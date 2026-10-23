@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VC接続時権限自動追加 - まごの手 ドキュメント</title>
+  <meta name="description" content="VC接続時権限自動追加 - まごの手 ドキュメント。VC接続時権限自動追加機能は、メンバーが VC に参加したときに、 自動的にその VC の管理権限（connect, view_channel, manage_channels, spe…">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

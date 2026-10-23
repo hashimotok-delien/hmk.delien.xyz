@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自動リアクション - まごの手 ドキュメント</title>
+  <meta name="description" content="自動リアクション - まごの手 ドキュメント。自動リアクション機能は、特定のチャンネルにメッセージが投稿されたときに、 自動で指定された絵文字リアクションを追加する機能です。 コミュニケーションの活性化や、特定の投稿への反応を自動化できま…">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

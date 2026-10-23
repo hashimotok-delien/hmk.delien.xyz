@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自動キック - まごの手 ドキュメント</title>
+  <meta name="description" content="自動キック - まごの手 ドキュメント。指定ロールを持たないメンバーを一括キック">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

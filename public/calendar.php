@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DeLien Calendar | けい🤖</title>
+<meta name="description" content="DeLien Calendar — Discord サーバー向けの予定管理システム。Googleカレンダー風のUIで、予定の作成・共有・管理をチームで行えます。">
 
 
 
@@ -298,6 +299,8 @@ code{
   <a href="https://calendar.delien.xyz" class="btn" target="_blank" rel="noopener">カレンダーを開く</a>
 </header>
 
+<main>
+
 <section>
   <h2>💡 何ができる？</h2>
   <div class="grid">
@@ -420,6 +423,7 @@ code{
   <a href="https://calendar.delien.xyz" class="btn" target="_blank" rel="noopener">カレンダー</a>
 </div>
 
+</main>
 <script>
 const sections=document.querySelectorAll("section");
 const observer=new IntersectionObserver(entries=>{

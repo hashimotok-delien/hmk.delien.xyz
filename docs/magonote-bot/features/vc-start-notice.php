@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VC開始通知 - まごの手 ドキュメント</title>
+  <meta name="description" content="VC開始通知 - まごの手 ドキュメント。VC開始通知機能は、メンバーが VC に参加したときや、VC 間を移動したときに、 指定されたチャンネルに通知メッセージを送信する機能です。 「新着除外」ロールを持っているメンバーは通知の対象外と…">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

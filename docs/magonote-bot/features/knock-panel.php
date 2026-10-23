@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ノックパネル - まごの手 ドキュメント</title>
+  <meta name="description" content="ノックパネル - まごの手 ドキュメント。ノックパネル機能は、VC に入室したいメンバーが「ノック（入室リクエスト）」を送信し、 相手の許可を得てから入室できる仕組みを提供します。 プライベートな VC でのコミュニケーションを安全に行う…">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

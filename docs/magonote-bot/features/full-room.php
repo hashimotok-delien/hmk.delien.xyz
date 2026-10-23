@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>満室機能 - まごの手 ドキュメント</title>
+  <meta name="description" content="満室機能 - まごの手 ドキュメント。満室機能は、自分が接続している VC のルーム名の先頭に 🈵 を付けたり外したりできる機能です。 ルームが満室であることを他のメンバーにひと目で伝えられます。">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

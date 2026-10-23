@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bot監視設定 - まごの手 ドキュメント</title>
+  <meta name="description" content="Bot監視設定 - まごの手 ドキュメント。24時間稼働Botのメッセージを監視し、停止を検知して通知">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

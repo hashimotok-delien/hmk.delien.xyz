@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>けい🤖 Portfolio</title>
+<meta name="description" content="けい🤖（hashimotok）のポートフォリオ。Discord Bot「Cultivate」「DeLien Calendar」などの制作物と、Web・Bot開発のスキルを紹介します。">
 
 
 
@@ -308,7 +309,7 @@ h2{
 </head>
 
 <body>
-<div id="loader">
+<div id="loader" aria-hidden="true">
   <div class="loader-text">Kei Dev</div>
 </div>
 <div id="page-transition"></div>
@@ -329,6 +330,8 @@ h2{
 
   <div class="scroll">↓ Scroll ↓</div>
 </header>
+
+<main>
 
 <!-- 🔥 Cultivate最優先 -->
 <section class="highlight">
@@ -432,6 +435,7 @@ h2{
   <a href="./cultivate/" class="btn">Cultivate</a>
 </div>
 
+</main>
 <script>
 // タイピング
 const text = "使えないなら作ってしまえDiscord Bot";

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ - まごの手 ドキュメント</title>
+  <meta name="description" content="FAQ - まごの手 ドキュメント。よくある質問とその回答をまとめています。">
   <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
 </head>
 <body>

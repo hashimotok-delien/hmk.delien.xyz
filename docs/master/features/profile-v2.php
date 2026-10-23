@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>プロフィール v2 - master Bot ドキュメント</title>
+  <meta name="description" content="プロフィール v2 - master Bot ドキュメント。カスタマイズ可能なプロフカードとVCインチャ表示の新世代プロフィールシステム">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

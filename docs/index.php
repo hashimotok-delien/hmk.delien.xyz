@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ドキュメント — けい Portfolio</title>
+  <meta name="description" content="Discord Bot「Cultivate」「まごのであります」「ねくさす」などのドキュメントをまとめたポータルです。各Botの機能・コマンド・設定方法を検索できます。">
   <link rel="stylesheet" href="cultivate/assets/css/style.css?v=<?= @filemtime(__DIR__ . '/cultivate/assets/css/style.css') ?: time() ?>">
   <style>
     /* Docs Portal 専用スタイル */

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>リアクション計測 - まごの手 ドキュメント</title>
+  <meta name="description" content="リアクション計測 - まごの手 ドキュメント。メッセージのリアクションを集計・ランキング表示">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

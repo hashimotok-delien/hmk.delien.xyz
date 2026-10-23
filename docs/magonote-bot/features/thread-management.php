@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>スレッド管理 - まごの手 ドキュメント</title>
+  <meta name="description" content="スレッド管理 - まごの手 ドキュメント。スレッド管理機能は、特定のチャンネルでスレッドが作成されたときに、 自動的に削除・名称変更・招待の3つのボタンを設置する機能です。 スレッドの管理を簡素化し、運営の手間を削減します。">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

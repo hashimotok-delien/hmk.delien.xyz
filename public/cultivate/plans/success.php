@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ご契約ありがとうございます - Cultivate Premium</title>
+  <meta name="description" content="Cultivate Premium のお申し込みが完了しました。プランの反映方法をご案内します。">
   <meta name="robots" content="noindex">
   <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
 </head>

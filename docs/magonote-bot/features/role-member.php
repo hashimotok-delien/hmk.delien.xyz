@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ロールメンバー検索 - まごの手 ドキュメント</title>
+  <meta name="description" content="ロールメンバー検索 - まごの手 ドキュメント。ロールの保持状況に基づいてメンバーを検索">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>

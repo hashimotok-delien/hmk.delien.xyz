@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cultivate | けい🤖</title>
+<meta name="description" content="Cultivate — Discord サーバー運営を自動化する多機能Bot。役職パネル、VC管理、プロフィール保存、自動リアクションなどで運営を効率化します。">
 
 
 
@@ -246,12 +247,14 @@ h2{
 <div id="progress-bar"></div>
 
 <header>
-  <img src="https://i.gyazo.com/f8acbedbd49c6cb2b5df494bd3de0e29.webp">
+  <img src="https://i.gyazo.com/f8acbedbd49c6cb2b5df494bd3de0e29.webp" alt="Cultivate のアイコン">
   <h1>𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮</h1>
   <div class="tagline">これ1つで“運営が回る”界隈サーバーを構築</div>
   <div class="benefit">運営作業の大部分を自動化し、誰でも回せるサーバーへ</div>
   <a href="https://discord.gg/AmMkFhhD2D" class="btn">導入する</a>
 </header>
+
+<main>
 
 <section>
   <h2>💡 何ができる？</h2>
@@ -297,22 +300,22 @@ h2{
 
   <div class="card">
     <p><strong>設定パネル</strong>：直感的に操作できる運営用UI</p>
-    <img src="https://i.gyazo.com/38843ab454abd0fa5440f0ce49f994a2.png" style="width:100%; border-radius:12px; box-shadow:0 0 20px rgba(0,229,255,0.3);">
+    <img src="https://i.gyazo.com/38843ab454abd0fa5440f0ce49f994a2.png" alt="設定パネルの画面" style="width:100%; border-radius:12px; box-shadow:0 0 20px rgba(0,229,255,0.3);">
   </div>
 
   <div class="card">
     <p><strong>裏2shot利用パネル</strong>：ユーザーが簡単にVCを作成可能</p>
-    <img src="https://i.gyazo.com/4871e0b066a3b3610bc1c88b2659b377.png" style="width:100%; border-radius:12px; box-shadow:0 0 20px rgba(0,229,255,0.3);">
+    <img src="https://i.gyazo.com/4871e0b066a3b3610bc1c88b2659b377.png" alt="裏2shot利用パネルの画面" style="width:100%; border-radius:12px; box-shadow:0 0 20px rgba(0,229,255,0.3);">
   </div>
 
   <div class="card">
     <p><strong>ワンクリックVC作成</strong>：ボタン操作だけで即VC生成</p>
-    <img src="https://i.gyazo.com/73ed206a23601712579e4274185679e1.png" style="width:100%; border-radius:12px; box-shadow:0 0 20px rgba(0,229,255,0.3);">
+    <img src="https://i.gyazo.com/73ed206a23601712579e4274185679e1.png" alt="ワンクリックVC作成の画面" style="width:100%; border-radius:12px; box-shadow:0 0 20px rgba(0,229,255,0.3);">
   </div>
 
   <div class="card">
     <p><strong>ノック機能</strong>：VC入室時に安全なコミュニケーション導線</p>
-    <img src="https://i.gyazo.com/6fedd2bf417a17efaa972af1bf4ca17a.png" style="width:100%; border-radius:12px; box-shadow:0 0 20px rgba(0,229,255,0.3);">
+    <img src="https://i.gyazo.com/6fedd2bf417a17efaa972af1bf4ca17a.png" alt="ノック機能の画面" style="width:100%; border-radius:12px; box-shadow:0 0 20px rgba(0,229,255,0.3);">
   </div>
 
 </section>
@@ -325,6 +328,7 @@ h2{
   <a href="https://discord.gg/AmMkFhhD2D" class="btn">導入</a>
 </div>
 
+</main>
 <script>
 const sections=document.querySelectorAll("section");
 const observer=new IntersectionObserver(entries=>{

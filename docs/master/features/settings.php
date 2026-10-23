@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>設定パネル - master Bot ドキュメント</title>
+  <meta name="description" content="設定パネル - master Bot ドキュメント。サーバー単位の各種設定をボタンから一括管理">
   <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 </head>
 <body>
