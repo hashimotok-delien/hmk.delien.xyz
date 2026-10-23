@@ -580,7 +580,7 @@ int(hi * R ** 0.5)</code></pre>
       </p>
 
       <h3>ランクカード（VCモード・メーター1本）</h3>
-      <p><img src="../assets/img/rank_card_vc.png" alt="ランクカード（VCモード）" style="max-width:100%;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><img src="../assets/img/rank_card_vc.png" alt="ランクカード（VCモード）" width="1100" height="420" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;"></p>
 
       <div class="alert alert-info">
         <p><strong>💡 ランクカードの内容:</strong></p>

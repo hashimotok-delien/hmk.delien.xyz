@@ -149,6 +149,23 @@ def main():
             )
     print("  ✓ copied assets/css, assets/img, assets/js")
 
+    # 共有フォント（docs/assets/fonts）をコピーし、CSS 内のパスを dist 用に補正
+    fonts_src = os.path.join(os.path.dirname(SCRIPT_DIR), "assets", "fonts")
+    if os.path.exists(fonts_src):
+        shutil.copytree(fonts_src, os.path.join(DIST_DIR, "assets", "fonts"))
+        css_dir = os.path.join(DIST_DIR, "assets", "css")
+        for name in sorted(os.listdir(css_dir)):
+            if not name.endswith(".css"):
+                continue
+            css_path = os.path.join(css_dir, name)
+            with open(css_path, encoding="utf-8") as f:
+                css = f.read()
+            fixed = css.replace("../../../assets/fonts/", "../fonts/")
+            if fixed != css:
+                with open(css_path, "w", encoding="utf-8", newline="") as f:
+                    f.write(fixed)
+        print("  ✓ copied assets/fonts")
+
     # PHP ページをビルド
     html_files = []
     for src_dir in SRC_DIRS:

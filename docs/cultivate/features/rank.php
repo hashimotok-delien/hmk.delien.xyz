@@ -643,13 +643,13 @@ max(100, 50 * L ** 1.5)
       </p>
 
       <h3>全体モード（combined・メーター1本）</h3>
-      <p><img src="../assets/img/rank_card_combined.png" alt="ランクカード（全体モード）" style="max-width:100%;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><img src="../assets/img/rank_card_combined.png" alt="ランクカード（全体モード）" width="1100" height="420" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;"></p>
 
       <h3>VC/チャットモード（separate・メーター2本）</h3>
-      <p><img src="../assets/img/rank_card_separate.png" alt="ランクカード（VC/チャットモード）" style="max-width:100%;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><img src="../assets/img/rank_card_separate.png" alt="ランクカード（VC/チャットモード）" width="1100" height="420" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;"></p>
 
       <h3>インチャットモード（inchat・メーター3本）</h3>
-      <p><img src="../assets/img/rank_card_inchat.png" alt="ランクカード（インチャットモード）" style="max-width:100%;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><img src="../assets/img/rank_card_inchat.png" alt="ランクカード（インチャットモード）" width="1100" height="420" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;"></p>
 
       <div class="alert alert-info">
         <p><strong>💡 ランクカードの内容:</strong></p>

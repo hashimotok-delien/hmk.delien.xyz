@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
-"""hmk.delien.xyz 用のセルフホストフォント（日本語サブセット）を生成する。
+"""セルフホストフォント（日本語サブセット）を生成する。
 
 使い方:
-  python tools/build_fonts.py                  # 現在のコンテンツから再生成
-  python tools/build_fonts.py --measure-bold   # 太字用の文字集合をブラウザで測り直して再生成
+  python tools/build_fonts.py                      # 保存済みの計測結果から再生成
+  python tools/build_fonts.py --measure            # ブラウザで文字集合を測り直してから再生成
+  python tools/build_fonts.py --measure --target docs
+  python tools/build_fonts.py --target public
 
 必要なもの:
   pip install fonttools brotli
-  --measure-bold には php と Chrome も必要（CHROME_PATH で明示指定可）
+  --measure には php と Chrome も必要（CHROME_PATH で明示指定可）
 
 出力:
-  public/assets/fonts/noto-sans-jp-400.woff2  本文用
-  public/assets/fonts/noto-sans-jp-700.woff2  太字用（実際に太字で描画される文字のみ）
-  public/assets/fonts/orbitron.woff2          見出し装飾用（可変 400-900）
+  public/assets/fonts/noto-sans-jp-<weight>.woff2  本文・見出し用
+  public/assets/fonts/orbitron.woff2               見出し装飾用（可変 400-900）
+  docs/assets/fonts/noto-sans-jp-<weight>.woff2    ドキュメントサイト用
 
 文字を追加・変更したら再実行してください。サブセットに無い文字は
 システムフォントで描画されるため、見た目が崩れることがあります。
@@ -23,6 +25,7 @@ from __future__ import annotations
 import argparse
 import base64
 import html
+import json
 import re
 import shutil
 import socket
@@ -31,6 +34,7 @@ import sys
 import tempfile
 import time
 import urllib.request
+from dataclasses import dataclass
 from pathlib import Path
 
 from fontTools import subset
@@ -39,10 +43,10 @@ from fontTools.varLib.instancer import instantiateVariableFont
 
 ROOT = Path(__file__).resolve().parent.parent
 PUBLIC = ROOT / "public"
-FONT_DIR = PUBLIC / "assets" / "fonts"
-BOLD_CHARS_FILE = Path(__file__).resolve().parent / "fonts" / "bold-chars.txt"
+DOCS = ROOT / "docs"
+DATA_DIR = Path(__file__).resolve().parent / "fonts"
 
-PAGES = [
+PUBLIC_PAGES = [
     "index.php",
     "calendar.php",
     "cultivate.php",
@@ -63,6 +67,44 @@ EXTRA_CHARS = "".join(chr(c) for c in range(0x20, 0x7F)) + (
     "、。・「」『』（）〔〕［］｛｝【】〜～ー―‐ｰ…‥！？：；，．／＋－＝＊＃＄％＆＠＾｜＿＜＞　"
     "０１２３４５６７８９"
 )
+
+PROBE = """<script>
+window.addEventListener("load", () => {
+  const buckets = {};
+  document.querySelectorAll("body *").forEach(el => {
+    const w = String(Math.round((parseInt(getComputedStyle(el).fontWeight, 10) || 400) / 100) * 100);
+    for (const n of el.childNodes) {
+      if (n.nodeType !== 3) continue;
+      buckets[w] = (buckets[w] || "") + n.nodeValue;
+    }
+  });
+  document.title = "W=" + btoa(unescape(encodeURIComponent(JSON.stringify(buckets))));
+});
+</script>
+</body>"""
+
+
+@dataclass(frozen=True)
+class Target:
+    name: str
+    docroot: Path
+    pages: list[str]
+    out: Path
+    orbitron: bool
+
+
+def docs_pages() -> list[str]:
+    return sorted(
+        p.relative_to(DOCS).as_posix()
+        for p in DOCS.rglob("*.php")
+        if "dist" not in p.parts
+    )
+
+
+TARGETS = {
+    "public": Target("public", PUBLIC, PUBLIC_PAGES, PUBLIC / "assets" / "fonts", True),
+    "docs": Target("docs", DOCS, docs_pages(), DOCS / "assets" / "fonts", False),
+}
 
 
 def page_chars(path: Path) -> set[str]:
@@ -88,10 +130,10 @@ def page_chars(path: Path) -> set[str]:
     return {c for c in chars if c.isprintable()}
 
 
-def collect_charset() -> str:
+def collect_charset(target: Target) -> str:
     chars: set[str] = set(EXTRA_CHARS)
-    for page in PAGES:
-        path = PUBLIC / page
+    for page in target.pages:
+        path = target.docroot / page
         if path.exists():
             chars |= page_chars(path)
     return "".join(sorted(chars))
@@ -114,66 +156,55 @@ def chrome_path() -> str | None:
     return shutil.which("chrome") or shutil.which("google-chrome") or shutil.which("chromium")
 
 
-PROBE = """<script>
-window.addEventListener("load", () => {
-  let s = "";
-  document.querySelectorAll("body *").forEach(el => {
-    if ((parseInt(getComputedStyle(el).fontWeight, 10) || 400) < 600) return;
-    for (const n of el.childNodes) if (n.nodeType === 3) s += n.nodeValue;
-  });
-  document.title = "BOLD=" + btoa(unescape(encodeURIComponent(s)));
-});
-</script>
-</body>"""
-
-
-def measure_bold() -> str:
+def measure(target: Target) -> dict[str, str]:
     chrome = chrome_path()
     php = shutil.which("php")
     if not chrome or not php:
-        sys.exit("--measure-bold には php と Chrome が必要です（CHROME_PATH で指定できます）")
+        sys.exit("--measure には php と Chrome が必要です（CHROME_PATH で指定できます）")
 
     with socket.socket() as s:
         s.bind(("127.0.0.1", 0))
         port = s.getsockname()[1]
 
     server = subprocess.Popen(
-        [php, "-S", f"127.0.0.1:{port}", "-t", str(PUBLIC)],
+        [php, "-S", f"127.0.0.1:{port}", "-t", str(target.docroot)],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
     )
+    buckets: dict[str, set[str]] = {}
     temp_files: list[Path] = []
-    chars: set[str] = set()
     try:
         time.sleep(1.5)
         with tempfile.TemporaryDirectory() as profile_root:
-            for i, page in enumerate(PAGES, start=1):
-                path = PUBLIC / page
+            for i, page in enumerate(target.pages, start=1):
+                path = target.docroot / page
                 if not path.exists():
                     continue
-                probe_file = PUBLIC / f"__fontprobe_{i}.php"
+                probe_file = path.with_name(f"__fontprobe_{i}.php")
                 content = "<?php error_reporting(0); ?>" + path.read_text(encoding="utf-8")
                 probe_file.write_text(content.replace("</body>", PROBE), encoding="utf-8")
                 temp_files.append(probe_file)
 
+                url = f"http://127.0.0.1:{port}/{probe_file.relative_to(target.docroot).as_posix()}"
                 out = subprocess.run(
                     [chrome, "--headless=new", "--disable-gpu",
                      f"--user-data-dir={Path(profile_root) / f'p{i}'}",
-                     "--virtual-time-budget=5000", "--dump-dom",
-                     f"http://127.0.0.1:{port}/__fontprobe_{i}.php"],
+                     "--virtual-time-budget=5000", "--dump-dom", url],
                     capture_output=True, text=True, encoding="utf-8", errors="replace",
                 ).stdout
-                m = re.search(r"<title>BOLD=([^<]+)</title>", out)
-                if m:
-                    chars |= set(base64.b64decode(m.group(1)).decode("utf-8"))
+                m = re.search(r"<title>W=([^<]+)</title>", out)
+                if not m:
+                    continue
+                for weight, text in json.loads(base64.b64decode(m.group(1)).decode("utf-8")).items():
+                    buckets.setdefault(weight, set()).update(c for c in text if c.isprintable())
     finally:
         for f in temp_files:
             f.unlink(missing_ok=True)
         server.terminate()
 
-    if not chars:
-        sys.exit("太字の文字集合を取得できませんでした")
-    return "".join(sorted(c for c in chars if c.isprintable()))
+    if not buckets:
+        sys.exit(f"{target.name}: 文字集合を取得できませんでした")
+    return {w: "".join(sorted(chars)) for w, chars in sorted(buckets.items())}
 
 
 def download(name: str, url: str, workdir: Path) -> Path:
@@ -200,38 +231,71 @@ def subset_font(src: Path, text: str, out: Path, weight: float | None = None) ->
     subset.save_font(font, str(out), options)
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--measure-bold", action="store_true",
-                        help="太字で描画される文字をブラウザで測り直す")
-    args = parser.parse_args()
+def weights_file(target: Target) -> Path:
+    return DATA_DIR / f"weights-{target.name}.json"
 
-    if args.measure_bold:
-        bold = measure_bold()
-        BOLD_CHARS_FILE.write_text(bold, encoding="utf-8")
-        print(f"太字用の文字集合を更新しました: {len(bold)} 文字")
 
-    body_text = collect_charset()
-    bold_text = BOLD_CHARS_FILE.read_text(encoding="utf-8") if BOLD_CHARS_FILE.exists() else body_text
-    if not bold_text:
-        bold_text = body_text
+def build(target: Target) -> None:
+    data_path = weights_file(target)
+    if data_path.exists():
+        measured: dict[str, str] = json.loads(data_path.read_text(encoding="utf-8"))
+    else:
+        print(f"{data_path.name} が無いため計測します…")
+        measured = measure(target)
+        data_path.parent.mkdir(parents=True, exist_ok=True)
+        data_path.write_text(json.dumps(measured, ensure_ascii=False), encoding="utf-8")
 
-    FONT_DIR.mkdir(parents=True, exist_ok=True)
+    body_text = collect_charset(target)
+    jobs: list[tuple[str, str, Path, float | None]] = [
+        ("noto", body_text, target.out / "noto-sans-jp-400.woff2", 400)
+    ]
+    for weight, text in measured.items():
+        if weight == "400" or not text:
+            continue
+        jobs.append(("noto", text, target.out / f"noto-sans-jp-{weight}.woff2", float(weight)))
+
+    expected = {out.name for _, _, out, _ in jobs}
+    if target.orbitron:
+        jobs.append(("orbitron", body_text, target.out / "orbitron.woff2", None))
+        expected.add("orbitron.woff2")
+
+    target.out.mkdir(parents=True, exist_ok=True)
+    for stale in target.out.glob("*.woff2"):
+        if stale.name not in expected:
+            stale.unlink()
+
     with tempfile.TemporaryDirectory() as tmp:
         workdir = Path(tmp)
-        noto = download("noto", SOURCES["noto"], workdir)
-        orbitron = download("orbitron", SOURCES["orbitron"], workdir)
+        sources = {"noto": download("noto", SOURCES["noto"], workdir)}
+        if target.orbitron:
+            sources["orbitron"] = download("orbitron", SOURCES["orbitron"], workdir)
 
-        jobs = [
-            (noto, body_text, FONT_DIR / "noto-sans-jp-400.woff2", 400),
-            (noto, bold_text, FONT_DIR / "noto-sans-jp-700.woff2", 700),
-            (orbitron, body_text, FONT_DIR / "orbitron.woff2", None),
-        ]
-        for src, text, out, weight in jobs:
-            subset_font(src, text, out, weight)
-            print(f"{out.relative_to(ROOT)}: {out.stat().st_size / 1024:.2f} KB")
+        for source, text, out, weight in jobs:
+            subset_font(sources[source], text, out, weight)
+            print(f"{out.relative_to(ROOT).as_posix()}: {out.stat().st_size / 1024:.2f} KB")
 
-    print(f"本文用の文字数: {len(body_text)} / 太字用: {len(bold_text)}")
+    weights = [str(int(w)) for src, _, _, w in jobs if src == "noto" and w]
+    total = sum(p.stat().st_size for p in target.out.glob("*.woff2"))
+    print(f"[{target.name}] 本文用 {len(body_text)} 文字 / ウェイト {', '.join(weights)} / 合計 {total / 1024:.1f} KB")
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--measure", action="store_true",
+                        help="ブラウザで実際に描画される文字を測り直す")
+    parser.add_argument("--target", choices=["all", *TARGETS], default="all")
+    args = parser.parse_args()
+
+    names = list(TARGETS) if args.target == "all" else [args.target]
+    for name in names:
+        target = TARGETS[name]
+        if args.measure:
+            print(f"[{name}] 計測中… ({len(target.pages)} ページ)")
+            measured = measure(target)
+            weights_file(target).parent.mkdir(parents=True, exist_ok=True)
+            weights_file(target).write_text(json.dumps(measured, ensure_ascii=False), encoding="utf-8")
+            print(f"[{name}] 計測完了: " + ", ".join(f"{w}={len(t)}文字" for w, t in measured.items()))
+        build(target)
 
 
 if __name__ == "__main__":

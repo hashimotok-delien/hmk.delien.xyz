@@ -23,6 +23,13 @@
 }
 @font-face{
   font-family:'Noto Sans JP';
+  src:url("assets/fonts/noto-sans-jp-600.woff2?v=<?= @filemtime(__DIR__ . '/assets/fonts/noto-sans-jp-600.woff2') ?: time() ?>") format("woff2");
+  font-weight:600;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:'Noto Sans JP';
   src:url("assets/fonts/noto-sans-jp-700.woff2?v=<?= @filemtime(__DIR__ . '/assets/fonts/noto-sans-jp-700.woff2') ?: time() ?>") format("woff2");
   font-weight:700;
   font-style:normal;
@@ -420,7 +427,7 @@ const observer=new IntersectionObserver(entries=>{
    if(e.isIntersecting){
      e.target.classList.add("active");
    }
- }
+ });
 },{threshold:0.2});
 sections.forEach(s=>observer.observe(s));
 
@@ -459,12 +466,27 @@ document.querySelectorAll("a").forEach(link=>{
 });
 
 // プログレスバー
+// スクロール範囲は layout 読み取りを伴うため、読み込み時とリサイズ時だけ測る
+const progressBar = document.getElementById("progress-bar");
+let scrollRange = 0;
+let scrollFrame = 0;
+
+const measureScrollRange = ()=>{
+  scrollRange = document.documentElement.scrollHeight - window.innerHeight;
+};
+measureScrollRange();
+window.addEventListener("load", measureScrollRange);
+window.addEventListener("resize", measureScrollRange, { passive: true });
+
 window.addEventListener("scroll", ()=>{
-  const scroll = window.scrollY;
-  const height = document.body.scrollHeight - window.innerHeight;
-  const percent = (scroll / height) * 100;
-  document.getElementById("progress-bar").style.width = percent + "%";
-});
+  if(scrollFrame) return;
+
+  scrollFrame = requestAnimationFrame(()=>{
+    scrollFrame = 0;
+    const y = window.scrollY;
+    progressBar.style.width = (scrollRange > 0 ? (y / scrollRange) * 100 : 0) + "%";
+  });
+}, { passive: true });
 </script>
 
 </body>

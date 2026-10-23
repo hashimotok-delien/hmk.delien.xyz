@@ -150,7 +150,7 @@
         中央にアイコンと「🎉 ブーストありがとう！」+ 表示名、
         現在のブースト数が描画されます。
       </p>
-      <p><img src="../assets/img/boost_card_sample.png" alt="ブーストカード（サンプル）" style="max-width:100%;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><img src="../assets/img/boost_card_sample.png" alt="ブーストカード（サンプル）" width="840" height="420" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;"></p>
       <ul>
         <li>
           背景画像は <code>data/img/boost_default_card.png</code> に置くことで

@@ -1,3 +1,31 @@
+/* ============================================================
+   セルフホストフォント（日本語サブセット）
+   フォントを差し替えたときは ?v= を更新してください
+   ============================================================ */
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url("../../assets/fonts/noto-sans-jp-400.woff2?v=1") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url("../../assets/fonts/noto-sans-jp-600.woff2?v=1") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans JP';
+  src: url("../../assets/fonts/noto-sans-jp-700.woff2?v=1") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ===== まごのです (Magonote) Docs - Dark Theme ===== */
 /* Based on Cultivate Docs theme */
 /* Color: #ff6b9d (pink accent for "mago" - grandmother theme) */

@@ -23,6 +23,13 @@
 }
 @font-face{
   font-family:'Noto Sans JP';
+  src:url("./assets/fonts/noto-sans-jp-600.woff2?v=<?= @filemtime(__DIR__ . '/assets/fonts/noto-sans-jp-600.woff2') ?: time() ?>") format("woff2");
+  font-weight:600;
+  font-style:normal;
+  font-display:swap;
+}
+@font-face{
+  font-family:'Noto Sans JP';
   src:url("./assets/fonts/noto-sans-jp-700.woff2?v=<?= @filemtime(__DIR__ . '/assets/fonts/noto-sans-jp-700.woff2') ?: time() ?>") format("woff2");
   font-weight:700;
   font-style:normal;
