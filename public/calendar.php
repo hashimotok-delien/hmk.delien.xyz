@@ -262,7 +262,7 @@ code{
 
 <header>
   <picture>
-    <source srcset="assets/img/calendar_icon.webp?v=<?= @filemtime(__DIR__ . '/assets/img/calendar_icon.webp') ?: time() ?>" type="image/webp">
+    <source srcset="assets/img/calendar_icon-120.webp?v=<?= @filemtime(__DIR__ . '/assets/img/calendar_icon-120.webp') ?: time() ?> 1x, assets/img/calendar_icon.webp?v=<?= @filemtime(__DIR__ . '/assets/img/calendar_icon.webp') ?: time() ?> 2x" type="image/webp">
     <img src="assets/img/calendar_icon.png?v=<?= @filemtime(__DIR__ . '/assets/img/calendar_icon.png') ?: time() ?>" alt="DeLien Calendar" width="120" height="120" decoding="async">
   </picture>
   <h1>DeLien Calendar</h1>

@@ -290,7 +290,7 @@ h2{
 
 <header>
   <picture>
-    <source srcset="./assets/img/kei_icon.webp?v=<?= @filemtime(__DIR__ . '/assets/img/kei_icon.webp') ?: time() ?>" type="image/webp">
+    <source srcset="./assets/img/kei_icon-120.webp?v=<?= @filemtime(__DIR__ . '/assets/img/kei_icon-120.webp') ?: time() ?> 1x, ./assets/img/kei_icon.webp?v=<?= @filemtime(__DIR__ . '/assets/img/kei_icon.webp') ?: time() ?> 2x" type="image/webp">
     <img src="./assets/img/kei_icon.png?v=<?= @filemtime(__DIR__ . '/assets/img/kei_icon.png') ?: time() ?>" alt="けい🤖" width="120" height="120" decoding="async">
   </picture>
   <h1>けい🤖</h1>
@@ -413,11 +413,12 @@ let i = 0;
 
 function startTyping() {
   i = 0;
-  document.getElementById("typing").innerHTML = "";
+  const el = document.getElementById("typing");
+  el.textContent = "";
 
   function typing() {
     if (i < text.length) {
-      document.getElementById("typing").innerHTML += text.charAt(i);
+      el.textContent = text.slice(0, i + 1);
       i++;
       setTimeout(typing, 50);
     }
@@ -435,21 +436,32 @@ const observer=new IntersectionObserver(e=>{
 });
 sections.forEach(s=>observer.observe(s));
 
-// マウス追従グロー
+// マウス追従グロー（読み取りと書き込みを1フレーム1回にまとめる）
 document.querySelectorAll(".card").forEach(card=>{
-  card.addEventListener("mousemove", e=>{
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+  let frame = 0;
+  let px = 0, py = 0;
 
-    card.style.background = `
-      radial-gradient(circle at ${x}px ${y}px,
-      rgba(0,229,255,0.15),
-      rgba(18,18,26,0.8) 40%)
-    `;
+  card.addEventListener("mousemove", e=>{
+    px = e.clientX;
+    py = e.clientY;
+
+    if(frame) return;
+
+    frame = requestAnimationFrame(()=>{
+      frame = 0;
+      const rect = card.getBoundingClientRect();
+      const x = px - rect.left;
+      const y = py - rect.top;
+
+      card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0,229,255,0.15), rgba(18,18,26,0.8) 40%)`;
+    });
   });
 
   card.addEventListener("mouseleave", ()=>{
+    if(frame){
+      cancelAnimationFrame(frame);
+      frame = 0;
+    }
     card.style.background = "rgba(18,18,26,0.8)";
   });
 });
@@ -520,25 +532,43 @@ window.addEventListener("pageshow", ()=>{
   document.body.classList.add("fade-in");
 });
 
-// プログレスバー
-window.addEventListener("scroll", ()=>{
-  const scroll = window.scrollY;
-  const height = document.body.scrollHeight - window.innerHeight;
-  const percent = (scroll / height) * 100;
-  document.getElementById("progress-bar").style.width = percent + "%";
-});
+// プログレスバー / 背景パララックス
+// スクロール範囲は layout 読み取りを伴うため、読み込み時とリサイズ時だけ測る
+const progressBar = document.getElementById("progress-bar");
+let scrollRange = 0;
+let scrollFrame = 0;
+
+const measureScrollRange = ()=>{
+  scrollRange = document.documentElement.scrollHeight - window.innerHeight;
+};
+measureScrollRange();
+window.addEventListener("load", measureScrollRange);
+window.addEventListener("resize", measureScrollRange, { passive: true });
 
 window.addEventListener("scroll", ()=>{
-  document.body.style.backgroundPositionY = window.scrollY * 0.3 + "px";
-});
+  if(scrollFrame) return;
+
+  scrollFrame = requestAnimationFrame(()=>{
+    scrollFrame = 0;
+    const y = window.scrollY;
+    progressBar.style.width = (scrollRange > 0 ? (y / scrollRange) * 100 : 0) + "%";
+    document.body.style.backgroundPositionY = y * 0.3 + "px";
+  });
+}, { passive: true });
 
 const header = document.querySelector("header");
+let tiltFrame = 0;
 
 document.addEventListener("mousemove", e=>{
-  const x = (e.clientX / window.innerWidth - 0.5) * 10;
-  const y = (e.clientY / window.innerHeight - 0.5) * 10;
+  if(tiltFrame) return;
 
-  header.style.transform = `rotateX(${ -y }deg) rotateY(${ x }deg)`;
+  tiltFrame = requestAnimationFrame(()=>{
+    tiltFrame = 0;
+    const x = (e.clientX / window.innerWidth - 0.5) * 10;
+    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+
+    header.style.transform = `rotateX(${ -y }deg) rotateY(${ x }deg)`;
+  });
 });
 </script>
 
