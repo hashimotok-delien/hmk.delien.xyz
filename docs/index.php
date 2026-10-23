@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="cultivate/css/style.css?v=<?= @filemtime(__DIR__ . '/cultivate/css/style.css') ?: time() ?>">
+  <link rel="stylesheet" href="cultivate/assets/css/style.css?v=<?= @filemtime(__DIR__ . '/cultivate/assets/css/style.css') ?: time() ?>">
   <style>
     /* Docs Portal 専用スタイル */
     .portal-hero {
@@ -157,7 +157,7 @@
     </div>
   </main>
 
-  <script src="cultivate/js/main.js?v=<?= @filemtime(__DIR__ . '/cultivate/js/main.js') ?: time() ?>"></script>
+  <script src="cultivate/assets/js/main.js?v=<?= @filemtime(__DIR__ . '/cultivate/assets/js/main.js') ?: time() ?>"></script>
 
 </body>
 </html>
