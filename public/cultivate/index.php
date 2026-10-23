@@ -247,7 +247,7 @@ h2{
 <div id="progress-bar"></div>
 
 <header>
-  <img src="https://i.gyazo.com/f8acbedbd49c6cb2b5df494bd3de0e29.webp" alt="Cultivate のアイコン">
+  <img src="./assets/img/cultivate_icon_210.webp" alt="Cultivate のアイコン">
   <h1>𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮</h1>
   <div class="tagline">これ1つで“運営が回る”界隈サーバーを構築</div>
   <div class="benefit">運営作業の大部分を自動化し、誰でも回せるサーバーへ</div>

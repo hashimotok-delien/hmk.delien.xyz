@@ -97,7 +97,7 @@
 <body>
 
   <?php $BASE = '.'; $LOGO_LABEL = 'Bot'; ?>
-  <?php include __DIR__ . '/include/header.php'; ?>
+  <?php include __DIR__ . '/assets/include/header.php'; ?>
 
   <main>
     <div class="legal">
@@ -393,7 +393,7 @@
     </div>
   </main>
 
-  <?php include __DIR__ . '/include/footer.php'; ?>
+  <?php include __DIR__ . '/assets/include/footer.php'; ?>
 
 </body>
 </html>
