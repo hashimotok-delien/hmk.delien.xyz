@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>サーバースペック - master Bot ドキュメント</title>
   <meta name="description" content="サーバースペック - master Bot ドキュメント。master Bot の運営に使用している PC・回線環境">
-  <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
+  <link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime(__DIR__ . '/assets/css/style.css') ?: time() ?>">
 </head>
 <body>
   <?php $ROOT = '.'; $PAGE_TITLE = 'サーバースペック'; ?>
-  <?php include __DIR__ . '/include/sidebar.php'; ?>
+  <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
 
   <main class="main-content">
-    <?php include __DIR__ . '/include/topbar.php'; ?>
+    <?php include __DIR__ . '/assets/include/topbar.php'; ?>
 
     <div class="content">
       <div class="feature-hero">

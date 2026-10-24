@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>master Bot ドキュメント</title>
   <meta name="description" content="master Bot ドキュメント。サーバー運営に必要な機能を1つにまとめた多機能 Bot">
-  <link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
+  <link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime(__DIR__ . '/assets/css/style.css') ?: time() ?>">
 </head>
 <body>
   <?php $ROOT = '.'; $PAGE_TITLE = 'トップ'; ?>
 
-  <?php include __DIR__ . '/include/sidebar.php'; ?>
+  <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
 
   <!-- Main Content -->
   <main class="main-content">
-    <?php include __DIR__ . '/include/topbar.php'; ?>
+    <?php include __DIR__ . '/assets/include/topbar.php'; ?>
 
     <div class="content">
       <!-- Hero -->
@@ -118,10 +118,10 @@
       </p>
       <a href="https://discord.gg/AmMkFhhD2D" class="btn btn-outline" target="_blank">💬 サポートサーバーに参加</a>
 
-      <?php include __DIR__ . '/include/footer.php'; ?>
+      <?php include __DIR__ . '/assets/include/footer.php'; ?>
     </div>
   </main>
 
-  <script src="js/main.js?v=<?= @filemtime(__DIR__ . '/js/main.js') ?: time() ?>"></script>
+  <script src="assets/js/main.js?v=<?= @filemtime(__DIR__ . '/assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

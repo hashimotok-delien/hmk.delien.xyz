@@ -61,12 +61,14 @@ hashimotok_web/
     ├── index.php           # ドキュメントポータル
     ├── cultivate/          # Cultivate ドキュメント
     │   ├── index.php, getting-started.php, commands.php, faq.php
-    │   ├── css/style.css
-    │   ├── js/main.js
-    │   ├── include/
-    │   │   ├── sidebar.php    # サイドバーナビ
-    │   │   ├── topbar.php     # トップバー
-    │   │   └── footer.php     # フッター
+    │   ├── assets/
+    │   │   ├── css/style.css  # スタイル
+    │   │   ├── js/main.js     # スクリプト
+    │   │   ├── img/           # 画像（cultivate / nexus のみ）
+    │   │   └── include/
+    │   │       ├── sidebar.php    # サイドバーナビ
+    │   │       ├── topbar.php     # トップバー
+    │   │       └── footer.php     # フッター
     │   ├── features/          # 機能ごとの詳細ページ
     │   └── build_docs.py      # inlining ビルドスクリプト
     ├── magonote-bot/       # まごのであります ドキュメント（cultivate と同じ構成）
@@ -82,9 +84,9 @@ hashimotok_web/
 - **CSS設計**: カスタムプロパティによる一元管理、`style.css` に集約
 
 ### ドキュメントの仕組み
-- 各ページは先頭で `$ROOT`（サイトルートへの相対パス）と `$PAGE_TITLE` を定義し、PHP の `include` で `include/*.php` を**サーバーサイドで**読み込む（JS による読み込みは行わない）
-- `$ROOT`: `include/sidebar.php` のナビゲーションリンクで使用（例: `href="<?= $ROOT ?? '.' ?>/getting-started"`）
-- `$PAGE_TITLE`: `include/topbar.php` のページタイトルで使用（例: `<?= $PAGE_TITLE ?? '' ?>`）
+- 各ページは先頭で `$ROOT`（サイトルートへの相対パス）と `$PAGE_TITLE` を定義し、PHP の `include` で `assets/include/*.php` を**サーバーサイドで**読み込む（JS による読み込みは行わない）
+- `$ROOT`: `assets/include/sidebar.php` のナビゲーションリンクで使用（例: `href="<?= $ROOT ?? '.' ?>/getting-started"`）
+- `$PAGE_TITLE`: `assets/include/topbar.php` のページタイトルで使用（例: `<?= $PAGE_TITLE ?? '' ?>`）
 - include ファイルはサーバーサイド専用。`docs/.htaccess` で `include/` への直接アクセスを禁止している
 - ビルドスクリプト: `build_docs.py` で PHP include を inlining → `dist/` に出力（静的プレビュー用）
 
@@ -97,8 +99,8 @@ hashimotok_web/
 ### キャッシュ破棄（CSS/JS）
 - 全ページは PHP（`.php`）。CSS/JS の読み込みには更新日時をクエリに付与し、ブラウザキャッシュを自動更新する
 ```html
-<link rel="stylesheet" href="css/style.css?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>">
-<script src="js/main.js?v=<?= @filemtime(__DIR__ . '/js/main.js') ?: time() ?>"></script>
+<link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime(__DIR__ . '/assets/css/style.css') ?: time() ?>">
+<script src="assets/js/main.js?v=<?= @filemtime(__DIR__ . '/assets/js/main.js') ?: time() ?>"></script>
 ```
 - `build_docs.py` は `dist/` 出力時にこの PHP タグを実ファイルの更新日時（数値）へ置換するため、`dist/` はそのままブラウザで開ける
 - 新しく CSS/JS を追加する場合も同じ形式（`?v=<?= @filemtime(...) ?>`）で参照する
@@ -141,12 +143,12 @@ hashimotok_web/
 ```php
 <body>
   <?php $ROOT = '.'; $PAGE_TITLE = 'ページ名'; ?>
-  <?php include __DIR__ . '/include/sidebar.php'; ?>
+  <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
 
   <main class="main-content">
-    <?php include __DIR__ . '/include/topbar.php'; ?>
+    <?php include __DIR__ . '/assets/include/topbar.php'; ?>
     ...
-    <?php include __DIR__ . '/include/footer.php'; ?>
+    <?php include __DIR__ . '/assets/include/footer.php'; ?>
   </main>
 ```
 
