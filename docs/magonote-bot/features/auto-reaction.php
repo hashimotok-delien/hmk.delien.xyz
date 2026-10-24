@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>自動リアクション - まごの手 ドキュメント</title>
   <meta name="description" content="自動リアクション - まごの手 ドキュメント。自動リアクション機能は、特定のチャンネルにメッセージが投稿されたときに、 自動で指定された絵文字リアクションを追加する機能です。 コミュニケーションの活性化や、特定の投稿への反応を自動化できま…">
-  <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
+  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
 </head>
 <body>
   <?php $ROOT = '..'; $PAGE_TITLE = '自動リアクション'; ?>
-  <?php include __DIR__ . '/../include/sidebar.php'; ?>
+  <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
-    <?php include __DIR__ . '/../include/topbar.php'; ?>
+    <?php include __DIR__ . '/../assets/include/topbar.php'; ?>
 
     <div class="content">
       <div class="feature-hero">
@@ -74,10 +74,10 @@
         <p><strong>💡 ヒント:</strong> カスタム絵文字を使用する場合は、絵文字ID（数値）を指定します。Unicode絵文字はそのまま文字列で指定可能です。</p>
       </div>
 
-      <?php include __DIR__ . '/../include/footer.php'; ?>
+      <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
 
-  <script src="../js/main.js?v=<?= @filemtime(__DIR__ . '/../js/main.js') ?: time() ?>"></script>
+  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>chリアクションロール - まごの手 ドキュメント</title>
   <meta name="description" content="chリアクションロール - まごの手 ドキュメント。リアクションを付けたユーザーにロールを一括付与">
-  <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
+  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
 </head>
 <body>
   <?php $ROOT = '..'; $PAGE_TITLE = 'chリアクションロール'; ?>
-  <?php include __DIR__ . '/../include/sidebar.php'; ?>
+  <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
-    <?php include __DIR__ . '/../include/topbar.php'; ?>
+    <?php include __DIR__ . '/../assets/include/topbar.php'; ?>
 
     <div class="content">
       <div class="feature-hero">
@@ -63,10 +63,10 @@
         <p><strong>⚠ 注意:</strong> チャンネル内の最大1000件のメッセージをスキャンします。大量のメンバーにロールを付与する場合、処理に時間がかかることがあります。</p>
       </div>
 
-      <?php include __DIR__ . '/../include/footer.php'; ?>
+      <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
 
-  <script src="../js/main.js?v=<?= @filemtime(__DIR__ . '/../js/main.js') ?: time() ?>"></script>
+  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

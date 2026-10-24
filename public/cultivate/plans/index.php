@@ -10,7 +10,7 @@
 <body>
 
   <?php $BASE = '..'; $LOGO_LABEL = 'Premium'; $SHOW_TERMS = true; ?>
-  <?php include __DIR__ . '/../include/header.php'; ?>
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 
   <main>
     <!-- ===== ヒーロー ===== -->
@@ -190,7 +190,7 @@
     </section>
   </main>
 
-  <?php include __DIR__ . '/../include/footer.php'; ?>
+  <?php include __DIR__ . '/../assets/include/footer.php'; ?>
 
 </body>
 </html>

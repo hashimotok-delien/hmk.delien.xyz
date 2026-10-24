@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VC開始通知 - まごの手 ドキュメント</title>
   <meta name="description" content="VC開始通知 - まごの手 ドキュメント。VC開始通知機能は、メンバーが VC に参加したときや、VC 間を移動したときに、 指定されたチャンネルに通知メッセージを送信する機能です。 「新着除外」ロールを持っているメンバーは通知の対象外と…">
-  <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
+  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
 </head>
 <body>
   <?php $ROOT = '..'; $PAGE_TITLE = 'VC開始通知'; ?>
-  <?php include __DIR__ . '/../include/sidebar.php'; ?>
+  <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
-    <?php include __DIR__ . '/../include/topbar.php'; ?>
+    <?php include __DIR__ . '/../assets/include/topbar.php'; ?>
 
     <div class="content">
       <div class="feature-hero">
@@ -41,10 +41,10 @@
         <p><strong>💡 ヒント:</strong> 「新着除外」ロールを特定のメンバーに付与することで、VC 参加時の通知を抑制できます。</p>
       </div>
 
-      <?php include __DIR__ . '/../include/footer.php'; ?>
+      <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
 
-  <script src="../js/main.js?v=<?= @filemtime(__DIR__ . '/../js/main.js') ?: time() ?>"></script>
+  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

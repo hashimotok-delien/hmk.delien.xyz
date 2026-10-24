@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>スレッド管理 - まごの手 ドキュメント</title>
   <meta name="description" content="スレッド管理 - まごの手 ドキュメント。スレッド管理機能は、特定のチャンネルでスレッドが作成されたときに、 自動的に削除・名称変更・招待の3つのボタンを設置する機能です。 スレッドの管理を簡素化し、運営の手間を削減します。">
-  <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
+  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
 </head>
 <body>
   <?php $ROOT = '..'; $PAGE_TITLE = 'スレッド管理'; ?>
-  <?php include __DIR__ . '/../include/sidebar.php'; ?>
+  <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
-    <?php include __DIR__ . '/../include/topbar.php'; ?>
+    <?php include __DIR__ . '/../assets/include/topbar.php'; ?>
 
     <div class="content">
       <div class="feature-hero">
@@ -73,10 +73,10 @@
         詳細は <a href="auto-channel-message">自動チャンネルメッセージ</a> のページを参照してください。
       </p>
 
-      <?php include __DIR__ . '/../include/footer.php'; ?>
+      <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
 
-  <script src="../js/main.js?v=<?= @filemtime(__DIR__ . '/../js/main.js') ?: time() ?>"></script>
+  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

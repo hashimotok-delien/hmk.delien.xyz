@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ノックパネル - まごの手 ドキュメント</title>
   <meta name="description" content="ノックパネル - まごの手 ドキュメント。ノックパネル機能は、VC に入室したいメンバーが「ノック（入室リクエスト）」を送信し、 相手の許可を得てから入室できる仕組みを提供します。 プライベートな VC でのコミュニケーションを安全に行う…">
-  <link rel="stylesheet" href="../css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
+  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
 </head>
 <body>
   <?php $ROOT = '..'; $PAGE_TITLE = 'ノックパネル'; ?>
-  <?php include __DIR__ . '/../include/sidebar.php'; ?>
+  <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
-    <?php include __DIR__ . '/../include/topbar.php'; ?>
+    <?php include __DIR__ . '/../assets/include/topbar.php'; ?>
 
     <div class="content">
       <div class="feature-hero">
@@ -52,10 +52,10 @@
         <p><strong>💡 ヒント:</strong> ノック機能は、特定の VC に参加したいが、相手に直接声をかけづらい場合などに便利です。</p>
       </div>
 
-      <?php include __DIR__ . '/../include/footer.php'; ?>
+      <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
 
-  <script src="../js/main.js?v=<?= @filemtime(__DIR__ . '/../js/main.js') ?: time() ?>"></script>
+  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

@@ -150,7 +150,7 @@ hashimotok_web/
   </main>
 ```
 
-**features 配下のページ（`docs/<site>/features/foo.php`）** では、`$ROOT = '..'` とし、パスを `'/../include/...'` にする。
+**features 配下のページ（`docs/<site>/features/foo.php`）** では、`$ROOT = '..'` とし、パスを `'/../assets/include/...'` にする。
 
 ### include パーツ内での `$ROOT` の使い方
 ```php
