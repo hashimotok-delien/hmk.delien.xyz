@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '..'; $PAGE_TITLE = 'スレッド管理 - まごの手 ドキュメント'; $PAGE_DESCRIPTION = 'スレッド管理 - まごの手 ドキュメント。スレッド管理機能は、特定のチャンネルでスレッドが作成されたときに、 自動的に削除・名称変更・招待の3つのボタンを設置する機能です。 スレッドの管理を簡素化し、運営の手間を削減します。'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>スレッド管理 - まごの手 ドキュメント</title>
-  <meta name="description" content="スレッド管理 - まごの手 ドキュメント。スレッド管理機能は、特定のチャンネルでスレッドが作成されたときに、 自動的に削除・名称変更・招待の3つのボタンを設置する機能です。 スレッドの管理を簡素化し、運営の手間を削減します。">
-  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '..'; $PAGE_TITLE = 'スレッド管理'; ?>
   <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -76,7 +74,5 @@
       <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
-
-  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

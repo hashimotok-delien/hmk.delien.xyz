@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '.'; $PAGE_TITLE = 'まごの手 ドキュメント'; $PAGE_DESCRIPTION = 'まごの手 ドキュメント。Discordサーバー運営を支える多機能Bot'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>まごの手 ドキュメント</title>
-  <meta name="description" content="まごの手 ドキュメント。Discordサーバー運営を支える多機能Bot">
-  <link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime(__DIR__ . '/assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '.'; $PAGE_TITLE = 'トップ'; ?>
 
   <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
 
@@ -154,7 +152,5 @@
       <?php include __DIR__ . '/assets/include/footer.php'; ?>
     </div>
   </main>
-
-  <script src="assets/js/main.js?v=<?= @filemtime(__DIR__ . '/assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

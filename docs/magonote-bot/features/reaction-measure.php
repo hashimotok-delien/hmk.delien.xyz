@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '..'; $PAGE_TITLE = 'リアクション計測 - まごの手 ドキュメント'; $PAGE_DESCRIPTION = 'リアクション計測 - まごの手 ドキュメント。メッセージのリアクションを集計・ランキング表示'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>リアクション計測 - まごの手 ドキュメント</title>
-  <meta name="description" content="リアクション計測 - まごの手 ドキュメント。メッセージのリアクションを集計・ランキング表示">
-  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '..'; $PAGE_TITLE = 'リアクション計測'; ?>
   <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -72,7 +70,5 @@
       <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
-
-  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

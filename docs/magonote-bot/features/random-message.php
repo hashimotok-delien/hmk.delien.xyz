@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '..'; $PAGE_TITLE = 'ランダム転載 - まごの手 ドキュメント'; $PAGE_DESCRIPTION = 'ランダム転載 - まごの手 ドキュメント。ランダム転載機能は、指定したチャンネルからランダムにメッセージを選び、 現在のチャンネルに転載表示する機能です。過去の面白い会話や有益な情報を 再発見するのに役立ちます。'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ランダム転載 - まごの手 ドキュメント</title>
-  <meta name="description" content="ランダム転載 - まごの手 ドキュメント。ランダム転載機能は、指定したチャンネルからランダムにメッセージを選び、 現在のチャンネルに転載表示する機能です。過去の面白い会話や有益な情報を 再発見するのに役立ちます。">
-  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '..'; $PAGE_TITLE = 'ランダム転載'; ?>
   <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -52,7 +50,5 @@
       <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
-
-  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '..'; $PAGE_TITLE = '満室機能 - まごの手 ドキュメント'; $PAGE_DESCRIPTION = '満室機能 - まごの手 ドキュメント。満室機能は、自分が接続している VC のルーム名の先頭に 🈵 を付けたり外したりできる機能です。 ルームが満室であることを他のメンバーにひと目で伝えられます。'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>満室機能 - まごの手 ドキュメント</title>
-  <meta name="description" content="満室機能 - まごの手 ドキュメント。満室機能は、自分が接続している VC のルーム名の先頭に 🈵 を付けたり外したりできる機能です。 ルームが満室であることを他のメンバーにひと目で伝えられます。">
-  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '..'; $PAGE_TITLE = '満室機能'; ?>
   <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -46,7 +44,5 @@
       <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
-
-  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

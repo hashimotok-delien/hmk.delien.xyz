@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '..'; $PAGE_TITLE = 'DM/フレンド開通 - master Bot ドキュメント'; $PAGE_DESCRIPTION = 'DM/フレンド開通 - master Bot ドキュメント。DM/フレンド開通機能は、DM やフレンドの申請をパネルのボタンから送信し、 相手がボタンで回答できる機能です。申請はサーバー内のチャンネルに投稿されます。'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DM/フレンド開通 - master Bot ドキュメント</title>
-  <meta name="description" content="DM/フレンド開通 - master Bot ドキュメント。DM/フレンド開通機能は、DM やフレンドの申請をパネルのボタンから送信し、 相手がボタンで回答できる機能です。申請はサーバー内のチャンネルに投稿されます。">
-  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '..'; $PAGE_TITLE = 'DM/フレンド開通'; ?>
   <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -85,6 +83,5 @@
       <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
-  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

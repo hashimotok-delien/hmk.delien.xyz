@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '..'; $PAGE_TITLE = 'メッセージ一括削除 - まごの手 ドキュメント'; $PAGE_DESCRIPTION = 'メッセージ一括削除 - まごの手 ドキュメント。メッセージ一括削除機能は、指定したチャンネル内の2つのメッセージIDの間にある メッセージを一括で削除します。テキストチャンネル、VC（テキスト部分）、スレッドに対応しています。'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>メッセージ一括削除 - まごの手 ドキュメント</title>
-  <meta name="description" content="メッセージ一括削除 - まごの手 ドキュメント。メッセージ一括削除機能は、指定したチャンネル内の2つのメッセージIDの間にある メッセージを一括で削除します。テキストチャンネル、VC（テキスト部分）、スレッドに対応しています。">
-  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '..'; $PAGE_TITLE = 'メッセージ一括削除'; ?>
   <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -65,7 +63,5 @@
       <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
-
-  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

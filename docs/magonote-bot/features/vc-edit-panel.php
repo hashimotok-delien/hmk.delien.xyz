@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '..'; $PAGE_TITLE = 'VC操作パネル - まごの手 ドキュメント'; $PAGE_DESCRIPTION = 'VC操作パネル - まごの手 ドキュメント。VC操作パネルは、自分が接続している VC のルーム名・人数制限・ステータス・ビットレートなどを ボタン操作で簡単に変更できるパネルです。ルームに接続している全員が操作できます。'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VC操作パネル - まごの手 ドキュメント</title>
-  <meta name="description" content="VC操作パネル - まごの手 ドキュメント。VC操作パネルは、自分が接続している VC のルーム名・人数制限・ステータス・ビットレートなどを ボタン操作で簡単に変更できるパネルです。ルームに接続している全員が操作できます。">
-  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '..'; $PAGE_TITLE = 'VC操作パネル'; ?>
   <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -90,7 +88,5 @@
       <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
-
-  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '..'; $PAGE_TITLE = '自動リアクション - まごの手 ドキュメント'; $PAGE_DESCRIPTION = '自動リアクション - まごの手 ドキュメント。自動リアクション機能は、特定のチャンネルにメッセージが投稿されたときに、 自動で指定された絵文字リアクションを追加する機能です。 コミュニケーションの活性化や、特定の投稿への反応を自動化できま…'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>自動リアクション - まごの手 ドキュメント</title>
-  <meta name="description" content="自動リアクション - まごの手 ドキュメント。自動リアクション機能は、特定のチャンネルにメッセージが投稿されたときに、 自動で指定された絵文字リアクションを追加する機能です。 コミュニケーションの活性化や、特定の投稿への反応を自動化できま…">
-  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '..'; $PAGE_TITLE = '自動リアクション'; ?>
   <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -77,7 +75,5 @@
       <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
-
-  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

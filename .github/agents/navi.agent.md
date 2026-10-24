@@ -49,7 +49,6 @@ hashimotok_web/
 │   ├── index.php           # ポートフォリオトップページ
 │   ├── cultivate.php
 │   ├── cultivate/          # Cultivate 公式サイト（plans, privacy, terms など）
-│   ├── docs/               # 旧ドキュメント置き場（docs.delien.xyz へ301転送するのみ）
 │   ├── blogs/              # Jekyll ブログ
 │   │   ├── _config.yml
 │   │   └── _layouts/
@@ -58,6 +57,7 @@ hashimotok_web/
 │
 └── docs/                   # docs.delien.xyz のドキュメントルート（FTPでアップロード）
     ├── .htaccess           # 拡張子なしURL化 / 旧URLからの転送
+    ├── assets/fonts/       # 全サイト共有のセルフホストフォント
     ├── index.php           # ドキュメントポータル
     ├── cultivate/          # Cultivate ドキュメント
     │   ├── index.php, getting-started.php, commands.php, faq.php
@@ -66,13 +66,16 @@ hashimotok_web/
     │   │   ├── js/main.js     # スクリプト
     │   │   ├── img/           # 画像（cultivate / nexus のみ）
     │   │   └── include/
+    │   │       ├── header.php     # <head> 一式（title / meta / OGP / CSS / JS）
     │   │       ├── sidebar.php    # サイドバーナビ
     │   │       ├── topbar.php     # トップバー
     │   │       └── footer.php     # フッター
     │   ├── features/          # 機能ごとの詳細ページ
     │   └── build_docs.py      # inlining ビルドスクリプト
     ├── magonote-bot/       # まごのであります ドキュメント（cultivate と同じ構成）
-    └── nexus/              # ねくさす ドキュメント（cultivate と同じ構成）
+    ├── master/             # master Bot ドキュメント（同上）
+    ├── viola/              # viola ドキュメント（同上）
+    └── nexus/              # ねくさす ドキュメント（同上）
 ```
 
 ### デザインシステム
@@ -84,11 +87,11 @@ hashimotok_web/
 - **CSS設計**: カスタムプロパティによる一元管理、`style.css` に集約
 
 ### ドキュメントの仕組み
-- 各ページは先頭で `$ROOT`（サイトルートへの相対パス）と `$PAGE_TITLE` を定義し、PHP の `include` で `assets/include/*.php` を**サーバーサイドで**読み込む（JS による読み込みは行わない）
-- `$ROOT`: `assets/include/sidebar.php` のナビゲーションリンクで使用（例: `href="<?= $ROOT ?? '.' ?>/getting-started"`）
-- `$PAGE_TITLE`: `assets/include/topbar.php` のページタイトルで使用（例: `<?= $PAGE_TITLE ?? '' ?>`）
+- 各ページは `<html>` 直後（`<head>` より前）で `$ROOT`（サイトルートへの相対パス）・`$PAGE_TITLE`（`<title>` とトップバーに出す完全なタイトル）・任意で `$PAGE_DESCRIPTION` を定義し、`<head>` 内で `assets/include/header.php` を PHP の `include` で**サーバーサイドで**読み込む（JS による読み込みは行わない）
+- `header.php` が title / meta description / OGP・Twitter カード / CSS / JS（`defer`）をまとめて出力する。ページ側に `<title>` や `main.js` の `<script>` は書かない
+- `$ROOT`: `assets/include/*.php` のリンク・アセット参照で使用（例: `href="<?= $ROOT ?? '.' ?>/getting-started"`、`<?= $ROOT ?? '.' ?>/assets/css/style.css`）
 - include ファイルはサーバーサイド専用。`docs/.htaccess` で `include/` への直接アクセスを禁止している
-- ビルドスクリプト: `build_docs.py` で PHP include を inlining → `dist/` に出力（静的プレビュー用）
+- ビルドスクリプト: `build_docs.py`（cultivate / nexus のみ）で PHP include を inlining → `dist/` に出力（静的プレビュー用）
 
 ### Cultivate 公式サイト（`public/cultivate/`）の仕組み
 - `index.php`（ランディング）は自己完結型（インラインCSS）。それ以外のページ（`plans/*.php`, `privacy.php`, `terms.php`）は共通パーツを PHP の include で読み込む
@@ -98,10 +101,13 @@ hashimotok_web/
 
 ### キャッシュ破棄（CSS/JS）
 - 全ページは PHP（`.php`）。CSS/JS の読み込みには更新日時をクエリに付与し、ブラウザキャッシュを自動更新する
-```html
-<link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime(__DIR__ . '/assets/css/style.css') ?: time() ?>">
-<script src="assets/js/main.js?v=<?= @filemtime(__DIR__ . '/assets/js/main.js') ?: time() ?>"></script>
+```php
+<link rel="stylesheet"
+      href="<?= $ROOT ?? '.' ?>/assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
+<script src="<?= $ROOT ?? '.' ?>/assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../js/main.js') ?: time() ?>"
+        defer></script>
 ```
+- この2行は `docs/<site>/assets/include/header.php` に集約している（各ページには書かない）
 - `build_docs.py` は `dist/` 出力時にこの PHP タグを実ファイルの更新日時（数値）へ置換するため、`dist/` はそのままブラウザで開ける
 - 新しく CSS/JS を追加する場合も同じ形式（`?v=<?= @filemtime(...) ?>`）で参照する
 
@@ -136,13 +142,20 @@ hashimotok_web/
 
 ## よく使うパターン
 
-### インクルードの追加
-`<body>` 直後に `$ROOT` / `$PAGE_TITLE` を定義し、PHP の `include` で読み込む。
+### ページの雛形
+`<html>` 直後に `$ROOT` / `$PAGE_TITLE` / `$PAGE_DESCRIPTION` を定義し、`<head>` で `header.php` を読み込む（`<title>` や CSS/JS は書かない）。
 
 **サイト直下のページ（`docs/<site>/foo.php`）:**
 ```php
+<!DOCTYPE html>
+<html lang="ja">
+<?php $ROOT = '.'; $PAGE_TITLE = 'ページ名 - サイト名 ドキュメント'; $PAGE_DESCRIPTION = '説明文'; ?>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <?php include __DIR__ . '/assets/include/header.php'; ?>
+</head>
 <body>
-  <?php $ROOT = '.'; $PAGE_TITLE = 'ページ名'; ?>
   <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -150,6 +163,8 @@ hashimotok_web/
     ...
     <?php include __DIR__ . '/assets/include/footer.php'; ?>
   </main>
+</body>
+</html>
 ```
 
 **features 配下のページ（`docs/<site>/features/foo.php`）** では、`$ROOT = '..'` とし、パスを `'/../assets/include/...'` にする。

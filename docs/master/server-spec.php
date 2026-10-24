@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '.'; $PAGE_TITLE = 'サーバースペック - master Bot ドキュメント'; $PAGE_DESCRIPTION = 'サーバースペック - master Bot ドキュメント。master Bot の運営に使用している PC・回線環境'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>サーバースペック - master Bot ドキュメント</title>
-  <meta name="description" content="サーバースペック - master Bot ドキュメント。master Bot の運営に使用している PC・回線環境">
-  <link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime(__DIR__ . '/assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '.'; $PAGE_TITLE = 'サーバースペック'; ?>
   <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
 
   <main class="main-content">

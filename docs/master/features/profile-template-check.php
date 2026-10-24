@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '..'; $PAGE_TITLE = 'プロフテンプレートチェック - master Bot ドキュメント'; $PAGE_DESCRIPTION = 'プロフテンプレートチェック - master Bot ドキュメント。メッセージが定型フォーマットに沿っているかを自動検証'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>プロフテンプレートチェック - master Bot ドキュメント</title>
-  <meta name="description" content="プロフテンプレートチェック - master Bot ドキュメント。メッセージが定型フォーマットに沿っているかを自動検証">
-  <link rel="stylesheet" href="../assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/../assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '..'; $PAGE_TITLE = 'プロフテンプレートチェック'; ?>
   <?php include __DIR__ . '/../assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -451,6 +449,5 @@ Hello! I'm John.</code></pre>
       <?php include __DIR__ . '/../assets/include/footer.php'; ?>
     </div>
   </main>
-  <script src="../assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

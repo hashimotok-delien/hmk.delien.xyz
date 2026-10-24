@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '.'; $PAGE_TITLE = '既知の不具合 - master Bot ドキュメント'; $PAGE_DESCRIPTION = '既知の不具合 - master Bot ドキュメント。現在確認されている既知の不具合と、その回避策・対応状況をまとめています。'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>既知の不具合 - master Bot ドキュメント</title>
-  <meta name="description" content="既知の不具合 - master Bot ドキュメント。現在確認されている既知の不具合と、その回避策・対応状況をまとめています。">
-  <link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime(__DIR__ . '/assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '.'; $PAGE_TITLE = '既知の不具合'; ?>
   <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -62,7 +60,5 @@
       <?php include __DIR__ . '/assets/include/footer.php'; ?>
     </div>
   </main>
-
-  <script src="assets/js/main.js?v=<?= @filemtime(__DIR__ . '/assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>

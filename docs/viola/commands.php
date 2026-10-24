@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
+<?php $ROOT = '.'; $PAGE_TITLE = 'コマンド一覧 - master Bot ドキュメント'; $PAGE_DESCRIPTION = 'コマンド一覧 - master Bot ドキュメント。master Bot で使用できる全コマンドの一覧です。 管理者専用 ユーザー用'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>コマンド一覧 - master Bot ドキュメント</title>
-  <meta name="description" content="コマンド一覧 - master Bot ドキュメント。master Bot で使用できる全コマンドの一覧です。 管理者専用 ユーザー用">
-  <link rel="stylesheet" href="assets/css/style.css?v=<?= @filemtime(__DIR__ . '/assets/css/style.css') ?: time() ?>">
+  <?php include __DIR__ . '/assets/include/header.php'; ?>
 </head>
 <body>
-  <?php $ROOT = '.'; $PAGE_TITLE = 'コマンド一覧'; ?>
   <?php include __DIR__ . '/assets/include/sidebar.php'; ?>
 
   <main class="main-content">
@@ -174,7 +172,5 @@
       <?php include __DIR__ . '/assets/include/footer.php'; ?>
     </div>
   </main>
-
-  <script src="assets/js/main.js?v=<?= @filemtime(__DIR__ . '/assets/js/main.js') ?: time() ?>"></script>
 </body>
 </html>
