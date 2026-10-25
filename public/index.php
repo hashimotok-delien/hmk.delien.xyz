@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>けい🤖 Portfolio</title>
-<meta name="description" content="けい🤖（hashimotok）のポートフォリオ。Discord Bot「Cultivate」「DeLien Calendar」などの制作物と、Web・Bot開発のスキルを紹介します。">
+<meta name="description" content="けい🤖（hashimotok）のポートフォリオ。Discord Bot「Cultivate」、予定管理システム「DeLien Calendar」、Windows向けオーディオミキサー「PulseWeaver」などの制作物と、Web・Bot・デスクトップアプリ開発のスキルを紹介します。">
 
 
 
@@ -337,10 +337,52 @@ h2{
 <section class="highlight">
   <h2>🚀 Featured</h2>
 
-  <div class="card">
-    <h3>𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮</h3>
-    <p>これ1つで“運営が回る”界隈サーバーを構築</p>
-    <a class="btn" href="./cultivate/">詳細を見る</a>
+  <div class="grid">
+    <div class="card main">
+      <h3>𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮</h3>
+      <p>これ1つで“運営が回る”界隈サーバーを構築</p>
+      <a class="btn" href="./cultivate/">詳細を見る</a>
+    </div>
+
+    <div class="card">
+      <h3>🎚️ PulseWeaver</h3>
+      <p>音を混ぜて、好きな場所へ。Windows向けの無料オーディオミキサー</p>
+      <a class="btn" href="./pulseweaver/">詳細を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- 🎚️ PulseWeaver -->
+<section>
+  <h2>🎚️ PulseWeaver</h2>
+
+  <p style="opacity:0.8;">H/W入力6・バーチャル入力3の計9系統を、H/W出力A1〜A4へ自由に振り分けるWindows向けの無料オーディオミキサー。ゲーム・通話・配信の音をアプリごとに分けたまま、同時に届けられます。</p>
+
+  <div class="grid">
+    <div class="card">
+      <h3>🎛 9入力 → 4出力</h3>
+      <p>入力ごと・出力ごとの音量を個別に調整し、A1〜A4へ自由に振り分け</p>
+    </div>
+
+    <div class="card">
+      <h3>🔁 ループバック取り込み</h3>
+      <p>既定出力やDiscordに流れている音をそのまま入力に。ゲームと通話を別々にミックス</p>
+    </div>
+
+    <div class="card">
+      <h3>💾 構成の保存・切替</h3>
+      <p>「ゲーム配信」「Discord通話」などの構成をJSONで保存し、選ぶだけで即切替</p>
+    </div>
+
+    <div class="card">
+      <h3>🔄 無料・自動更新</h3>
+      <p>追加のランタイム不要。24時間に1回アップデートを確認し、そのまま更新</p>
+    </div>
+  </div>
+
+  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
+    <a class="btn" href="./pulseweaver/">詳細を見る</a>
+    <a class="btn" href="https://github.com/hashimotok-delien/PulseWeaver/releases" target="_blank" rel="noopener">ダウンロード</a>
   </div>
 </section>
 
@@ -373,7 +415,7 @@ h2{
   </div>
 
   <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
-    <a class="btn" href="./calendar">詳細を見る</a>
+    <a class="btn" href="./deliencalendar/">詳細を見る</a>
     <a class="btn" href="https://calendar.delien.xyz" target="_blank" rel="noopener">サービスを開く</a>
   </div>
 </section>
@@ -405,9 +447,15 @@ h2{
     </div>
 
     <div class="card">
+      <h3>🎚️ PulseWeaver</h3>
+      <p>Windows向けの無料オーディオミキサー（9入力 → 4出力・構成の保存・自動更新）</p>
+      <a class="btn" href="./pulseweaver/">見る</a>
+    </div>
+
+    <div class="card">
       <h3>📅 DeLien Calendar</h3>
       <p>Googleカレンダー風の予定管理システム（公開設定・メンバー招待・Discord通知連携）</p>
-      <a class="btn" href="./calendar">見る</a>
+      <a class="btn" href="./deliencalendar/">見る</a>
     </div>
 
     <div class="card">
@@ -535,7 +583,7 @@ document.querySelectorAll("a").forEach(link=>{
       const overlay = document.getElementById("page-transition");
 
       // 🔥 行き先ごとの色
-      if(href.includes("cultivate") || href.includes("calendar")){
+      if(href.includes("cultivate") || href.includes("deliencalendar") || href.includes("pulseweaver")){
         overlay.style.background =
           "radial-gradient(circle at 20% 20%, rgba(0, 229, 255, 0.15), transparent), " +
           "radial-gradient(circle at 80% 80%, rgba(0, 229, 255, 0.1), transparent)";

@@ -123,7 +123,7 @@ Gyazo などの外部URLを直接貼るのは避けてください（リンク�
 ```python
 PUBLIC_PAGES = [
     "index.php",
-    "calendar.php",
+    "deliencalendar/index.php",
     "cultivate/index.php",
     "<slug>/index.php",        # ← 追加
     "<slug>/plans/index.php",  # ← 追加

@@ -48,13 +48,15 @@ DATA_DIR = Path(__file__).resolve().parent / "fonts"
 
 PUBLIC_PAGES = [
     "index.php",
-    "calendar.php",
     "cultivate/index.php",
     "cultivate/plans/index.php",
     "cultivate/plans/success.php",
     "cultivate/plans/cancel.php",
     "cultivate/privacy.php",
     "cultivate/terms.php",
+    "deliencalendar/index.php",
+    "deliencalendar/privacy.php",
+    "deliencalendar/terms.php",
     "pulseweaver/index.php",
     "pulseweaver/privacy.php",
     "pulseweaver/terms.php",
