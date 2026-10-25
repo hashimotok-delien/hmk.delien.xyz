@@ -105,6 +105,13 @@ a:hover {
   text-shadow: 0 0 8px var(--accent-glow);
 }
 
+/* 本文中のリンクは色だけに頼らず下線でも区別する（WCAG 1.4.1） */
+main a:not(.btn),
+.site-footer a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 /* ===== Header ===== */
 .site-header {
   position: sticky;

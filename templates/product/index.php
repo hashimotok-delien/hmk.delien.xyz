@@ -290,7 +290,10 @@ h2{
 <div id="progress-bar"></div>
 
 <header>
-  <img src="<?= $ICON_PATH ?>" alt="<?= $PRODUCT_NAME ?> のアイコン">
+  <picture>
+    <source srcset="./assets/img/icon-120.webp?v=<?= @filemtime(__DIR__ . '/assets/img/icon-120.webp') ?: time() ?> 1x, ./assets/img/icon.webp?v=<?= @filemtime(__DIR__ . '/assets/img/icon.webp') ?: time() ?> 2x" type="image/webp">
+    <img src="<?= $ICON_PATH ?>" alt="<?= $PRODUCT_NAME ?> のアイコン" width="120" height="120" decoding="async">
+  </picture>
   <h1><?= $PRODUCT_NAME ?></h1>
   <div class="tagline">（TODO: キャッチコピー）</div>
   <div class="benefit">（TODO: 補足の一文）</div>
@@ -349,14 +352,30 @@ h2{
 
   <div class="card">
     <p><strong>（TODO: 画面名1）</strong>：（TODO: 説明）</p>
-    <img src="./assets/img/screenshot-1.webp" alt="（TODO: スクリーンショットの説明）"
-         style="width:100%; border-radius:12px; box-shadow:0 0 20px rgba(var(--accent-rgb),0.3);" loading="lazy">
+    <picture>
+      <source type="image/webp"
+              srcset="./assets/img/screenshot-1-600.webp?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-1-600.webp') ?: time() ?> 600w,
+                      ./assets/img/screenshot-1-900.webp?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-1-900.webp') ?: time() ?> 900w,
+                      ./assets/img/screenshot-1-1200.webp?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-1-1200.webp') ?: time() ?> 1200w"
+              sizes="(max-width: 1060px) calc(100vw - 90px), 900px">
+      <img src="./assets/img/screenshot-1.webp" alt="（TODO: スクリーンショットの説明）"
+           width="1200" height="980" loading="lazy" decoding="async"
+           style="width:100%; height:auto; border-radius:12px; box-shadow:0 0 20px rgba(var(--accent-rgb),0.3);">
+    </picture>
   </div>
 
   <div class="card">
     <p><strong>（TODO: 画面名2）</strong>：（TODO: 説明）</p>
-    <img src="./assets/img/screenshot-2.webp" alt="（TODO: スクリーンショットの説明）"
-         style="width:100%; border-radius:12px; box-shadow:0 0 20px rgba(var(--accent-rgb),0.3);" loading="lazy">
+    <picture>
+      <source type="image/webp"
+              srcset="./assets/img/screenshot-2-600.webp?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-2-600.webp') ?: time() ?> 600w,
+                      ./assets/img/screenshot-2-900.webp?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-2-900.webp') ?: time() ?> 900w,
+                      ./assets/img/screenshot-2-1200.webp?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-2-1200.webp') ?: time() ?> 1200w"
+              sizes="(max-width: 1060px) calc(100vw - 90px), 900px">
+      <img src="./assets/img/screenshot-2.webp" alt="（TODO: スクリーンショットの説明）"
+           width="1200" height="980" loading="lazy" decoding="async"
+           style="width:100%; height:auto; border-radius:12px; box-shadow:0 0 20px rgba(var(--accent-rgb),0.3);">
+    </picture>
   </div>
 </section>
 

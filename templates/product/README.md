@@ -83,9 +83,28 @@ Copy-Item templates\product public\<slug> -Recurse
 `assets/img/` に置き、`index.php` からは `./assets/img/...` で参照します。
 
 ```
-assets/img/icon.webp          … ヒーローのアイコン（120px 表示 / 400px 程度を用意）
-assets/img/screenshot-1.webp  … 使用イメージ
-assets/img/screenshot-2.webp
+assets/img/icon.png            … ヒーローのアイコン（PNG フォールバック / 240px 程度）
+assets/img/icon.webp           …         〃        （WebP 2x = 240px）
+assets/img/icon-120.webp       …         〃        （WebP 1x = 120px）
+assets/img/screenshot-1.webp   … 使用イメージ（PNG フォールバックも用意するなら screenshot-1.png）
+assets/img/screenshot-1-600.webp / -900.webp / -1200.webp  … srcset 用の各幅
+assets/img/screenshot-2.webp / -600.webp / -900.webp / -1200.webp
+assets/img/og.png              … OGP 用（1200x630）
+```
+
+- ヒーローは 120px 表示なので **1x=120px / 2x=240px** を `srcset` で出し分ける（`<picture>` 済み）。
+- スクリーンショットはカード内で最大 900px 表示。**600 / 900 / 1200 の3サイズ**を作り、
+  `sizes="(max-width: 1060px) calc(100vw - 90px), 900px"` で選ばせる（`<picture>` 済み）。
+- 画像は `width` / `height` を必ず書き、`style` に `height:auto` を添える（CLS 対策）。
+  ヒーロー以外は `loading="lazy" decoding="async"`。
+- 生成例（Pillow）:
+
+```python
+from PIL import Image
+im = Image.open("screenshot-1.png").convert("RGB")
+for w in (600, 900, 1200):
+    im.resize((w, round(im.height * w / im.width)), Image.LANCZOS).save(
+        f"screenshot-1-{w}.webp", "WEBP", quality=82, method=6)
 ```
 
 Gyazo などの外部URLを直接貼るのは避けてください（リンク切れ・外部依存・表示遅延の原因）。
@@ -162,7 +181,8 @@ PUBLIC_PAGES = [
 
 - CSS は `?v=<?= @filemtime(__DIR__ . '/css/style.css') ?: time() ?>` の形で読み込む。
   更新日時がクエリに入るので、ファイルを差し替えるだけでブラウザキャッシュが切れる。
-- 画像はこの仕組みの対象外。**差し替えたらファイル名を変える**（または `?v=` を手で付ける）。
+- `index.php` の画像も同じく `?v=<?= @filemtime(...) ?>` を付けている（`public/.htaccess` で
+  画像は1年キャッシュされるため、この更新日時クエリが無いと差し替えが反映されない）。
 
 ### SEO・メタ情報
 

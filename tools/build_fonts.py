@@ -55,6 +55,9 @@ PUBLIC_PAGES = [
     "cultivate/plans/cancel.php",
     "cultivate/privacy.php",
     "cultivate/terms.php",
+    "pulseweaver/index.php",
+    "pulseweaver/privacy.php",
+    "pulseweaver/terms.php",
 ]
 
 SOURCES = {
@@ -245,6 +248,11 @@ def build(target: Target) -> None:
         data_path.write_text(json.dumps(measured, ensure_ascii=False), encoding="utf-8")
 
     body_text = collect_charset(target)
+    # 実際に描画された文字も必ず含める（インクルード越しの文言や
+    # PHP で組み立てた文字列を取りこぼさないため）
+    measured_body = measured.get("400", "")
+    body_text = "".join(sorted(set(body_text) | set(measured_body)))
+
     jobs: list[tuple[str, str, Path, float | None]] = [
         ("noto", body_text, target.out / "noto-sans-jp-400.woff2", 400)
     ]
