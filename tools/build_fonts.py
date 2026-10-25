@@ -49,7 +49,6 @@ DATA_DIR = Path(__file__).resolve().parent / "fonts"
 PUBLIC_PAGES = [
     "index.php",
     "calendar.php",
-    "cultivate.php",
     "cultivate/index.php",
     "cultivate/plans/index.php",
     "cultivate/plans/success.php",

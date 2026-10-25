@@ -47,8 +47,7 @@ hashimotok_web/
 ├── public/                 # hmk.delien.xyz のドキュメントルート（FTPでアップロード）
 │   ├── .htaccess           # 拡張子なしURL化 / 旧 /docs の転送
 │   ├── index.php           # ポートフォリオトップページ
-│   ├── cultivate.php
-│   ├── cultivate/          # Cultivate 公式サイト（plans, privacy, terms など）
+│   ├── cultivate/          # Cultivate 公式サイト（index.php がランディング。plans, privacy, terms など）
 │   ├── blogs/              # Jekyll ブログ
 │   │   ├── _config.yml
 │   │   └── _layouts/
