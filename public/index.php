@@ -209,6 +209,22 @@ h2{
 .card {
   position: relative;
   overflow: hidden;
+  padding: 20px;
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  border-radius: 14px;
+  background: rgba(18, 18, 26, 0.8);
+  line-height: 1.7;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.card p {
+  margin: 0;
+  opacity: 0.8;
 }
 
 .card::before {
@@ -228,12 +244,65 @@ h2{
 .card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 0 30px rgba(0,229,255,0.5);
+  border-color: rgba(0,229,255,0.45);
 }
 
-/* メインプロジェクト強調 */
-.main{
-  border:2px solid #00e5ff;
-  transform:scale(1.05);
+/* サービス一覧（1サービス = 1ブロック） */
+.service {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 32px;
+  padding: 32px;
+  border: 1px solid rgba(0, 229, 255, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(160deg, rgba(22, 22, 32, 0.95), rgba(10, 10, 15, 0.95));
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.service:last-of-type {
+  margin-bottom: 0;
+}
+
+.service::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00e5ff, transparent);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Cultivate（主力）を強調 */
+.service.main {
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.18), 0 12px 32px rgba(0, 0, 0, 0.45);
+}
+
+.service-head h3 {
+  margin: 0 0 10px;
+  font-size: 1.45rem;
+  letter-spacing: 1px;
+}
+
+.service-head p {
+  margin: 0 0 24px;
+  opacity: 0.8;
+  line-height: 1.8;
+}
+
+/* サービス内は 2×2 で揃える */
+.service .grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
 }
 
 /* ボタン */
@@ -260,16 +329,6 @@ h2{
   margin:5px;
   border-radius:8px;
   display:inline-block;
-}
-
-/* Cultivate強調セクション */
-.highlight{
-  text-align:center;
-}
-
-.highlight .card {
-  border: 2px solid #00e5ff;
-  box-shadow: 0 0 40px rgba(0,229,255,0.3);
 }
 
 /* 固定CTA */
@@ -305,6 +364,13 @@ h2{
   pointer-events:none;
   transition: transform 0.5s ease, filter 0.5s ease;
 }
+
+@media (max-width: 600px){
+  section{ padding: 70px 16px; }
+  .service{ padding: 22px 18px; border-radius: 16px; }
+  .service-head h3{ font-size: 1.25rem; }
+  .service .grid{ grid-template-columns: 1fr; }
+}
 </style>
 </head>
 
@@ -333,91 +399,111 @@ h2{
 
 <main>
 
-<!-- 🔥 Cultivate最優先 -->
-<section class="highlight">
-  <h2>🚀 Featured</h2>
+<!-- 🛠 Services（サービス一覧） -->
+<section id="services">
+  <h2>🛠 Services</h2>
 
-  <div class="grid">
-    <div class="card main">
+  <article class="service main">
+    <div class="service-head">
       <h3>𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮</h3>
-      <p>これ1つで“運営が回る”界隈サーバーを構築</p>
+      <p>これ1つで“運営が回る”界隈サーバーを構築。運営・VC・ユーザー管理の作業を、ボタン操作と自動化でまとめて引き受けるDiscord Botです。</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>🧑‍💼 運営パネル</h3>
+        <p>役職パネル・設定パネル・吊下げメッセージなど、運営の定型作業をボタンだけで完結</p>
+      </div>
+
+      <div class="card">
+        <h3>🎤 VC運用</h3>
+        <p>裏2shot・寝落ち送り・VC制御・VCカウンターで、VCの立ち上げと片付けを自動化</p>
+      </div>
+
+      <div class="card">
+        <h3>🛂 入退室とロール管理</h3>
+        <p>必須ロール確認・自動KICK・ロール同期・カテゴリ権限同期で、安全なサーバーを保つ</p>
+      </div>
+
+      <div class="card">
+        <h3>🏆 プロフィールとランク</h3>
+        <p>プロフィール v2・プロフィール審査・ランクシステム・予約投稿で、交流を可視化</p>
+      </div>
+    </div>
+
+    <div class="service-actions">
       <a class="btn" href="./cultivate/">詳細を見る</a>
+      <a class="btn" href="https://docs.delien.xyz/cultivate/" target="_blank" rel="noopener">ドキュメントを見る</a>
     </div>
+  </article>
 
-    <div class="card">
+  <article class="service">
+    <div class="service-head">
       <h3>🎚️ PulseWeaver</h3>
-      <p>音を混ぜて、好きな場所へ。Windows向けの無料オーディオミキサー</p>
+      <p>H/W入力6・バーチャル入力3の計9系統を、H/W出力A1〜A4へ自由に振り分けるWindows向けの無料オーディオミキサー。ゲーム・通話・配信の音をアプリごとに分けたまま、同時に届けられます。</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>🎛 9入力 → 4出力</h3>
+        <p>入力ごと・出力ごとの音量を個別に調整し、A1〜A4へ自由に振り分け</p>
+      </div>
+
+      <div class="card">
+        <h3>🔁 ループバック取り込み</h3>
+        <p>既定出力やDiscordに流れている音をそのまま入力に。ゲームと通話を別々にミックス</p>
+      </div>
+
+      <div class="card">
+        <h3>💾 構成の保存・切替</h3>
+        <p>「ゲーム配信」「Discord通話」などの構成をJSONで保存し、選ぶだけで即切替</p>
+      </div>
+
+      <div class="card">
+        <h3>🔄 無料・自動更新</h3>
+        <p>追加のランタイム不要。24時間に1回アップデートを確認し、そのまま更新</p>
+      </div>
+    </div>
+
+    <div class="service-actions">
       <a class="btn" href="./pulseweaver/">詳細を見る</a>
+      <a class="btn" href="https://github.com/hashimotok-delien/PulseWeaver/releases" target="_blank" rel="noopener">ダウンロード</a>
     </div>
-  </div>
-</section>
+  </article>
 
-<!-- 🎚️ PulseWeaver -->
-<section>
-  <h2>🎚️ PulseWeaver</h2>
-
-  <p style="opacity:0.8;">H/W入力6・バーチャル入力3の計9系統を、H/W出力A1〜A4へ自由に振り分けるWindows向けの無料オーディオミキサー。ゲーム・通話・配信の音をアプリごとに分けたまま、同時に届けられます。</p>
-
-  <div class="grid">
-    <div class="card">
-      <h3>🎛 9入力 → 4出力</h3>
-      <p>入力ごと・出力ごとの音量を個別に調整し、A1〜A4へ自由に振り分け</p>
+  <article class="service">
+    <div class="service-head">
+      <h3>📅 DeLien Calendar</h3>
+      <p>Googleカレンダー風の予定管理システム。グループ（カレンダー）単位で予定を管理し、公開設定・メンバー招待・カレンダー画像出力・Discord通知までこなします。</p>
     </div>
 
-    <div class="card">
-      <h3>🔁 ループバック取り込み</h3>
-      <p>既定出力やDiscordに流れている音をそのまま入力に。ゲームと通話を別々にミックス</p>
+    <div class="grid">
+      <div class="card">
+        <h3>🗓 月 / 週 / 日表示</h3>
+        <p>複数日予定はバー表示。ワンクリックで「予定あり」表示に切替</p>
+      </div>
+
+      <div class="card">
+        <h3>🔐 3段階の公開設定</h3>
+        <p>非公開 / 限定公開 / 公開 +「内容を隠して公開」</p>
+      </div>
+
+      <div class="card">
+        <h3>👥 権限と招待</h3>
+        <p>作成者・管理者・編集者・メンバー・閲覧者の5段階</p>
+      </div>
+
+      <div class="card">
+        <h3>🔔 Discord通知</h3>
+        <p>登録・編集・削除・開始前リマインドをBotが配信</p>
+      </div>
     </div>
 
-    <div class="card">
-      <h3>💾 構成の保存・切替</h3>
-      <p>「ゲーム配信」「Discord通話」などの構成をJSONで保存し、選ぶだけで即切替</p>
+    <div class="service-actions">
+      <a class="btn" href="./deliencalendar/">詳細を見る</a>
+      <a class="btn" href="https://calendar.delien.xyz" target="_blank" rel="noopener">サービスを開く</a>
     </div>
-
-    <div class="card">
-      <h3>🔄 無料・自動更新</h3>
-      <p>追加のランタイム不要。24時間に1回アップデートを確認し、そのまま更新</p>
-    </div>
-  </div>
-
-  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
-    <a class="btn" href="./pulseweaver/">詳細を見る</a>
-    <a class="btn" href="https://github.com/hashimotok-delien/PulseWeaver/releases" target="_blank" rel="noopener">ダウンロード</a>
-  </div>
-</section>
-
-<!-- 📅 DeLien Calendar -->
-<section>
-  <h2>📅 DeLien Calendar</h2>
-
-  <p style="opacity:0.8;">Googleカレンダー風の予定管理システム。グループ（カレンダー）単位で予定を管理し、公開設定・メンバー招待・カレンダー画像出力・Discord通知までこなします。</p>
-
-  <div class="grid">
-    <div class="card">
-      <h3>🗓 月 / 週 / 日表示</h3>
-      <p>複数日予定はバー表示。ワンクリックで「予定あり」表示に切替</p>
-    </div>
-
-    <div class="card">
-      <h3>🔐 3段階の公開設定</h3>
-      <p>非公開 / 限定公開 / 公開 +「内容を隠して公開」</p>
-    </div>
-
-    <div class="card">
-      <h3>👥 権限と招待</h3>
-      <p>作成者・管理者・編集者・メンバー・閲覧者の5段階</p>
-    </div>
-
-    <div class="card">
-      <h3>🔔 Discord通知</h3>
-      <p>登録・編集・削除・開始前リマインドをBotが配信</p>
-    </div>
-  </div>
-
-  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
-    <a class="btn" href="./deliencalendar/">詳細を見る</a>
-    <a class="btn" href="https://calendar.delien.xyz" target="_blank" rel="noopener">サービスを開く</a>
-  </div>
+  </article>
 </section>
 
 <section>
@@ -440,24 +526,6 @@ h2{
   <h2>🚀 Projects</h2>
 
   <div class="grid">
-    <div class="card main">
-      <h3>𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮</h3>
-      <p>運営自動化Bot</p>
-      <a class="btn" href="./cultivate/">見る</a>
-    </div>
-
-    <div class="card">
-      <h3>🎚️ PulseWeaver</h3>
-      <p>Windows向けの無料オーディオミキサー（9入力 → 4出力・構成の保存・自動更新）</p>
-      <a class="btn" href="./pulseweaver/">見る</a>
-    </div>
-
-    <div class="card">
-      <h3>📅 DeLien Calendar</h3>
-      <p>Googleカレンダー風の予定管理システム（公開設定・メンバー招待・Discord通知連携）</p>
-      <a class="btn" href="./deliencalendar/">見る</a>
-    </div>
-
     <div class="card">
       <h3>𝓐𝓬𝓽𝓲𝓿𝓪𝓽𝓮</h3>
       <p>イベ鯖専用Bot</p>
@@ -540,7 +608,7 @@ document.querySelectorAll(".card").forEach(card=>{
       cancelAnimationFrame(frame);
       frame = 0;
     }
-    card.style.background = "rgba(18,18,26,0.8)";
+    card.style.background = "";
   });
 });
 

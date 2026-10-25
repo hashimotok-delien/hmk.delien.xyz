@@ -145,6 +145,21 @@ body::after{
   text-decoration:none;
 }
 
+.topnav nav a.back-link{
+  padding:8px 14px;
+  border:1px solid rgba(0,229,255,0.35);
+  border-radius:999px;
+  background:rgba(0,229,255,0.08);
+  color:var(--text);
+  font-weight:600;
+}
+
+.topnav nav a.back-link:hover{
+  background:rgba(0,229,255,0.18);
+  color:var(--text);
+  text-decoration:none;
+}
+
 .topnav nav a.nav-cta{
   padding:8px 16px;
   border-radius:10px;
@@ -529,6 +544,7 @@ code{
     <?= $h($PRODUCT_EMOJI) ?> <?= $h($PRODUCT_NAME) ?>
   </div>
   <nav>
+    <a class="back-link" href="../">← ポートフォリオ</a>
     <a href="#features">機能</a>
     <a href="#sharing">公開設定</a>
     <a href="#desktop">Windowsアプリ</a>
