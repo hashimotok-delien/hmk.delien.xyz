@@ -1,0 +1,21 @@
+# DeLien Calendar 紹介ページ
+# 拡張子なしURL（privacy / terms）を正規形として扱う
+
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 共通設定・共通パーツへの直接アクセスを禁止
+  RewriteRule (^|/)include(/|$) - [F,L]
+
+  # 開発用ドキュメントは公開しない
+  RewriteRule ^README\.md$ - [F,L]
+
+  # /privacy → privacy.php（実ファイル・実ディレクトリ以外）
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.php -f
+  RewriteRule ^(.+?)/?$ $1.php [L]
+</IfModule>
