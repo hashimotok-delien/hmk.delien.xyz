@@ -54,28 +54,34 @@ hashimotok_web/
 │   │       └── tag.html    # Jekyll レイアウト（Liquid 記法のため .html のまま）
 │   ├── assets/, news.json, favicon.*, CNAME
 │
-└── docs/                   # docs.delien.xyz のドキュメントルート（FTPでアップロード）
-    ├── .htaccess           # 拡張子なしURL化 / 旧URLからの転送
-    ├── assets/fonts/       # 全サイト共有のセルフホストフォント
-    ├── index.php           # ドキュメントポータル
-    ├── cultivate/          # Cultivate ドキュメント
-    │   ├── index.php, getting-started.php, commands.php, faq.php
-    │   ├── assets/
-    │   │   ├── css/style.css  # スタイル
-    │   │   ├── js/main.js     # スクリプト
-    │   │   ├── img/           # 画像（cultivate / nexus のみ）
-    │   │   └── include/
-    │   │       ├── header.php     # <head> 一式（title / meta / OGP / CSS / JS）
-    │   │       ├── sidebar.php    # サイドバーナビ
-    │   │       ├── topbar.php     # トップバー
-    │   │       └── footer.php     # フッター
-    │   ├── features/          # 機能ごとの詳細ページ
-    │   └── build_docs.py      # inlining ビルドスクリプト
-    ├── magonote-bot/       # まごのであります ドキュメント（cultivate と同じ構成）
-    ├── master/             # master Bot ドキュメント（同上）
-    ├── viola/              # viola ドキュメント（同上）
-    └── nexus/              # ねくさす ドキュメント（同上）
+├── docs/                   # docs.delien.xyz のドキュメントルート（FTPでアップロード）
+│   ├── .htaccess           # 拡張子なしURL化 / 旧URLからの転送
+│   ├── assets/fonts/       # 全サイト共有のセルフホストフォント
+│   ├── index.php           # ドキュメントポータル
+│   ├── cultivate/          # Cultivate ドキュメント
+│   │   ├── index.php, getting-started.php, commands.php, faq.php
+│   │   ├── assets/
+│   │   │   ├── css/style.css  # スタイル
+│   │   │   ├── js/main.js     # スクリプト
+│   │   │   ├── img/           # 画像（cultivate / nexus のみ）
+│   │   │   └── include/
+│   │   │       ├── header.php     # <head> 一式（title / meta / OGP / CSS / JS）
+│   │   │       ├── sidebar.php    # サイドバーナビ
+│   │   │       ├── topbar.php     # トップバー
+│   │   │       └── footer.php     # フッター
+│   │   ├── features/          # 機能ごとの詳細ページ
+│   │   └── build_docs.py      # inlining ビルドスクリプト
+│   ├── magonote-bot/       # まごのであります ドキュメント（cultivate と同じ構成）
+│   ├── master/             # master Bot ドキュメント（同上）
+│   ├── viola/              # viola ドキュメント（同上）
+│   └── nexus/              # ねくさす ドキュメント（同上）
+│
+└── templates/
+    └── product/            # 新規商品サイトのひな形（公開されない）。README.md 参照
 ```
+
+> 新規商品の公式サイトを追加するときは `templates/product/` を
+> `public/<slug>/` にコピーして使う（手順と注意点は `templates/product/README.md`）。
 
 ### デザインシステム
 - **テーマ**: ダーク（背景 `#0a0a0f`）
