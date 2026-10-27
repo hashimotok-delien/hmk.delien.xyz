@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>けい🤖 Portfolio</title>
-<meta name="description" content="けい🤖（hashimotok）のポートフォリオ。Discord Bot「Cultivate」、予定管理システム「DeLien Calendar」、Windows向けオーディオミキサー「PulseWeaver」などの制作物と、Web・Bot・デスクトップアプリ開発のスキルを紹介します。">
+<meta name="description" content="けい🤖（hashimotok）のポートフォリオ。Discord Bot「Cultivate」「RoyalGuide」、予定管理システム「DeLien Calendar」、Windows向けオーディオミキサー「PulseWeaver」などの制作物と、Web・Bot・デスクトップアプリ開発のスキルを紹介します。">
 
 
 
@@ -439,6 +439,40 @@ h2{
 
   <article class="service">
     <div class="service-head">
+      <h3>👑 RoyalGuide</h3>
+      <p>投稿者プリセット・保存先チャンネル・SoundCloud再生を、この1台にまとめたDiscord Bot。設定はスラッシュコマンドとボタン操作だけで完結します。</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>👤 投稿者プリセット</h3>
+        <p>Webhook投稿の表示名・アイコンをプリセットとして最大24件登録。作成も切替もボタン操作で完結</p>
+      </div>
+
+      <div class="card">
+        <h3>🗂 保存先の一元管理</h3>
+        <p>グローバルと機能別の保存先チャンネルを1か所で設定。未設定なら自動でフォールバック</p>
+      </div>
+
+      <div class="card">
+        <h3>🎧 SoundCloud再生</h3>
+        <p>URLを貼るだけでVCに再生。最大100曲のキューと、3モードのループに対応</p>
+      </div>
+
+      <div class="card">
+        <h3>🎛 再生コントロールパネル</h3>
+        <p>一時停止・スキップ・停止・シャッフル・ループを、常設パネルのボタンから操作</p>
+      </div>
+    </div>
+
+    <div class="service-actions">
+      <a class="btn" href="./royalguide/">詳細を見る</a>
+      <a class="btn" href="https://docs.delien.xyz/royalguide/" target="_blank" rel="noopener">ドキュメントを見る</a>
+    </div>
+  </article>
+
+  <article class="service">
+    <div class="service-head">
       <h3>🎚️ PulseWeaver</h3>
       <p>H/W入力6・バーチャル入力3の計9系統を、H/W出力A1〜A4へ自由に振り分けるWindows向けの無料オーディオミキサー。ゲーム・通話・配信の音をアプリごとに分けたまま、同時に届けられます。</p>
     </div>
@@ -516,7 +550,7 @@ h2{
 
   <div class="card skills">
     <h3>💻 Skills</h3>
-    <span>Python</span><span>Java</span><span>PHP</span>
+    <span>Python</span><span>Java</span><span>C#</span><span>PHP</span>
     <span>HTML</span><span>CSS</span>
     <span>JavaScript</span><span>SQL</span>
   </div>
