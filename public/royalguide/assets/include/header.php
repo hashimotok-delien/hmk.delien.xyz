@@ -1,0 +1,21 @@
+<?php
+/**
+ * 共通ヘッダー（privacy / terms 用）
+ *
+ * 呼び出し側で事前に定義できる変数:
+ *   $BASE        … 商品ルートへの相対パス（直下は '.'、1階層下は '..'）
+ *   $LOGO_LABEL  … ロゴ横のラベル（'Bot' / 'Premium' など）
+ *
+ * スタイルは各ページが assets/css/legal.css を読み込む前提。
+ */
+require_once __DIR__ . '/config.php';
+?>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="<?= $BASE ?? '.' ?>/"><?= $PRODUCT_EMOJI ?><?= $PRODUCT_NAME ?> <span><?= $LOGO_LABEL ?></span></a>
+    <nav class="header-nav">
+      <a href="<?= $DOCS_URL ?>">ドキュメント</a>
+      <a href="<?= $SUPPORT_URL ?>">サポートサーバー</a>
+    </nav>
+  </div>
+</header>
