@@ -280,6 +280,242 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v1.8.5 — 寝落ち送り / プロフテンプレ / プロフ審査 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.8.5</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">💤</div>
+        <div class="update-body">
+          <div class="update-title">
+            寝落ち送り — コメント入力と設定の統合
+            <span class="update-date">2026/10/28</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>
+              プリセットごとに<strong>コメント入力</strong>
+              （📝 必須 / 💬 任意 / 🚫 不要）を設定できるようになりました
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              必須・任意の場合はコメント入力のモーダルが開き、
+              コメントと送り結果を
+              <strong>💬 送信チャンネル</strong>へ投稿します
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              送信チャンネル未設定の場合は、実行したチャンネル
+              （VCのチャットなど）に実行者だけの表示で結果を出力
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              設定パネルのチャンネル設定（送信チャンネル・送り先VC）と
+              ロール設定（送り・切断・拒否）を
+              <strong>1つのモーダルでまとめて設定</strong>できるよう統合
+              （現在の設定は初期選択済み）
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              寝落ち送りの結果を、メンション付きの返信から
+              <strong>メンションなしの返信</strong>に変更し、
+              コメント投稿時と同じ形式に統一
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature profile">
+        <div class="update-icon">📝</div>
+        <div class="update-body">
+          <div class="update-title">
+            プロフテンプレチェック — ロール制御の整理
+            <span class="update-date">2026/10/28</span>
+            <span class="tag tag-feature">機能改善</span>
+          </div>
+          <ul>
+            <li>
+              合格時のロール操作は<strong>採用した1設定のみ</strong>行い、
+              A合格 / B合格ロールの二重付与を防止
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              採用しなかった設定が不合格の場合は、その設定の
+              違反ロール付与・合格ロール剥奪を行うように整理
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              「プロフィール設定」の紐付けに合わせ、
+              <strong>投稿されたチャンネルに紐付く設定のみ</strong>で評価
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              定期チェックはメンバーごとの
+              <strong>最新プロフ1件</strong>で判定
+              （走査順による上書きを解消）
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature profile">
+        <div class="update-icon">🧑‍⚖️</div>
+        <div class="update-body">
+          <div class="update-title">
+            プロフ審査 — 転送メッセージを編集する方式に変更
+            <span class="update-date">2026/10/28</span>
+            <span class="tag tag-feature">機能改善</span>
+          </div>
+          <ul>
+            <li>
+              同じメンバーの転送メッセージが既にある場合は
+              <strong>新規転送せず既存メッセージを更新</strong>
+              （投票データはメンバー単位で引き継ぎ）
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              編集はデバウンス（1.5秒）と最小編集間隔（2.5秒）で
+              レート制限に配慮
+              <span class="tag tag-info">システム</span>
+            </li>
+            <li>
+              <code>429</code> 応答時は <code>retry_after</code> 待機して再試行
+              <span class="tag tag-info">システム</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug profile">
+        <div class="update-icon">🧑‍⚖️</div>
+        <div class="update-body">
+          <div class="update-title">
+            プロフテンプレチェック — 合格時ロール付与／スレッド残存の修正
+            <span class="update-date">2026/10/28</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>
+              合格しているのに<strong>合格付与ロールが付与されない</strong>
+              不具合を修正
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+            <li>
+              プロフメッセージ削除時に
+              <strong>テンプレチェックのスレッドが残る</strong>問題を修正
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
+      <!-- v1.8.4 — ランク / プロフ審査 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.8.4</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature rank">
+        <div class="update-icon">🏆</div>
+        <div class="update-body">
+          <div class="update-title">
+            ランクシステム — ランク確認パネルと経験値設定の拡張
+            <span class="update-date">2026/10/23</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>
+              <code>/ランク設定</code> から
+              <strong>ランク確認パネル</strong>を設置できるようになりました
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              メイン設定のランクだけでなく、<code>/ランク</code> で
+              <strong>すべてのランク設定</strong>のランク確認が可能に
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              VC人数が不足している場合（例: 1人待機）でも、
+              設定した比率（<code>0.0～1.0</code>）で経験値を付与できるように対応
+              （デフォルト <code>0.0</code> のため付与されないまま）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              経験値の付与条件を<strong>チャット条件</strong>と
+              <strong>VC条件</strong>に分離
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              <code>/ランク設定</code> の設定プレビューから、現在の計算設定で
+              どれぐらいの時間でどれぐらいのレベルになるかを
+              <strong>試算できるツールへのリンク</strong>を表示
+              （運用によっては時間を秘匿したい場合があるため非公開ページ）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              ロール操作設定を後から追加した際に次回レベルアップまで
+              反映されないため、手動で一括反映する
+              <strong>「🎭 現在レベルのロール反映」</strong>ボタンを追加
+              <span class="tag tag-feature">新機能</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature profile">
+        <div class="update-icon">🧑‍⚖️</div>
+        <div class="update-body">
+          <div class="update-title">
+            プロフ審査 — 管理メニュー設定を追加
+            <span class="update-date">2026/10/23</span>
+            <span class="tag tag-feature">新機能</span>
+          </div>
+          <ul>
+            <li>
+              「管理メニュー設定」を追加し、設定するとプロフ審査の
+              転送メッセージに<strong>「管理メニュー」ボタン</strong>が
+              表示されるように対応
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              「管理メニュー」ボタンから、設定に応じて
+              <strong>プロフ投稿者のロール操作・指定メッセージの送信・KICK</strong>
+              が行えるように対応
+              <span class="tag tag-feature">新機能</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug profile">
+        <div class="update-icon">🧑‍⚖️</div>
+        <div class="update-body">
+          <div class="update-title">
+            プロフテンプレチェック — 設定解除時のエラーを修正
+            <span class="update-date">2026/10/23</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>
+              プロフ設定を複数選択している状態でいずれかを解除しようとすると
+              「インタラクションに失敗しました」と表示されて
+              解除できない問題を修正
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v1.8.3 — 吊り下げ / プロフィール -->
       <!-- ========================================================= -->
 
