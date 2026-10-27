@@ -77,11 +77,14 @@ hashimotok_web/
 │   └── nexus/              # ねくさす ドキュメント（同上）
 │
 └── templates/
-    └── product/            # 新規商品サイトのひな形（公開されない）。README.md 参照
+    ├── product/            # 新規商品サイトのひな形（公開されない）。README.md 参照
+    └── docs/               # 新規ドキュメントサイトのひな形（公開されない）。README.md 参照
 ```
 
 > 新規商品の公式サイトを追加するときは `templates/product/` を
 > `public/<slug>/` にコピーして使う（手順と注意点は `templates/product/README.md`）。
+> ドキュメントサイトを追加するときは `templates/docs/` を
+> `docs/<slug>/` にコピーして使う（手順と注意点は `templates/docs/README.md`）。
 
 ### デザインシステム
 - **テーマ**: ダーク（背景 `#0a0a0f`）

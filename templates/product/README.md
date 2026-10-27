@@ -113,6 +113,7 @@ Gyazo などの外部URLを直接貼るのは避けてください（リンク�
 
 - `public/index.php`（ポートフォリオ）の該当カードに `href="./<slug>/"` を追加
 - ドキュメントサイトがある場合は `docs/<slug>/` を作成し、`docs/index.php` のポータルにも追加
+  （ひな形は `templates/docs/`。手順は `templates/docs/README.md`）
 - 内部リンクは**拡張子なし**で書く（`.php` は付けない。フォルダのトップは `./` か `<slug>/`）
 
 ### (6) フォントのサブセット対象に追加
