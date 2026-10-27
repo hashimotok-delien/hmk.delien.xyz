@@ -1,0 +1,28 @@
+<button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+<div class="mobile-menu-overlay" id="menu-overlay"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="logo">兄弟Bot</div>
+    <div class="logo-sub">ドキュメント</div>
+  </div>
+  <nav class="sidebar-nav">
+    <div class="nav-section">はじめに</div>
+    <a href="<?= $ROOT ?? '.' ?>/"><span class="nav-icon">🏠</span>トップ</a>
+    <a href="<?= $ROOT ?? '.' ?>/getting-started"><span class="nav-icon">🚀</span>導入方法</a>
+    <a href="<?= $ROOT ?? '.' ?>/commands"><span class="nav-icon">📜</span>コマンド一覧</a>
+    <a href="<?= $ROOT ?? '.' ?>/faq"><span class="nav-icon">❓</span>FAQ</a>
+
+    <div class="nav-section">機能</div>
+    <a href="<?= $ROOT ?? '.' ?>/features/rolling"><span class="nav-icon">🎠</span>個室リレーv2</a>
+    <a href="<?= $ROOT ?? '.' ?>/features/random-meeting"><span class="nav-icon">🎲</span>ランダム会議</a>
+    <a href="<?= $ROOT ?? '.' ?>/features/group-date"><span class="nav-icon">💑</span>合コン進行</a>
+    <a href="<?= $ROOT ?? '.' ?>/features/auto-chair"><span class="nav-icon">🪑</span>全自動椅子取りv2</a>
+    <a href="<?= $ROOT ?? '.' ?>/features/sticky"><span class="nav-icon">📌</span>スティッキーメッセージ</a>
+    <a href="<?= $ROOT ?? '.' ?>/features/server-tools"><span class="nav-icon">🛠️</span>サーバー運営ツール</a>
+
+    <div class="nav-section">その他</div>
+    <a href="<?= $ROOT ?? '.' ?>/updates"><span class="nav-icon">📋</span>更新履歴</a>
+    <a href="<?= $ROOT ?? '.' ?>/known-issues"><span class="nav-icon">⚠️</span>既知の不具合</a>
+  </nav>
+</aside>

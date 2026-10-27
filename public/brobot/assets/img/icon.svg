@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="兄弟Bot">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101820"/>
+      <stop offset="1" stop-color="#062a33"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#66f2ff"/>
+      <stop offset="1" stop-color="#00bcd4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="240" height="240" rx="52" fill="url(#bg)"/>
+  <rect x="8" y="8" width="224" height="224" rx="46"
+        fill="none" stroke="rgba(0,229,255,.35)" stroke-width="2"/>
+
+  <!-- antenna -->
+  <line x1="120" y1="40" x2="120" y2="66" stroke="url(#accent)" stroke-width="7"
+        stroke-linecap="round"/>
+  <circle cx="120" cy="36" r="9" fill="#66f2ff"/>
+
+  <!-- head -->
+  <rect x="52" y="62" width="136" height="104" rx="30"
+        fill="rgba(0,229,255,.08)" stroke="url(#accent)" stroke-width="7"/>
+
+  <!-- eyes -->
+  <circle cx="94" cy="106" r="13" fill="#00e5ff"/>
+  <circle cx="146" cy="106" r="13" fill="#00e5ff"/>
+  <circle cx="98" cy="101" r="4.5" fill="#eafcff"/>
+  <circle cx="150" cy="101" r="4.5" fill="#eafcff"/>
+
+  <!-- smile -->
+  <path d="M96 132 Q120 152 144 132" fill="none" stroke="#00e5ff"
+        stroke-width="7" stroke-linecap="round"/>
+
+  <!-- body / shoulder -->
+  <rect x="76" y="172" width="88" height="46" rx="18"
+        fill="rgba(0,229,255,.08)" stroke="url(#accent)" stroke-width="7"/>
+  <circle cx="100" cy="195" r="6" fill="#00e5ff"/>
+  <circle cx="120" cy="195" r="6" fill="rgba(0,229,255,.55)"/>
+  <circle cx="140" cy="195" r="6" fill="rgba(0,229,255,.3)"/>
+</svg>
