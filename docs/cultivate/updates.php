@@ -415,6 +415,43 @@
         </div>
       </div>
 
+      <div class="update-card" data-tags="bug profile">
+        <div class="update-icon">🧑‍⚖️</div>
+        <div class="update-body">
+          <div class="update-title">
+            プロフ審査設定 — 保存・削除が失敗する不具合を修正
+            <span class="update-date">2026/10/28</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>
+              設定パネルの<strong>💾 保存 / 🗑️ 設定削除</strong>を
+              押した際、<code>Unknown interaction</code> エラーで
+              処理が中断され、設定が保存・削除されないことがある
+              不具合を修正
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+            <li>
+              <strong>管理メニュー / 投票 / 問い合わせ</strong>ボタンで
+              <code>Interaction has already been acknowledged</code>
+              エラーが記録される不具合を修正
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+            <li>
+              パネル操作時は<strong>先に応答してから</strong>
+              保存処理を行うよう変更し、DBへの書き込み中も
+              他の操作が止まらないように改善
+              <span class="tag tag-info">システム</span>
+            </li>
+            <li>
+              ボタン操作は<strong>interaction 単位で1回だけ処理</strong>
+              されるようにし、二重応答を防止
+              <span class="tag tag-info">システム</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <!-- ========================================================= -->
       <!-- v1.8.4 — ランク / プロフ審査 -->
       <!-- ========================================================= -->
