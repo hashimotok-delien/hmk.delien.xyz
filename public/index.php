@@ -13,6 +13,8 @@
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="favicon.png">
 
+<script src="https://kit.fontawesome.com/2dcbce0170.js" crossorigin="anonymous"></script>
+
 <style>
 /* セルフホストフォント（日本語サブセット） */
 @font-face{
@@ -199,6 +201,18 @@ h2{
   padding-left:10px;
 }
 
+/* Font Awesome アイコン（Kit は <i> を <svg> に置換するため両方に指定） */
+h2 i,
+h2 .svg-inline--fa,
+.card h3 i,
+.card h3 .svg-inline--fa,
+.service-head h3 i,
+.service-head h3 .svg-inline--fa{
+  margin-right:8px;
+  font-size:0.9em;
+  color:#00e5ff;
+}
+
 /* カード */
 .grid{
   display:grid;
@@ -257,11 +271,14 @@ h2{
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
-  align-items: start;
+  align-items: stretch;
 }
 
+/* 横並びのカードの高さを一番高いものに揃える */
 .service {
   position: relative;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   padding: 22px;
   border: 1px solid rgba(0, 229, 255, 0.16);
@@ -328,15 +345,38 @@ h2{
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 18px;
+  margin-top: auto;
+  padding-top: 18px;
 }
 
+/* サービス内のボタンは背景なし（アウトライン） */
 .service-actions .btn {
   flex: 1 1 auto;
   margin-top: 0;
   padding: 9px 12px;
   font-size: 0.78rem;
   text-align: center;
+  background: transparent;
+  color: #00e5ff;
+  border: 1px solid rgba(0, 229, 255, 0.45);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.service-actions .btn:hover {
+  background: rgba(0, 229, 255, 0.12);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.35);
+}
+
+/* ダウンロードのみ塗りボタン */
+.service-actions .btn-solid {
+  background: #00e5ff;
+  color: #000;
+  border-color: #00e5ff;
+}
+
+.service-actions .btn-solid:hover {
+  background: #00e5ff;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.8);
 }
 
 /* Profile / Projects / Links を横並びに */
@@ -524,7 +564,26 @@ footer p {
   .cta-card{ padding: 36px 20px; border-radius: 20px; }
 
   footer{ flex-direction: column; gap: 10px; padding-bottom: 50px; }
-  .footer-ornament{ flex: 0 0 14px; width: 100%; }
+  /* スマホは ★---★ を上下に配置 */
+  .footer-ornament{
+    flex: 0 0 auto;
+    width: calc(100% - 36px);
+    height: 1px;
+    border-top: 1px dashed rgba(0, 229, 255, 0.35);
+  }
+  .footer-ornament::before{ left: -15px; }
+  .footer-ornament::after{
+    content: "★";
+    top: 50%;
+    left: auto;
+    right: -15px;
+    transform: translateY(-50%);
+    border: 0;
+    font-size: 0.7rem;
+    color: rgba(0, 229, 255, 0.6);
+  }
+  .footer-ornament.right::before{ left: -15px; right: auto; }
+  .footer-ornament.right::after{ left: auto; right: -15px; }
 }
 </style>
 </head>
@@ -556,34 +615,34 @@ footer p {
 
 <!-- 🛠 Services（サービス一覧） -->
 <section id="services" class="section-wide">
-  <h2>🛠 Services</h2>
+  <h2><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>Services</h2>
 
   <div class="service-grid">
 
   <article class="service main">
     <div class="service-head">
-      <h3>𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮</h3>
+      <h3><i class="fa-solid fa-seedling" aria-hidden="true"></i>𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮</h3>
       <p>これ1つで“運営が回る”界隈サーバーを構築。運営・VC・ユーザー管理の作業を、ボタン操作と自動化でまとめて引き受けるDiscord Botです。</p>
     </div>
 
     <div class="grid">
       <div class="card">
-        <h3>🧑‍💼 運営パネル</h3>
+        <h3><i class="fa-solid fa-user-tie" aria-hidden="true"></i>運営パネル</h3>
         <p>役職パネル・設定パネル・吊下げメッセージなど、運営の定型作業をボタンだけで完結</p>
       </div>
 
       <div class="card">
-        <h3>🎤 VC運用</h3>
+        <h3><i class="fa-solid fa-microphone-lines" aria-hidden="true"></i>VC運用</h3>
         <p>裏2shot・寝落ち送り・VC制御・VCカウンターで、VCの立ち上げと片付けを自動化</p>
       </div>
 
       <div class="card">
-        <h3>🛂 入退室とロール管理</h3>
+        <h3><i class="fa-solid fa-user-shield" aria-hidden="true"></i>入退室とロール管理</h3>
         <p>必須ロール確認・自動KICK・ロール同期・カテゴリ権限同期で、安全なサーバーを保つ</p>
       </div>
 
       <div class="card">
-        <h3>🏆 プロフィールとランク</h3>
+        <h3><i class="fa-solid fa-ranking-star" aria-hidden="true"></i>プロフィールとランク</h3>
         <p>プロフィール v2・プロフィール審査・ランクシステム・予約投稿で、交流を可視化</p>
       </div>
     </div>
@@ -596,28 +655,28 @@ footer p {
 
   <article class="service">
     <div class="service-head">
-      <h3>👑 RoyalGuide</h3>
+      <h3><i class="fa-solid fa-crown" aria-hidden="true"></i>RoyalGuide</h3>
       <p>投稿者プリセット・保存先チャンネル・SoundCloud再生を、この1台にまとめたDiscord Bot。設定はスラッシュコマンドとボタン操作だけで完結します。</p>
     </div>
 
     <div class="grid">
       <div class="card">
-        <h3>👤 投稿者プリセット</h3>
+        <h3><i class="fa-solid fa-user-pen" aria-hidden="true"></i>投稿者プリセット</h3>
         <p>Webhook投稿の表示名・アイコンをプリセットとして最大24件登録。作成も切替もボタン操作で完結</p>
       </div>
 
       <div class="card">
-        <h3>🗂 保存先の一元管理</h3>
+        <h3><i class="fa-solid fa-folder-tree" aria-hidden="true"></i>保存先の一元管理</h3>
         <p>グローバルと機能別の保存先チャンネルを1か所で設定。未設定なら自動でフォールバック</p>
       </div>
 
       <div class="card">
-        <h3>🎧 SoundCloud再生</h3>
+        <h3><i class="fa-brands fa-soundcloud" aria-hidden="true"></i>SoundCloud再生</h3>
         <p>URLを貼るだけでVCに再生。最大100曲のキューと、3モードのループに対応</p>
       </div>
 
       <div class="card">
-        <h3>🎛 再生コントロールパネル</h3>
+        <h3><i class="fa-solid fa-sliders" aria-hidden="true"></i>再生コントロールパネル</h3>
         <p>一時停止・スキップ・停止・シャッフル・ループを、常設パネルのボタンから操作</p>
       </div>
     </div>
@@ -630,62 +689,62 @@ footer p {
 
   <article class="service">
     <div class="service-head">
-      <h3>🎚️ PulseWeaver</h3>
+      <h3><i class="fa-solid fa-sliders" aria-hidden="true"></i>PulseWeaver</h3>
       <p>H/W入力6・バーチャル入力3の計9系統を、H/W出力A1〜A4へ自由に振り分けるWindows向けの無料オーディオミキサー。ゲーム・通話・配信の音をアプリごとに分けたまま、同時に届けられます。</p>
     </div>
 
     <div class="grid">
       <div class="card">
-        <h3>🎛 9入力 → 4出力</h3>
+        <h3><i class="fa-solid fa-sliders" aria-hidden="true"></i>9入力 → 4出力</h3>
         <p>入力ごと・出力ごとの音量を個別に調整し、A1〜A4へ自由に振り分け</p>
       </div>
 
       <div class="card">
-        <h3>🔁 ループバック取り込み</h3>
+        <h3><i class="fa-solid fa-repeat" aria-hidden="true"></i>ループバック取り込み</h3>
         <p>既定出力やDiscordに流れている音をそのまま入力に。ゲームと通話を別々にミックス</p>
       </div>
 
       <div class="card">
-        <h3>💾 構成の保存・切替</h3>
+        <h3><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i>構成の保存・切替</h3>
         <p>「ゲーム配信」「Discord通話」などの構成をJSONで保存し、選ぶだけで即切替</p>
       </div>
 
       <div class="card">
-        <h3>🔄 無料・自動更新</h3>
+        <h3><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i>無料・自動更新</h3>
         <p>追加のランタイム不要。24時間に1回アップデートを確認し、そのまま更新</p>
       </div>
     </div>
 
     <div class="service-actions">
       <a class="btn" href="./pulseweaver/">詳細を見る</a>
-      <a class="btn" href="https://github.com/hashimotok-delien/PulseWeaver/releases" target="_blank" rel="noopener">ダウンロード</a>
+      <a class="btn btn-solid" href="https://github.com/hashimotok-delien/PulseWeaver/releases" target="_blank" rel="noopener">ダウンロード</a>
     </div>
   </article>
 
   <article class="service">
     <div class="service-head">
-      <h3>📅 DeLien Calendar</h3>
+      <h3><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>DeLien Calendar</h3>
       <p>Googleカレンダー風の予定管理システム。グループ（カレンダー）単位で予定を管理し、公開設定・メンバー招待・カレンダー画像出力・Discord通知までこなします。</p>
     </div>
 
     <div class="grid">
       <div class="card">
-        <h3>🗓 月 / 週 / 日表示</h3>
+        <h3><i class="fa-solid fa-calendar-days" aria-hidden="true"></i>月 / 週 / 日表示</h3>
         <p>複数日予定はバー表示。ワンクリックで「予定あり」表示に切替</p>
       </div>
 
       <div class="card">
-        <h3>🔐 3段階の公開設定</h3>
+        <h3><i class="fa-solid fa-lock" aria-hidden="true"></i>3段階の公開設定</h3>
         <p>非公開 / 限定公開 / 公開 +「内容を隠して公開」</p>
       </div>
 
       <div class="card">
-        <h3>👥 権限と招待</h3>
+        <h3><i class="fa-solid fa-users" aria-hidden="true"></i>権限と招待</h3>
         <p>作成者・管理者・編集者・メンバー・閲覧者の5段階</p>
       </div>
 
       <div class="card">
-        <h3>🔔 Discord通知</h3>
+        <h3><i class="fa-brands fa-discord" aria-hidden="true"></i>Discord通知</h3>
         <p>登録・編集・削除・開始前リマインドをBotが配信</p>
       </div>
     </div>
@@ -701,7 +760,7 @@ footer p {
 
 <div class="trio">
 <section>
-  <h2>👤 Profile</h2>
+  <h2><i class="fa-solid fa-user" aria-hidden="true"></i>Profile</h2>
 
   <div class="card">
     Discord Botエンジニア / 鯖主<br>
@@ -709,7 +768,7 @@ footer p {
   </div>
 
   <div class="card skills">
-    <h3>💻 Skills</h3>
+    <h3><i class="fa-solid fa-code" aria-hidden="true"></i>Skills</h3>
     <span>Python</span><span>Java</span><span>C#</span><span>PHP</span>
     <span>HTML</span><span>CSS</span>
     <span>JavaScript</span><span>SQL</span>
@@ -717,7 +776,7 @@ footer p {
 </section>
 
 <section>
-  <h2>🚀 Projects</h2>
+  <h2><i class="fa-solid fa-rocket" aria-hidden="true"></i>Projects</h2>
 
   <div class="grid">
     <div class="card">
@@ -733,7 +792,7 @@ footer p {
 </section>
 
 <section>
-  <h2>🔗 Links</h2>
+  <h2><i class="fa-solid fa-link" aria-hidden="true"></i>Links</h2>
 
   <div class="card">
     <a class="btn" href="https://x.com/hashimotok0808" target="_blank">X</a>
