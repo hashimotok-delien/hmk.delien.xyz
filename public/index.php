@@ -606,7 +606,7 @@ footer p {
 
   <p>Discord Botで“運営を仕組み化”するエンジニア</p>
   
-  <a href="./cultivate/" class="btn">Cultivateを見る</a>
+  <a href="./cultivate/" class="btn">𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮を見る</a>
 
   <div class="scroll">↓ Scroll ↓</div>
 </header>
