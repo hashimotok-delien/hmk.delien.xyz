@@ -514,6 +514,17 @@ footer p {
   display:inline-block;
 }
 
+/* Skills のブランドアイコン / ボタン内アイコン（Kit は svg に置換するため両対応） */
+.skills span i,
+.skills span .svg-inline--fa{
+  margin-right:6px;
+}
+
+.btn i,
+.btn .svg-inline--fa{
+  margin-right:8px;
+}
+
 #progress-bar{
   position:fixed;
   top:0;
@@ -598,7 +609,7 @@ footer p {
 <header>
   <picture>
     <source srcset="./assets/img/kei_icon-120.webp?v=<?= @filemtime(__DIR__ . '/assets/img/kei_icon-120.webp') ?: time() ?> 1x, ./assets/img/kei_icon.webp?v=<?= @filemtime(__DIR__ . '/assets/img/kei_icon.webp') ?: time() ?> 2x" type="image/webp">
-    <img src="./assets/img/kei_icon.png?v=<?= @filemtime(__DIR__ . '/assets/img/kei_icon.png') ?: time() ?>" alt="けい🤖" width="120" height="120" decoding="async">
+    <img src="./assets/img/kei_icon-120.webp?v=<?= @filemtime(__DIR__ . '/assets/img/kei_icon-120.webp') ?: time() ?>" alt="けい🤖" width="120" height="120" decoding="async">
   </picture>
   <h1>けい🤖</h1>
 
@@ -769,9 +780,14 @@ footer p {
 
   <div class="card skills">
     <h3><i class="fa-solid fa-code" aria-hidden="true"></i>Skills</h3>
-    <span>Python</span><span>Java</span><span>C#</span><span>PHP</span>
-    <span>HTML</span><span>CSS</span>
-    <span>JavaScript</span><span>SQL</span>
+    <span><i class="fa-brands fa-python" aria-hidden="true"></i>Python</span>
+    <span><i class="fa-brands fa-java" aria-hidden="true"></i>Java</span>
+    <span><i class="fa-brands fa-microsoft" aria-hidden="true"></i>C#</span>
+    <span><i class="fa-brands fa-php" aria-hidden="true"></i>PHP</span>
+    <span><i class="fa-brands fa-html5" aria-hidden="true"></i>HTML</span>
+    <span><i class="fa-brands fa-css3-alt" aria-hidden="true"></i>CSS</span>
+    <span><i class="fa-brands fa-js" aria-hidden="true"></i>JavaScript</span>
+    <span><i class="fa-solid fa-database" aria-hidden="true"></i>SQL</span>
   </div>
 </section>
 
@@ -795,8 +811,8 @@ footer p {
   <h2><i class="fa-solid fa-link" aria-hidden="true"></i>Links</h2>
 
   <div class="card">
-    <a class="btn" href="https://x.com/hashimotok0808" target="_blank">X</a>
-    <a class="btn" href="https://github.com/hashimotok-delien/" target="_blank">GitHub</a>
+    <a class="btn" href="https://x.com/hashimotok0808" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i>X</a>
+    <a class="btn" href="https://github.com/hashimotok-delien/" target="_blank" rel="noopener"><i class="fa-brands fa-github" aria-hidden="true"></i>GitHub</a>
   </div>
 </section>
 </div>
