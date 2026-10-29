@@ -247,20 +247,27 @@ h2{
   border-color: rgba(0,229,255,0.45);
 }
 
-/* サービス一覧（1サービス = 1ブロック） */
+/* 横幅を活かすセクション */
+.section-wide {
+  max-width: 1240px;
+}
+
+/* サービス一覧（最大4件を横並び、それ以上は次の行へ） */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
 .service {
   position: relative;
   overflow: hidden;
-  margin-bottom: 32px;
-  padding: 32px;
+  padding: 22px;
   border: 1px solid rgba(0, 229, 255, 0.16);
   border-radius: 20px;
   background: linear-gradient(160deg, rgba(22, 22, 32, 0.95), rgba(10, 10, 15, 0.95));
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-}
-
-.service:last-of-type {
-  margin-bottom: 0;
 }
 
 .service::after {
@@ -282,27 +289,163 @@ h2{
 }
 
 .service-head h3 {
-  margin: 0 0 10px;
-  font-size: 1.45rem;
+  margin: 0 0 8px;
+  font-size: 1.2rem;
   letter-spacing: 1px;
 }
 
 .service-head p {
-  margin: 0 0 24px;
+  margin: 0 0 18px;
+  font-size: 0.82rem;
   opacity: 0.8;
-  line-height: 1.8;
+  line-height: 1.75;
 }
 
-/* サービス内は 2×2 で揃える */
+/* 1ブロックが細くなるため詳細カードは縦に並べる */
 .service .grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.service .card {
+  padding: 14px 16px;
+}
+
+.service .card h3 {
+  font-size: 0.92rem;
+}
+
+.service .card p {
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.service .card:hover {
+  transform: translateY(-4px) scale(1.02);
 }
 
 .service-actions {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
-  margin-top: 24px;
+  margin-top: 18px;
+}
+
+.service-actions .btn {
+  flex: 1 1 auto;
+  margin-top: 0;
+  padding: 9px 12px;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+/* Profile / Projects / Links を横並びに */
+.trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 100px 20px;
+}
+
+.trio > section {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.trio > section .card + .card {
+  margin-top: 14px;
+}
+
+/* 最下部CTA */
+.cta-card {
+  position: relative;
+  overflow: hidden;
+  padding: 48px 32px;
+  text-align: center;
+  border: 1px solid rgba(0, 229, 255, 0.4);
+  border-radius: 24px;
+  background: linear-gradient(150deg, rgba(0, 229, 255, 0.13), rgba(18, 18, 26, 0.9) 55%);
+  box-shadow: 0 0 50px rgba(0, 229, 255, 0.15);
+}
+
+.cta-card h2 {
+  margin: 0 0 14px;
+  padding: 0;
+  border: 0;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  letter-spacing: 1px;
+  text-shadow: 0 0 18px rgba(0, 229, 255, 0.55);
+}
+
+.cta-card p {
+  max-width: 560px;
+  margin: 0 auto 26px;
+  opacity: 0.8;
+  line-height: 1.8;
+}
+
+.cta-card .btn {
+  margin-top: 0;
+  padding: 14px 32px;
+  font-size: 1rem;
+}
+
+/* フッター */
+footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 20px 70px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  color: rgba(224, 224, 224, 0.65);
+  white-space: nowrap;
+}
+
+/* ★-----★ は装飾として描画する */
+.footer-ornament {
+  position: relative;
+  flex: 1 1 30px;
+  height: 14px;
+}
+
+.footer-ornament::before {
+  content: "★";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: rgba(0, 229, 255, 0.6);
+}
+
+.footer-ornament::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  right: 0;
+  border-top: 1px dashed rgba(0, 229, 255, 0.35);
+}
+
+.footer-ornament.right::before {
+  left: auto;
+  right: 0;
+}
+
+.footer-ornament.right::after {
+  left: 0;
+  right: 14px;
 }
 
 /* ボタン */
@@ -331,14 +474,6 @@ h2{
   display:inline-block;
 }
 
-/* 固定CTA */
-.fixed-cta{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  z-index:999;
-}
-
 #progress-bar{
   position:fixed;
   top:0;
@@ -365,11 +500,31 @@ h2{
   transition: transform 0.5s ease, filter 0.5s ease;
 }
 
+@media (max-width: 1100px){
+  .service-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 860px){
+  .trio{ grid-template-columns: 1fr; }
+}
+
 @media (max-width: 600px){
   section{ padding: 70px 16px; }
-  .service{ padding: 22px 18px; border-radius: 16px; }
+  .service-grid{ grid-template-columns: 1fr; }
+  .service{ padding: 18px 14px; border-radius: 16px; }
   .service-head h3{ font-size: 1.25rem; }
-  .service .grid{ grid-template-columns: 1fr; }
+  /* スマホは2列まで */
+  .service .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .service .card{ padding: 12px; }
+  .service .card h3{ font-size: 0.85rem; }
+  .service .card p{ font-size: 0.72rem; }
+
+  .trio{ padding: 70px 16px; gap: 40px; }
+
+  .cta-card{ padding: 36px 20px; border-radius: 20px; }
+
+  footer{ flex-direction: column; gap: 10px; padding-bottom: 50px; }
+  .footer-ornament{ flex: 0 0 14px; width: 100%; }
 }
 </style>
 </head>
@@ -400,8 +555,10 @@ h2{
 <main>
 
 <!-- 🛠 Services（サービス一覧） -->
-<section id="services">
+<section id="services" class="section-wide">
   <h2>🛠 Services</h2>
+
+  <div class="service-grid">
 
   <article class="service main">
     <div class="service-head">
@@ -538,8 +695,11 @@ h2{
       <a class="btn" href="https://calendar.delien.xyz" target="_blank" rel="noopener">サービスを開く</a>
     </div>
   </article>
+
+  </div>
 </section>
 
+<div class="trio">
 <section>
   <h2>👤 Profile</h2>
 
@@ -580,12 +740,24 @@ h2{
     <a class="btn" href="https://github.com/hashimotok-delien/" target="_blank">GitHub</a>
   </div>
 </section>
-
-<div class="fixed-cta">
-  <a href="./cultivate/" class="btn">Cultivate</a>
 </div>
 
+<!-- 最下部CTA -->
+<section class="section-wide">
+  <div class="cta-card">
+    <h2>𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮を体験しよう</h2>
+    <p>運営・VC・ユーザー管理の作業を、ボタン操作と自動化でまとめて引き受けるDiscord Bot。まずはサーバーに招待して、その手軽さを体感してください。</p>
+    <a class="btn" href="./cultivate/">𝓒𝓾𝓵𝓽𝓲𝓿𝓪𝓽𝓮を見る</a>
+  </div>
+</section>
+
 </main>
+
+<footer>
+  <span class="footer-ornament" aria-hidden="true"></span>
+  <p>©2026 けい🤖 All rights reserved.</p>
+  <span class="footer-ornament right" aria-hidden="true"></span>
+</footer>
 <script>
 // タイピング
 const text = "使えないなら作ってしまえDiscord Bot";
