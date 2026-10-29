@@ -13,7 +13,9 @@
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="favicon.png">
 
-<script src="https://kit.fontawesome.com/2dcbce0170.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://kit.fontawesome.com">
+<link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin>
+<script src="https://kit.fontawesome.com/2dcbce0170.js" crossorigin="anonymous" defer></script>
 
 <style>
 /* セルフホストフォント（日本語サブセット） */
@@ -968,7 +970,8 @@ let scrollFrame = 0;
 const measureScrollRange = ()=>{
   scrollRange = document.documentElement.scrollHeight - window.innerHeight;
 };
-measureScrollRange();
+// パース直後に読むと強制リフローになるため、フレーム描画後に測る
+requestAnimationFrame(measureScrollRange);
 window.addEventListener("load", measureScrollRange);
 window.addEventListener("resize", measureScrollRange, { passive: true });
 
