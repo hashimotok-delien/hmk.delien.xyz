@@ -34,8 +34,12 @@
         </button>
       </div>
 
+      <!-- ========================================================= -->
+      <!-- v0.3.1 -->
+      <!-- ========================================================= -->
+
       <div class="update-version">
-        <div class="version-badge">v0.2.3</div>
+        <div class="version-badge">v0.3.1</div>
         <p class="version-date">2026年10月</p>
       </div>
 
@@ -48,30 +52,11 @@
             <span class="tag tag-bug">バグ修正</span>
           </div>
           <ul>
-            <li>読み上げ開始メッセージの「音声」欄を修正しました（VOICEVOX 未起動時の代替音声・ロール音声ルール・投稿者ごとの適用を正しく表示）。</li>
+            <li>サーバー読み上げ設定のモーダルが開けない不具合を修正しました（Component V2 のラベル二重指定）。</li>
+            <li>音声設定のモーダルも同じ形式に統一しました。</li>
           </ul>
         </div>
       </div>
-
-      <div class="update-version">
-        <div class="version-badge">v0.2.2</div>
-        <p class="version-date">2026年10月</p>
-      </div>
-
-      <div class="update-card" data-tags="bug">
-        <div class="update-icon">🐛</div>
-        <div class="update-body">
-          <div class="update-title">
-            バグ修正
-            <span class="update-date">2026/10/31</span>
-            <span class="tag tag-bug">バグ修正</span>
-          </div>
-          <ul>
-            <li>系列Botへ委譲した読み上げが開始できない不具合を修正しました（接続処理の引数不一致）。</li>
-          </ul>
-        </div>
-      </div>
-
       <!-- ========================================================= -->
       <!-- v0.3.0 -->
       <!-- ========================================================= -->
@@ -127,7 +112,50 @@
           </ul>
         </div>
       </div>
+      <!-- ========================================================= -->
+      <!-- v0.2.3 -->
+      <!-- ========================================================= -->
 
+      <div class="update-version">
+        <div class="version-badge">v0.2.3</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="bug">
+        <div class="update-icon">🐛</div>
+        <div class="update-body">
+          <div class="update-title">
+            バグ修正
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>読み上げ開始メッセージの「音声」欄を修正しました（VOICEVOX 未起動時の代替音声・ロール音声ルール・投稿者ごとの適用を正しく表示）。</li>
+          </ul>
+        </div>
+      </div>
+      <!-- ========================================================= -->
+      <!-- v0.2.2 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v0.2.2</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="bug">
+        <div class="update-icon">🐛</div>
+        <div class="update-body">
+          <div class="update-title">
+            バグ修正
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>系列Botへ委譲した読み上げが開始できない不具合を修正しました（接続処理の引数不一致）。</li>
+          </ul>
+        </div>
+      </div>
       <!-- ========================================================= -->
       <!-- v0.2.1 -->
       <!-- ========================================================= -->
@@ -155,7 +183,6 @@
           </ul>
         </div>
       </div>
-
       <!-- ========================================================= -->
       <!-- v0.2.0 -->
       <!-- ========================================================= -->
@@ -266,7 +293,6 @@
           </ul>
         </div>
       </div>
-
       <!-- ========================================================= -->
       <!-- v0.1.0 -->
       <!-- ========================================================= -->
