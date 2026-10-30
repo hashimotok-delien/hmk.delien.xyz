@@ -35,6 +35,25 @@
       </div>
 
       <div class="update-version">
+        <div class="version-badge">v0.2.3</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="bug">
+        <div class="update-icon">🐛</div>
+        <div class="update-body">
+          <div class="update-title">
+            バグ修正
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>読み上げ開始メッセージの「音声」欄を修正しました（VOICEVOX 未起動時の代替音声・ロール音声ルール・投稿者ごとの適用を正しく表示）。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-version">
         <div class="version-badge">v0.2.2</div>
         <p class="version-date">2026年10月</p>
       </div>
