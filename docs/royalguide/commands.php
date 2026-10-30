@@ -57,9 +57,11 @@
         <div class="cmd-desc">
           実行者がいるボイスチャンネルで読み上げを開始します。
           <code>bot</code> に系列Bot（RoyalGuide02 など）を指定すると、
-          そのBotが担当します。指定したBotが使用中・応答なしの場合は、
-          自動で別の系列Botへ切り替えます。開始時は以前の担当Botを
-          自動で停止します。
+          そのBotが担当します。読み上げはVCごとに管理され、
+          別のVCは空いている系列Botが担当します。使用中のVCでは
+          入れ替えを行いません（担当中のBotを案内します）。
+          指定したBotが使用中・応答なしの場合は、自動で別の系列Botへ
+          切り替えます。
           RoyalGuide01 でのみ利用できます。
         </div>
         <div class="cmd-meta"><span class="tag tag-user">ユーザー用</span></div>

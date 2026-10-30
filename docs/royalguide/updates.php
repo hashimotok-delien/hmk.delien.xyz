@@ -73,6 +73,62 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v0.3.0 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v0.3.0</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">🔧</div>
+        <div class="update-body">
+          <div class="update-title">
+            読み上げ挙動設定
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li><code>/サーバー読み上げ設定</code> に「🔧 読み上げ挙動設定」を追加しました。</li>
+            <li>VC入場時・離脱時の読み上げメッセージ、名前を読まない待機期間、使用する名前の種類を設定できます。</li>
+            <li>発言者の名前・入退室・添付ファイル・スタンプ・カスタム絵文字・連続した同じ文章・VC在室者のみ、を個別にON/OFFできます。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">🗣️</div>
+        <div class="update-body">
+          <div class="update-title">
+            VCごとの読み上げ
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>1つのVCにつき1台のBotが担当し、別のVCは別の号機が同時に担当できます。</li>
+            <li>使用中のVCでは入れ替えを行わず、担当中のBotを案内します。</li>
+            <li>指定したBotが使用中の場合は、空いている号機へ自動で割り当てます。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug">
+        <div class="update-icon">🐛</div>
+        <div class="update-body">
+          <div class="update-title">
+            バグ修正
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>RoyalGuide01 の音声設定が 02 / 03 に反映されない問題を修正しました（系列Bot共通のストレージキーを使用）。</li>
+            <li>既存の読み上げを強制的に入れ替えてしまう問題を修正しました。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v0.2.1 -->
       <!-- ========================================================= -->
 
