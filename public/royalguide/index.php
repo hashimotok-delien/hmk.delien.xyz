@@ -16,10 +16,10 @@ require __DIR__ . '/assets/include/config.php';
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?= $PRODUCT_NAME ?> | <?= $SITE_OWNER ?></title>
-<meta name="description" content="投稿者プリセット・保存先チャンネル・SoundCloud再生を、ボタン操作ひとつでまとめて管理するDiscord Botです。">
+<meta name="description" content="投稿者プリセット・保存先チャンネル・SoundCloud再生・読み上げを、ボタン操作ひとつでまとめて管理するDiscord Botです。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="<?= $PRODUCT_NAME ?> | <?= $SITE_OWNER ?>">
-<meta property="og:description" content="投稿者プリセット・保存先チャンネル・SoundCloud再生を、ボタン操作ひとつでまとめて管理するDiscord Bot。">
+<meta property="og:description" content="投稿者プリセット・保存先チャンネル・SoundCloud再生・読み上げを、ボタン操作ひとつでまとめて管理するDiscord Bot。">
 <meta property="og:image" content="https://hmk.delien.xyz/royalguide/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -349,7 +349,7 @@ h2{
   </picture>
   <h1><?= $PRODUCT_NAME ?></h1>
   <div class="tagline">サーバー運用の“面倒”を、ボタンひとつに。</div>
-  <div class="benefit">投稿者プリセット・保存先チャンネル・SoundCloud再生を、この1台で。</div>
+  <div class="benefit">投稿者プリセット・保存先チャンネル・SoundCloud再生・読み上げを、この1台で。</div>
   <a href="<?= $SUPPORT_URL ?>" class="btn">導入する</a>
 </header>
 
@@ -365,7 +365,7 @@ h2{
     </div>
     <div class="card">
       <div class="category">🗂 保存先チャンネルの一元管理</div>
-      <p>グローバル・投稿者設定・交流スタンプラリーの保存先チャンネルを1か所で設定。各機能は「固有設定 → グローバル設定 → 既定値」の順で自動的に保存先を解決します。</p>
+      <p>グローバル・投稿者設定の保存先チャンネルを1か所で設定。各機能は「固有設定 → グローバル設定 → 既定値」の順で自動的に保存先を解決します。</p>
     </div>
     <div class="card">
       <div class="category">🎧 SoundCloud 再生</div>
@@ -380,8 +380,16 @@ h2{
       <p>サーバー既定の音量（0〜200%）を保存でき、以降の再生はその音量で開始。毎回 <code>/volume</code> で調整する必要がありません。</p>
     </div>
     <div class="card">
+      <div class="category">🗣 読み上げ</div>
+      <p>テキストチャンネルの投稿をボイスチャンネルで読み上げ。ずんだもん等（VOICEVOX）の話者にも対応し、辞書で読みを調整できます。</p>
+    </div>
+    <div class="card">
+      <div class="category">🔊 音声設定</div>
+      <p>音量・話者・話速をユーザーごとに設定。管理者は話者の許可や上下限を指定でき、ロールごとの話者ルールも作成できます。</p>
+    </div>
+    <div class="card">
       <div class="category">🧩 移植できるシステムコグ構成</div>
-      <p>機能ごとに独立した Cog（投稿者設定・基本設定・SoundCloud）で構成。他の Bot へそのまま持ち込めるように作られています。</p>
+      <p>機能ごとに独立した Cog（投稿者設定・基本設定・SoundCloud・読み上げ・音声設定）で構成。他の Bot へそのまま持ち込めるように作られています。</p>
     </div>
   </div>
 </section>
@@ -392,7 +400,7 @@ h2{
   <div class="grid">
     <div class="card">⚡ <strong>設定がボタンで完結</strong><br>スラッシュコマンドを打ち分けず、パネルのボタンから直感的に設定できます。</div>
     <div class="card">🧭 <strong>保存先を迷わない</strong><br>保存先チャンネルを一元管理し、未設定でもグローバル設定へ自動でフォールバックします。</div>
-    <div class="card">🔐 <strong>権限をきちんと分離</strong><br>投稿者設定・基本設定は管理者専用、既定音量は管理権限、再生操作はVC参加者なら誰でも。</div>
+    <div class="card">🔐 <strong>権限をきちんと分離</strong><br>投稿者設定・基本設定・サーバー読み上げ設定は管理者専用、既定音量は管理権限、再生操作と読み上げはVC参加者なら誰でも。</div>
     <div class="card">🔁 <strong>キューとループを保持</strong><br>再生状態をプレイヤーが保持するため、操作のたびにキューが消えることがありません。</div>
   </div>
 </section>
@@ -432,6 +440,12 @@ h2{
       <pre class="cmd">/play url:https://soundcloud.com/...
 → 再生コントロールパネルが投稿されます</pre>
       <p>パネルのボタンで一時停止・スキップ・ループを操作できます。</p>
+    </div>
+    <div class="card">
+      <div class="category">読み上げる</div>
+      <pre class="cmd">/読み上げ開始
+→ 実行したチャンネルをVCで読み上げ</pre>
+      <p>声は <code>/音声設定</code> から変更できます。</p>
     </div>
   </div>
 </section>

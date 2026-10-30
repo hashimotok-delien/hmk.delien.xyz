@@ -57,7 +57,6 @@
       <ul>
         <li><strong>🌐 グローバルチャンネル</strong> — 全機能のデフォルト保存先</li>
         <li><strong>📁 投稿者設定チャンネル</strong> — 投稿者設定でアップロードした画像の保存先</li>
-        <li><strong>🏷️ 交流スタンプラリー保存先</strong> — 交流スタンプラリーの画像保存先</li>
       </ul>
       <p>
         個別の設定が未設定の場合、グローバルチャンネルが使われます。
@@ -85,6 +84,28 @@
           <p>ボイスチャンネルへの参加から再生・キュー操作まで。</p>
           <a href="features/soundcloud">使い方 →</a>
         </div>
+        <div class="card">
+          <h3>🗣 読み上げ</h3>
+          <p>テキストチャンネルの投稿をVCで読み上げます。辞書で読みを調整できます。</p>
+          <a href="features/read">使い方 →</a>
+        </div>
+        <div class="card">
+          <h3>🔊 音声設定</h3>
+          <p>音量・話者・話速の設定と、サーバー側の音声制御。</p>
+          <a href="features/voice-settings">設定方法 →</a>
+        </div>
+      </div>
+
+      <h3>4. 読み上げを使う場合（任意）</h3>
+      <p>
+        テキストチャンネルの投稿を読み上げるには、実行者がボイスチャンネルへ
+        参加した状態で <code>/読み上げ開始</code> を実行します。
+        音声や話速は <code>/音声設定</code> から変更できます。
+      </p>
+      <div class="alert alert-info">
+        <p><strong>💡 ずんだもん等を使う場合:</strong> VOICEVOX Engine
+        （既定 <code>http://127.0.0.1:50021</code>）を起動しておく必要があります。
+        起動していない場合は edge-tts の既定音声で読み上げます。</p>
       </div>
 
       <?php include __DIR__ . '/assets/include/footer.php'; ?>

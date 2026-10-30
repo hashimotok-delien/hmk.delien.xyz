@@ -1,6 +1,6 @@
 # RoyalGuide 公式サイト
 
-Discord Bot「RoyalGuide」の紹介ページです。
+Discord Bot「RoyalGuide」の紹介ページです（投稿者プリセット・基本設定・SoundCloud 再生・読み上げ・音声設定）。
 
 - 公開URL: <https://hmk.delien.xyz/royalguide/>
 - ドキュメント: <https://docs.delien.xyz/royalguide/>

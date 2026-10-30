@@ -57,6 +57,30 @@
             <td>「ボイスチャンネルに接続」権限が必要</td>
             <td>権限がない場合は接続できません。</td>
           </tr>
+          <tr>
+            <td>VOICEVOX の話者</td>
+            <td>VOICEVOX Engine の起動が必要</td>
+            <td>未起動の場合は edge-tts の既定音声で読み上げます。</td>
+          </tr>
+          <tr>
+            <td>読み上げ辞書</td>
+            <td>1サーバーあたり最大 2,000 件</td>
+            <td>単語 60 文字 / 読み 120 文字まで。</td>
+          </tr>
+          <tr>
+            <td>ロール音声制御</td>
+            <td>1サーバーあたり最大 25 件</td>
+            <td>1ルールにつきロール・話者は 25 件まで選択できます。</td>
+          </tr>
+          <tr>
+            <td>設定コマンド</td>
+            <td>RoyalGuide01 のみ</td>
+            <td>
+              <code>/音声設定</code> <code>/基本設定</code> <code>/投稿者設定</code>
+              <code>/サーバー読み上げ設定</code> <code>/辞書</code> は
+              RoyalGuide01 でのみ利用できます。
+            </td>
+          </tr>
         </tbody>
       </table></div>
 

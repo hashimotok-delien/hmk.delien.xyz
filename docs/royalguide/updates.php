@@ -35,11 +35,122 @@
       </div>
 
       <!-- ========================================================= -->
-      <!-- v0.0.0 -->
+      <!-- v0.2.0 -->
       <!-- ========================================================= -->
 
       <div class="update-version">
-        <div class="version-badge">v1.0.0</div>
+        <div class="version-badge">v0.2.0</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">🗣️</div>
+        <div class="update-body">
+          <div class="update-title">
+            読み上げ（Text To Speech）
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li><code>/読み上げ開始</code> <code>/読み上げ終了</code> <code>/読み上げスキップ</code> <code>/読み上げ状態</code> を追加しました。</li>
+            <li>edge-tts（Azure）に加え、VOICEVOX Engine の話者（ずんだもん等）に対応しました。</li>
+            <li>メンション・ロール・チャンネル・カスタム絵文字・URL を読み上げ用に整形し、長文は文単位で分割します。</li>
+            <li>音声は投稿者ごとに解決します（ロール設定 → ユーザー設定 → サーバーデフォルト の順）。</li>
+            <li>VC から人がいなくなると自動で退出します。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">🔊</div>
+        <div class="update-body">
+          <div class="update-title">
+            音声設定
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li><code>/音声設定</code> から、ユーザーごとの音量・話者・話速を設定できるようにしました。</li>
+            <li>サーバーデフォルトも同じパネルから設定できます（サーバー管理権限）。</li>
+            <li>適用順は「ユーザー設定 → サーバーデフォルト → 全体既定」です。未設定の項目は自動でフォールバックします。</li>
+            <li>サーバー側で許可された話者のみ保存でき、話速・音量は設定された範囲内へ自動補正されます。</li>
+            <li>ロール音声ルールに一致するユーザーは話者を変更できません。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">⚙️</div>
+        <div class="update-body">
+          <div class="update-title">
+            サーバー読み上げ設定（RoyalGuide01 限定）
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li><code>/サーバー読み上げ設定</code>（管理者）から 5 つの設定を編集できます。</li>
+            <li>読み上げ開始/終了テキスト（既定: <code>読み上げ起動</code> / <code>読み上げ停止</code>）。その文字だけを送ると開始・終了します。</li>
+            <li>全インスタンスで共有し、最初に応答した 1 台だけが処理します。</li>
+            <li>サーバーデフォルト音声・サーバー音声制御（許可話者・話速/音量の上下限）・サーバーロール音声制御に対応しました。</li>
+            <li>ロール音声制御はページネーション付きで、新規追加・編集・削除・デフォルトに戻すを操作できます。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">📚</div>
+        <div class="update-body">
+          <div class="update-title">
+            読み上げ辞書
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li><code>/辞書 追加</code> <code>/辞書 削除</code> <code>/辞書 一覧</code> <code>/辞書 出力</code> <code>/辞書 読み込み</code> を追加しました。</li>
+            <li>形式は ShabeleA 互換の <code>単語,読み</code>（UTF-8）。出力したファイルをそのまま読み込めます。</li>
+            <li>長い単語を優先して置換します。最大 2,000 件まで登録できます。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="info">
+        <div class="update-icon">🗄️</div>
+        <div class="update-body">
+          <div class="update-title">
+            システム
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-info">システム</span>
+          </div>
+          <ul>
+            <li>データストアを MySQL/MariaDB から MongoDB へ移行しました。</li>
+            <li>全インスタンスが同一の MongoDB を共有し、設定変更は Change Streams で即時同期されます（利用できない場合は差分ポーリング）。</li>
+            <li>設定コグ（音声設定・基本設定・投稿者設定・サーバー読み上げ設定）は RoyalGuide01 のみで動作します。</li>
+            <li>ダッシュボード連携（heartbeat・ログ転送・設定スキーマ・リソース統計）に対応しました。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug">
+        <div class="update-icon">🐛</div>
+        <div class="update-body">
+          <div class="update-title">
+            バグ修正
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>既存インデックスと名前が異なることで起動時に <code>IndexOptionsConflict</code>（コード 85）が発生する問題を修正しました。</li>
+            <li>MongoDB の認証・権限エラー時に、原因と対処が分かるログを出力するようにしました。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
+      <!-- v0.1.0 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v0.1.0</div>
         <p class="version-date">2026年10月</p>
       </div>
 
@@ -48,7 +159,7 @@
         <div class="update-body">
           <div class="update-title">
             初回リリース
-            <span class="update-date">2026/10/27</span>
+            <span class="update-date">2026/10/18</span>
             <span class="tag tag-feature">新機能 / 機能改善</span>
           </div>
           <ul>
@@ -66,7 +177,7 @@
         <div class="update-body">
           <div class="update-title">
             システム
-            <span class="update-date">2026/10/27</span>
+            <span class="update-date">2026/10/18</span>
             <span class="tag tag-info">システム</span>
           </div>
           <ul>

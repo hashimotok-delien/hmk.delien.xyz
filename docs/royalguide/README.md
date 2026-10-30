@@ -23,7 +23,9 @@ royalguide/
 ├── features/
 │   ├── authors.php        … 投稿者プリセット
 │   ├── base-settings.php  … 基本設定（保存先チャンネル）
-│   └── soundcloud.php     … SoundCloud 再生
+│   ├── soundcloud.php     … SoundCloud 再生
+│   ├── read.php           … 読み上げ・辞書
+│   └── voice-settings.php … 音声設定・サーバー読み上げ設定
 ├── build_docs.py          … include を展開して dist/ を作る静的プレビュー用スクリプト
 └── assets/
     ├── css/style.css      … デザインシステム（変更不要）

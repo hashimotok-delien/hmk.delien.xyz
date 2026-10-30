@@ -17,6 +17,8 @@
     <a href="<?= $ROOT ?? '.' ?>/features/authors"><span class="nav-icon">👤</span>投稿者プリセット</a>
     <a href="<?= $ROOT ?? '.' ?>/features/base-settings"><span class="nav-icon">🗂</span>基本設定（保存先）</a>
     <a href="<?= $ROOT ?? '.' ?>/features/soundcloud"><span class="nav-icon">🎧</span>SoundCloud 再生</a>
+    <a href="<?= $ROOT ?? '.' ?>/features/read"><span class="nav-icon">🗣</span>読み上げ</a>
+    <a href="<?= $ROOT ?? '.' ?>/features/voice-settings"><span class="nav-icon">🔊</span>音声設定</a>
 
     <div class="nav-section">その他</div>
     <a href="<?= $ROOT ?? '.' ?>/updates"><span class="nav-icon">📋</span>更新履歴</a>
