@@ -35,6 +35,43 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v0.3.2 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v0.3.2</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="bug">
+        <div class="update-icon">🐛</div>
+        <div class="update-body">
+          <div class="update-title">
+            バグ修正
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>VC入退室の読み上げメッセージに辞書が反映されない不具合を修正しました。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="info">
+        <div class="update-icon">🔧</div>
+        <div class="update-body">
+          <div class="update-title">
+            設定項目名の変更
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-info">システム</span>
+          </div>
+          <ul>
+            <li>「退室を読み上げる」を「VC離脱者を読み上げる」に変更しました（「VC参加者を読み上げる」と対称）。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v0.3.1 -->
       <!-- ========================================================= -->
 
