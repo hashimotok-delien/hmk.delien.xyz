@@ -53,17 +53,24 @@
       <h2>🗣 読み上げ・音声</h2>
 
       <div class="command-block">
-        <div class="cmd-name">/読み上げ開始</div>
+        <div class="cmd-name">/読み上げ開始 [bot]</div>
         <div class="cmd-desc">
-          実行者がいるボイスチャンネルへ参加し、実行したチャンネルの投稿を
-          読み上げます。音声は投稿者ごとに解決されます。
+          実行者がいるボイスチャンネルで読み上げを開始します。
+          <code>bot</code> に系列Bot（RoyalGuide02 など）を指定すると、
+          そのBotが担当します。指定したBotが使用中・応答なしの場合は、
+          自動で別の系列Botへ切り替えます。開始時は以前の担当Botを
+          自動で停止します。
+          RoyalGuide01 でのみ利用できます。
         </div>
         <div class="cmd-meta"><span class="tag tag-user">ユーザー用</span></div>
       </div>
 
       <div class="command-block">
         <div class="cmd-name">/読み上げ終了</div>
-        <div class="cmd-desc">読み上げを停止し、ボイスチャンネルから退出します。</div>
+        <div class="cmd-desc">
+          読み上げを停止し、ボイスチャンネルから退出します。
+          担当Botへ自動で振り分けられます。
+        </div>
         <div class="cmd-meta"><span class="tag tag-user">ユーザー用</span></div>
       </div>
 

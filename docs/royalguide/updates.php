@@ -35,6 +35,34 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v0.2.1 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v0.2.1</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">🤝</div>
+        <div class="update-body">
+          <div class="update-title">
+            系列Botへの読み上げ委譲
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li><code>/読み上げ開始 [bot]</code> で、読み上げを担当する系列Botを指定できるようになりました。</li>
+            <li>指定したBotが使用中・応答なしの場合は、自動で別の系列Botへ切り替えます。</li>
+            <li>実行は担当Bot自身が行います（他Botのトークンやコマンドを代行しません）。</li>
+            <li><code>/読み上げ終了</code> <code>/読み上げスキップ</code> <code>/読み上げ状態</code> も担当Botへ委譲します。</li>
+            <li>開始時は、以前の担当Botを自動で停止します（二重再生の防止）。</li>
+            <li>読み上げの操作コマンドは RoyalGuide01 に集約されました。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v0.2.0 -->
       <!-- ========================================================= -->
 

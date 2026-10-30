@@ -32,7 +32,7 @@
         構成されています。
       </p>
       <p>
-        バージョン <strong>0.2.0</strong> ／ モジュール: <strong>discord.py</strong>
+        バージョン <strong>0.2.1</strong> ／ モジュール: <strong>discord.py</strong>
         <span style="display: inline-block; margin-left: 16px;">
           <a href="updates" style="font-size: 0.9rem;">📋 更新履歴を見る</a>
         </span>
