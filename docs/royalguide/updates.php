@@ -35,6 +35,79 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v0.3.5 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v0.3.5</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">⚙️</div>
+        <div class="update-body">
+          <div class="update-title">
+            Bot ごとの設定をダッシュボードから編集
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>SoundCloud の音量など、Bot 固有の設定を号機ごとの設定画面から編集できるようにしました。</li>
+            <li>共通設定（接頭辞・読み上げなど）は RoyalGuide01 に集約され、系列Botと共有されます。</li>
+            <li>RoyalGuide02 / 03 の設定画面には、その号機の SoundCloud 設定だけが表示されます。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
+      <!-- v0.3.4 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v0.3.4</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="bug">
+        <div class="update-icon">🐛</div>
+        <div class="update-body">
+          <div class="update-title">
+            バグ修正
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>共通設定を実装していない号機（RoyalGuide02 / 03）にも設定画面が表示される問題を修正しました。</li>
+            <li>設定は RoyalGuide01 に集約され、02 / 03 の設定画面は空になります。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
+      <!-- v0.3.3 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v0.3.3</div>
+        <p class="version-date">2026年10月</p>
+      </div>
+
+      <div class="update-card" data-tags="info">
+        <div class="update-icon">🎵</div>
+        <div class="update-body">
+          <div class="update-title">
+            SoundCloud 設定を Bot ごとに独立
+            <span class="update-date">2026/10/31</span>
+            <span class="tag tag-info">システム</span>
+          </div>
+          <ul>
+            <li><code>/defaultvolume</code> などの SoundCloud 設定を、Bot 固有の設定に変更しました。</li>
+            <li>読み上げの既定音量とは別の設定になり、他の号機やダッシュボードとは共有しません。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v0.3.2 -->
       <!-- ========================================================= -->
 

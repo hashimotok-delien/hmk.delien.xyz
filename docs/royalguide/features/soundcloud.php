@@ -57,7 +57,10 @@
           </tr>
           <tr>
             <td><code>/defaultvolume [value]</code></td>
-            <td>サーバーの既定音量を設定・表示します（管理権限が必要）。</td>
+            <td>
+              この Bot のサーバー既定音量を設定・表示します（管理権限が必要）。
+              SoundCloud 専用の設定で、読み上げの既定音量や他の Bot とは共有しません。
+            </td>
           </tr>
           <tr>
             <td><code>/skip</code></td>
