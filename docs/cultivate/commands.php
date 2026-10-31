@@ -404,6 +404,20 @@
         <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
       </div>
 
+      <h3>🔱 裏募集</h3>
+
+      <div class="command-block">
+        <div class="cmd-name">/裏募集設定</div>
+        <div class="cmd-desc">裏募集設定のプリセットを管理します。募集文・対象ロール・通知先・通知メンションをプリセットとして作成・編集・削除できます。</div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
+      <div class="command-block">
+        <div class="cmd-name">/裏募集パネル設定</div>
+        <div class="cmd-desc">裏募集パネル設定のプリセットを管理します。パネル本文・通知方式・使用する募集設定を決めてチャンネルへ設置できます。</div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
       <h3>🎭 ロール同期</h3>
 
       <div class="command-block">

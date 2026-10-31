@@ -20,6 +20,10 @@
       </div>
 
       <div class="alert alert-info">
+        <p><strong>🆕 新機能:</strong> この機能は <strong>v1.9.0</strong> で追加されました。</p>
+      </div>
+
+      <div class="alert alert-info">
         <p><strong>💡 でりえんカレンダーとは？</strong>
         <a href="https://calendar.delien.xyz/">DeLien Calender</a> に
         登録した予定の作成・編集・削除・開始前リマインドを

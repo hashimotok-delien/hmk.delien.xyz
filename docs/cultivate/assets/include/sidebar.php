@@ -34,6 +34,7 @@
     <a href="<?= $ROOT ?? '.' ?>/features/template-channel"><span class="nav-icon">📂</span>テンプレチャンネル設定</a>
     <a href="<?= $ROOT ?? '.' ?>/features/period-message"><span class="nav-icon">⏰</span>定期メッセージ</a>
     <a href="<?= $ROOT ?? '.' ?>/features/delien-calendar"><span class="nav-icon">📅</span>でりえんカレンダー</a>
+    <a href="<?= $ROOT ?? '.' ?>/features/recruitment"><span class="nav-icon">🔱</span>裏募集</a>
 
     <div class="nav-section">VC系機能</div>
     <a href="<?= $ROOT ?? '.' ?>/features/back-2shot"><span class="nav-icon">🔒</span>裏2shot</a>

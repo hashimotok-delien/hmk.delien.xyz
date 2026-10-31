@@ -44,7 +44,7 @@
       </div>
 
       <!-- ========================================================= -->
-      <!-- v1.9.0 — 定期メッセージ -->
+      <!-- v1.9.0 — 定期メッセージ / でりえんカレンダー / 自動KICK / 裏募集 / ロール同期 / ログ / ランク -->
       <!-- ========================================================= -->
 
       <div class="update-version">
@@ -274,6 +274,88 @@
               監査ログから実行者・理由を取得
               （権限がない場合は「不明」として記録を継続）
               <span class="tag tag-feature">新機能</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature info">
+        <div class="update-icon">🔱</div>
+        <div class="update-body">
+          <div class="update-title">
+            裏募集機能を追加
+            <span class="update-date">2026/11/01</span>
+            <span class="tag tag-feature">新機能</span>
+          </div>
+          <ul>
+            <li>
+              <code>/裏募集設定</code> コマンドで、募集文・対象ロール・
+              通知先をまとめた募集プリセットを管理できます
+              （新規作成・編集・削除）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <code>/裏募集パネル設定</code> コマンドで、
+              パネルプリセットを管理し、チャンネルへパネルを設置できます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              パネルの「投稿 / 編集 / 削除」ボタンから募集を管理し、
+              募集の「立候補 / 辞退」ボタンから立候補を受け付けます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              立候補の通知方法は「DM / スレッド / DM→スレッド」から
+              選択でき、通知対象は複数登録できます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              記名／匿名募集、選択式募集、複数立候補禁止、
+              アピール文必須、複数宛先への募集に対応
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              日中／深夜の通知メンションロールと深夜時間帯を設定でき、
+              深夜の立候補は深夜用のロールへメンションします
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              プリセット上限は無料 5 / プレミアム 20
+              （パネルは無料 3 / プレミアム 10）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature rank">
+        <div class="update-icon">🏷️</div>
+        <div class="update-body">
+          <div class="update-title">
+            ランクシステム — サーバータグボーナスを追加
+            <span class="update-date">2026/11/01</span>
+            <span class="tag tag-feature">新機能</span>
+          </div>
+          <ul>
+            <li>
+              プロフィールに自サーバーのサーバータグを表示している
+              メンバーは、獲得XPが既定で<strong>1.5倍</strong>になります
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              対象はチャット・インチャット・VCのすべてのXP獲得
+              （イベントブースト適用後に乗算）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              「XP倍率」と「1回あたり上限XP」を設定でき、
+              上限で頭打ちにできます（<code>0</code> で無制限）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              既定はOFF。プリセット単位でON/OFF・倍率・上限を
+              設定できるため、既存プリセットの挙動は変わりません
+              <span class="tag tag-feature">機能改善</span>
             </li>
           </ul>
         </div>

@@ -20,6 +20,10 @@
       </div>
 
       <div class="alert alert-info">
+        <p><strong>🆕 新機能:</strong> この機能は <strong>v1.9.0</strong> で追加されました。</p>
+      </div>
+
+      <div class="alert alert-info">
         <p><strong>💡 自動KICKとは？</strong>
         サーバーに参加してから<strong>指定日数以上</strong>経過しても、
         指定したロール（<strong>いずれか</strong>）を所持していない
