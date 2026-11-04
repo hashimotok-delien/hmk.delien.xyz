@@ -39,7 +39,7 @@
         別の Bot へファイルを置くだけで同じ機能を移植できます。
       </p>
       <p>
-        バージョン <strong>v2.1.0</strong> ／ システムコグ: <strong>6</strong> ／ コマンド: <strong>20</strong>
+        バージョン <strong>v1.2.0</strong> ／ システムコグ: <strong>6</strong> ／ コマンド: <strong>20</strong>
         <span style="display: inline-block; margin-left: 16px;">
           <a href="updates" style="font-size: 0.9rem;">📋 更新履歴を見る</a>
         </span>

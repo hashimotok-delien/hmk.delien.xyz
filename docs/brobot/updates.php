@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
-<?php $ROOT = '.'; $PAGE_TITLE = '更新履歴 - 兄弟Bot ドキュメント'; $PAGE_DESCRIPTION = '兄弟Bot の各機能のアップデート情報をまとめています。'; ?>
+<?php $ROOT = '.'; $PAGE_TITLE = '更新履歴 - 兄弟Bot ドキュメント'; $PAGE_DESCRIPTION = '兄弟Bot のバージョンごとのアップデート情報をまとめています。'; ?>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,25 +37,130 @@
       <div class="alert alert-info">
         <p>
           <strong>💡 メモ:</strong>
-          バージョンは機能（システムコグ）ごとに管理しています。
-          同じ日に複数の機能が更新されることもあります。
+          バージョンは <strong>Bot 本体のバージョン</strong>（<code>Var.BOT_VERSION</code>）で管理しています。
+          機能（システムコグ）ごとの細かい変更は、リポジトリ直下の
+          <code>CHANGELOG.md</code> を参照してください。
         </p>
       </div>
 
       <!-- ========================================================= -->
-      <!-- 2026年10月 -->
+      <!-- v1.2.0 -->
       <!-- ========================================================= -->
 
       <div class="update-version">
-        <div class="version-badge">2026年10月</div>
-        <p class="version-date">合コン進行 / 個室リレーv2 / ランダム会議 / スティッキーメッセージ</p>
+        <div class="version-badge">v1.2.0</div>
+        <p class="version-date">2026/11/04 ・ 全自動椅子取りv2 / 個室リレーv2 / ランダム会議 / 合コン進行</p>
+      </div>
+
+      <div class="update-card" data-tags="feature bug">
+        <div class="update-icon">🪑</div>
+        <div class="update-body">
+          <div class="update-title">
+            全自動椅子取りv2 の改善
+            <span class="update-date">2026/11/04</span>
+            <span class="tag tag-feature">機能改善</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>「途中参加の自動参加」を実装（集合ロビーから空き椅子へ自動配置）</li>
+            <li>回収対象を<strong>移動側</strong>に統一（「男回収」→「移動側回収」へ改名）</li>
+            <li>パネルを常設メッセージ化し、再起動後も操作・更新できるように変更</li>
+            <li>VC移動の失敗を検知してエラー表示、自動進行の失敗時は手動操作へ復帰</li>
+            <li>「男性椅子」モードが機能していなかった問題、参加済みロールの付与対象を修正</li>
+            <li>タイマー登録の競合・再起動復旧・DBの号機分離（<code>bot_id</code>）に対応</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature bug">
+        <div class="update-icon">🎠</div>
+        <div class="update-body">
+          <div class="update-title">
+            個室リレーv2 の改善
+            <span class="update-date">2026/11/04</span>
+            <span class="tag tag-feature">機能改善</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>休憩室設定「3の倍数」「偶数・3の倍数」を仕様どおりの計算に修正</li>
+            <li>休憩室判定は椅子側の退出時のみ適用（移動側の退出・Bot移動では解除）</li>
+            <li>部屋割り当てのキー不一致でVCが増殖する問題、椅子側の設定陳腐化を修正</li>
+            <li>確認ダイアログが応答されない問題、終了時に参加者が切断される問題を修正</li>
+            <li>停止・再開、最終ラウンド復旧、終了後パネルの復元を修正</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature bug">
+        <div class="update-icon">🎲</div>
+        <div class="update-body">
+          <div class="update-title">
+            ランダム会議 の改善
+            <span class="update-date">2026/11/04</span>
+            <span class="tag tag-feature">機能改善</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>「停止 / 再開」ボタンを追加（他機能と操作体系を統一）</li>
+            <li>待機VCが無い場合は終了・回収を中止し、参加者の切断を防止</li>
+            <li>マッチングロール全削除時に既定値が復活する問題を修正</li>
+            <li>設定読み込み失敗時に既定値で上書き保存される問題を修正</li>
+            <li>マッチング対象（同じ部屋にしたい相手）が編成に反映されない問題を修正</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug">
+        <div class="update-icon">💑</div>
+        <div class="update-body">
+          <div class="update-title">
+            合コン進行 の改善
+            <span class="update-date">2026/11/04</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>開始時にVC移動が全滅していてもラウンドを開始してしまう問題を修正</li>
+            <li>席替えで「移動不可ロール」が無視される問題を修正</li>
+            <li>最終ラウンドの予約が解除されず、以後も最終扱いになる問題を修正</li>
+            <li>承認時に別の組へ重複所属できる問題を修正</li>
+            <li>登録リセット後に組み分けパネルが更新されない問題を修正</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="info bug">
+        <div class="update-icon">🛠️</div>
+        <div class="update-body">
+          <div class="update-title">
+            システム共通の改善
+            <span class="update-date">2026/11/04</span>
+            <span class="tag tag-info">システム</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>権限モデルを統一（操作: 操作ロール or 設定ロール or 管理者 / 設定: 設定ロール or 管理者）</li>
+            <li>タイマー方式を絶対時刻（<code>round_end_ts</code>）に統一</li>
+            <li>再起動時のフェーズ復旧を4機能で統一</li>
+            <li>投稿者プリセットが反映されない問題（<code>await</code> 漏れ）を修正</li>
+            <li>DB接続の解放漏れ（47箇所）と、コマンド実行後の「考え中」残留を修正</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
+      <!-- v1.1.1 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.1.1</div>
+        <p class="version-date">2025/07/25 ・ 各システムコグの追加・改善（2025/09/28 〜 2026/10/24）</p>
       </div>
 
       <div class="update-card" data-tags="feature">
         <div class="update-icon">💑</div>
         <div class="update-body">
           <div class="update-title">
-            合コン進行 v1.0.0
+            合コン進行
             <span class="update-date">2026/10/24</span>
             <span class="tag tag-feature">新機能</span>
           </div>
@@ -73,7 +178,7 @@
         <div class="update-icon">🎠</div>
         <div class="update-body">
           <div class="update-title">
-            個室リレーv2 v2.1.0
+            個室リレーv2 の設定UI刷新
             <span class="update-date">2026/10/16</span>
             <span class="tag tag-feature">機能改善</span>
             <span class="tag tag-info">システム</span>
@@ -92,7 +197,7 @@
         <div class="update-icon">🎲</div>
         <div class="update-body">
           <div class="update-title">
-            ランダム会議 v1.0.0
+            ランダム会議
             <span class="update-date">2026/10/14</span>
             <span class="tag tag-feature">新機能</span>
           </div>
@@ -109,7 +214,7 @@
         <div class="update-icon">📌</div>
         <div class="update-body">
           <div class="update-title">
-            スティッキーメッセージ v1.2.2
+            スティッキーメッセージ の修正
             <span class="update-date">2026/10/14</span>
             <span class="tag tag-bug">バグ修正</span>
           </div>
@@ -120,20 +225,11 @@
         </div>
       </div>
 
-      <!-- ========================================================= -->
-      <!-- 2026年9月 -->
-      <!-- ========================================================= -->
-
-      <div class="update-version">
-        <div class="version-badge">2026年9月</div>
-        <p class="version-date">スティッキーメッセージ</p>
-      </div>
-
       <div class="update-card" data-tags="info">
         <div class="update-icon">📌</div>
         <div class="update-body">
           <div class="update-title">
-            スティッキーメッセージ v1.2.1
+            スティッキーメッセージ の内部整理
             <span class="update-date">2026/09/06</span>
             <span class="tag tag-info">システム</span>
           </div>
@@ -149,7 +245,7 @@
         <div class="update-icon">📌</div>
         <div class="update-body">
           <div class="update-title">
-            スティッキーメッセージ v1.2.0
+            スティッキーメッセージ のモジュール統合
             <span class="update-date">2026/09/06</span>
             <span class="tag tag-info">システム</span>
           </div>
@@ -160,20 +256,11 @@
         </div>
       </div>
 
-      <!-- ========================================================= -->
-      <!-- 2026年8月 -->
-      <!-- ========================================================= -->
-
-      <div class="update-version">
-        <div class="version-badge">2026年8月</div>
-        <p class="version-date">全自動椅子取りv2 / 個室リレーv2</p>
-      </div>
-
       <div class="update-card" data-tags="feature">
         <div class="update-icon">🪑</div>
         <div class="update-body">
           <div class="update-title">
-            全自動椅子取りv2 v2.0.0
+            全自動椅子取りv2
             <span class="update-date">2026/08/26</span>
             <span class="tag tag-feature">新機能</span>
           </div>
@@ -189,7 +276,7 @@
         <div class="update-icon">🎠</div>
         <div class="update-body">
           <div class="update-title">
-            個室リレーv2 v2.0.0
+            個室リレーv2
             <span class="update-date">2026/08/25</span>
             <span class="tag tag-feature">新機能</span>
           </div>
@@ -199,20 +286,11 @@
         </div>
       </div>
 
-      <!-- ========================================================= -->
-      <!-- 2026年7月 -->
-      <!-- ========================================================= -->
-
-      <div class="update-version">
-        <div class="version-badge">2026年7月</div>
-        <p class="version-date">投稿者設定 / スティッキーメッセージ</p>
-      </div>
-
       <div class="update-card" data-tags="feature">
         <div class="update-icon">📛</div>
         <div class="update-body">
           <div class="update-title">
-            投稿者設定 v1.0.0
+            投稿者設定
             <span class="update-date">2026/07/29</span>
             <span class="tag tag-feature">新機能</span>
           </div>
@@ -227,7 +305,7 @@
         <div class="update-icon">📌</div>
         <div class="update-body">
           <div class="update-title">
-            スティッキーメッセージ v1.1.2
+            スティッキーメッセージ のプロフ機能
             <span class="update-date">2026/07/22</span>
             <span class="tag tag-feature">新機能</span>
           </div>
@@ -243,7 +321,7 @@
         <div class="update-icon">📌</div>
         <div class="update-body">
           <div class="update-title">
-            スティッキーメッセージ v1.1.1
+            スティッキーメッセージ の設定UI見直し
             <span class="update-date">2026/07/18</span>
             <span class="tag tag-feature">機能改善</span>
           </div>
@@ -253,20 +331,11 @@
         </div>
       </div>
 
-      <!-- ========================================================= -->
-      <!-- 2026年5月 -->
-      <!-- ========================================================= -->
-
-      <div class="update-version">
-        <div class="version-badge">2026年5月</div>
-        <p class="version-date">スティッキーメッセージ</p>
-      </div>
-
       <div class="update-card" data-tags="feature bug">
         <div class="update-icon">📌</div>
         <div class="update-body">
           <div class="update-title">
-            スティッキーメッセージ v1.1.0
+            スティッキーメッセージ の編集機能改善
             <span class="update-date">2026/05/09</span>
             <span class="tag tag-feature">機能改善</span>
             <span class="tag tag-bug">バグ修正</span>
@@ -282,25 +351,39 @@
         </div>
       </div>
 
-      <!-- ========================================================= -->
-      <!-- 2025年9月 -->
-      <!-- ========================================================= -->
-
-      <div class="update-version">
-        <div class="version-badge">2025年9月</div>
-        <p class="version-date">スティッキーメッセージ</p>
-      </div>
-
       <div class="update-card" data-tags="feature">
         <div class="update-icon">📌</div>
         <div class="update-body">
           <div class="update-title">
-            スティッキーメッセージ v1.0.0
+            スティッキーメッセージ
             <span class="update-date">2025/09/28</span>
             <span class="tag tag-feature">初回リリース</span>
           </div>
           <ul>
             <li>スティッキーメッセージ機能をリリース</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
+      <!-- v1.0.0 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.0.0</div>
+        <p class="version-date">2025/06/22 ・ 初回リリース</p>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">👬</div>
+        <div class="update-body">
+          <div class="update-title">
+            兄弟Bot
+            <span class="update-date">2025/06/22</span>
+            <span class="tag tag-feature">初回リリース</span>
+          </div>
+          <ul>
+            <li>サーバー運営ツールと VC イベント進行の基盤をリリース</li>
           </ul>
         </div>
       </div>
