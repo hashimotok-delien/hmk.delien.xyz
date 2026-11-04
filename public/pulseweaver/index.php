@@ -396,7 +396,7 @@ h2{
                       ./assets/img/screenshot-1-900.webp?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-1-900.webp') ?: time() ?> 900w,
                       ./assets/img/screenshot-1-1200.webp?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-1-1200.webp') ?: time() ?> 1200w"
               sizes="(max-width: 1060px) calc(100vw - 90px), 900px">
-      <img src="./assets/img/screenshot-1.png?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-1.png') ?: time() ?>" alt="PulseWeaver のミキサー画面。H/W入力・バーチャル入力・H/W出力の一覧と音量スライダーが並んでいる"
+      <img src="./assets/img/png/screenshot-1.png?v=<?= @filemtime(__DIR__ . '/assets/img/png/screenshot-1.png') ?: time() ?>" alt="PulseWeaver のミキサー画面。H/W入力・バーチャル入力・H/W出力の一覧と音量スライダーが並んでいる"
            width="1200" height="980" loading="lazy" decoding="async"
            style="width:100%; height:auto; border-radius:12px; box-shadow:0 0 20px rgba(var(--accent-rgb),0.3);">
     </picture>
@@ -410,7 +410,7 @@ h2{
                       ./assets/img/screenshot-2-900.webp?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-2-900.webp') ?: time() ?> 900w,
                       ./assets/img/screenshot-2-1200.webp?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-2-1200.webp') ?: time() ?> 1200w"
               sizes="(max-width: 1060px) calc(100vw - 90px), 900px">
-      <img src="./assets/img/screenshot-2.png?v=<?= @filemtime(__DIR__ . '/assets/img/screenshot-2.png') ?: time() ?>" alt="PulseWeaver の設定画面。一般・音声・構成・更新情報・このアプリについてのメニューがある"
+      <img src="./assets/img/png/screenshot-2.png?v=<?= @filemtime(__DIR__ . '/assets/img/png/screenshot-2.png') ?: time() ?>" alt="PulseWeaver の設定画面。一般・音声・構成・更新情報・このアプリについてのメニューがある"
            width="1200" height="980" loading="lazy" decoding="async"
            style="width:100%; height:auto; border-radius:12px; box-shadow:0 0 20px rgba(var(--accent-rgb),0.3);">
     </picture>
