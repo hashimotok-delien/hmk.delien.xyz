@@ -66,6 +66,11 @@
             <td>一時停止中</td>
             <td>設定・再開・全員回収・終了</td>
           </tr>
+          <tr>
+            <td><code>shuffled</code></td>
+            <td>配置済み（ラウンド開始待ち）</td>
+            <td>上記と同じ</td>
+          </tr>
         </tbody>
       </table></div>
 
@@ -85,6 +90,10 @@
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td><strong>開始 / 次へ / 再開</strong></td>
+            <td>1つのボタンで進行します。<strong>開始</strong>＝参加者を配置（シャッフル）、<strong>次へ</strong>＝ラウンド開始 → ラウンド終了 → 再配置 の順に進みます。停止中は<strong>再開</strong>になります。</td>
+          </tr>
           <tr>
             <td><strong>シャッフル</strong></td>
             <td>待機VCと管理VCにいる人を全員対象に、ルールに沿って再配置します。</td>
