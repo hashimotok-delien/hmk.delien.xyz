@@ -35,6 +35,30 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v0.3.6 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v0.3.6</div>
+        <p class="version-date">2026年11月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">🗣️</div>
+        <div class="update-body">
+          <div class="update-title">
+            読み上げ時に絵文字を除外
+            <span class="update-date">2026/11/06</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>「絵文字を読み上げない」を有効にすると、カスタム絵文字に加えてUnicode絵文字も本文から除去します。</li>
+            <li>肌色・国旗・家族などの結合絵文字にも対応しています。設定は既定で有効です。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v0.3.5 -->
       <!-- ========================================================= -->
 
