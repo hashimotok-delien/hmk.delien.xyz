@@ -90,6 +90,12 @@
               <span class="tag tag-feature">新機能</span>
             </li>
             <li>
+              送信先チャンネルを<strong>固定</strong>でき、
+              <strong>指定したVC・カテゴリに入室したら自動でパネルを送信</strong>
+              する設定を追加（WL / BL 対応）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
               <a href="features/secret-delivery">
                 詳しい使い方はこちら
               </a>

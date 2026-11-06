@@ -88,6 +88,15 @@
             <td>設定ごとに一時的な無効化が可能</td>
           </tr>
           <tr>
+            <td>送信先の固定</td>
+            <td>送信先チャンネルを固定し、コマンドの指定より優先</td>
+          </tr>
+          <tr>
+            <td>入室時の自動送信</td>
+            <td>指定したVC・カテゴリに入室したメンバーのパネルを自動送信
+              （WL / BL 対応）</td>
+          </tr>
+          <tr>
             <td>設定数上限</td>
             <td>有効にできる設定は最大 25 件（コマンド補完の上限）</td>
           </tr>
@@ -297,6 +306,86 @@
         </tbody>
       </table></div>
 
+      <h3>📍 送信先チャンネル設定</h3>
+      <div class="table-wrapper"><table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>初期値</th>
+            <th>説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>送信先チャンネル</td>
+            <td><code>未設定</code></td>
+            <td>自動送信や送信先固定で使用するチャンネル
+              （TC / VC / スレッド）</td>
+          </tr>
+          <tr>
+            <td>送信先を固定する</td>
+            <td><code>OFF</code></td>
+            <td>ONにすると、<code>/ひみつ便パネル送信</code> で
+              別のチャンネルを指定しても
+              <strong>設定したチャンネルへ送信</strong>します</td>
+          </tr>
+        </tbody>
+      </table></div>
+
+      <h3>📨 自動送信設定</h3>
+      <p>
+        指定したカテゴリ・VCにメンバーが入室したとき、
+        そのメンバーのパネルを<strong>送信先チャンネルへ自動送信</strong>します。
+      </p>
+      <div class="table-wrapper"><table>
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>初期値</th>
+            <th>説明</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>WL VC</td>
+            <td><code>なし</code></td>
+            <td>このVCに入室したら自動送信</td>
+          </tr>
+          <tr>
+            <td>WL カテゴリ</td>
+            <td><code>なし</code></td>
+            <td>このカテゴリ内のVCに入室したら自動送信</td>
+          </tr>
+          <tr>
+            <td>BL VC</td>
+            <td><code>なし</code></td>
+            <td>このVCに入室しても自動送信しない</td>
+          </tr>
+          <tr>
+            <td>BL カテゴリ</td>
+            <td><code>なし</code></td>
+            <td>このカテゴリ内のVCでは自動送信しない
+              （<strong>WLより優先</strong>）</td>
+          </tr>
+          <tr>
+            <td>自動送信を有効にする</td>
+            <td><code>OFF</code></td>
+            <td>チェックすると入室時の自動送信が動作します</td>
+          </tr>
+        </tbody>
+      </table></div>
+      <div class="alert alert-info">
+        <p><strong>判定の順番</strong><br>
+          ① BL VC / BL カテゴリに一致 → 送信しない<br>
+          ② WL VC / WL カテゴリに一致 → 送信する<br>
+          ③ どちらにも一致しない → 送信しない</p>
+        <p><strong>重複送信の防止</strong><br>
+          送信したパネルの<strong>メッセージIDを記録</strong>し、
+          そのパネルがまだチャンネルに残っている場合は
+          <strong>送信しません</strong>。パネルが削除されると記録も消え、
+          次に入室したときに再送されます。</p>
+      </div>
+
       <h2>プレースホルダー</h2>
       <p>パネルのタイトル・説明文で使用できます。</p>
       <div class="table-wrapper"><table>
@@ -342,7 +431,9 @@
           <tr>
             <td><code>チャンネル</code></td>
             <td>送信先。未指定ならコマンドを実行したチャンネル。
-              <strong>TC / VC / スレッド</strong>に送信できます</td>
+              <strong>TC / VC / スレッド</strong>に送信できます。
+              送信先が固定されている場合はこの指定より
+              <strong>設定したチャンネルが優先</strong>されます</td>
           </tr>
           <tr>
             <td><code>所持ロール</code></td>
@@ -456,6 +547,15 @@
             （ひみつ便 → 返信の1往復で終了します）</li>
           <li>有効にできる設定は最大 25 件です。それ以上は
             既存の設定を無効にしてから有効にしてください</li>
+          <li>自動送信は<strong>送信先チャンネルが設定されている場合のみ</strong>
+            動作します。あわせて「自動送信を有効にする」に
+            チェックが必要です</li>
+          <li>自動送信は<strong>同一メンバー・同一設定で60秒間</strong>
+            連続送信されません（VCを行き来しても連投しません）</li>
+          <li>送信済みパネルのメッセージIDを記録しており、
+            <strong>パネルが残っている間は再送されません</strong>。
+            パネルを削除すると次回の入室時に再度送信されます</li>
+          <li>自動送信の対象は<strong>メンバーのみ</strong>です（Botは対象外）</li>
           <li>パネルは<strong>対象者1人につき1メッセージ</strong>送信されます。
             ロール指定などで人数が多い場合は送信に時間がかかります</li>
         </ul>
