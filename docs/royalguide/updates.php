@@ -44,6 +44,22 @@
       </div>
 
       <div class="update-card" data-tags="feature">
+        <div class="update-icon">🔁</div>
+        <div class="update-body">
+          <div class="update-title">
+            再起動後、元のボイスチャンネルへ自動で復帰
+            <span class="update-date">2026/11/06</span>
+            <span class="tag tag-feature">新機能 / 機能改善</span>
+          </div>
+          <ul>
+            <li>Bot が再起動・再接続しても、読み上げていたボイスチャンネルへ自動で戻り、読み上げを再開します。</li>
+            <li>誰もいない VC、削除されたチャンネル、24時間以上前の記録には復帰しません。</li>
+            <li>復帰時は、開始時と同じ読み上げ対象チャンネルを使用します。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature">
         <div class="update-icon">🗣️</div>
         <div class="update-body">
           <div class="update-title">
@@ -54,6 +70,21 @@
           <ul>
             <li>「絵文字を読み上げない」を有効にすると、カスタム絵文字に加えてUnicode絵文字も本文から除去します。</li>
             <li>肌色・国旗・家族などの結合絵文字にも対応しています。設定は既定で有効です。</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug">
+        <div class="update-icon">🐛</div>
+        <div class="update-body">
+          <div class="update-title">
+            記号だけの投稿で読み上げエラーになる問題を修正
+            <span class="update-date">2026/11/06</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>「。」「…」「ーー」のように読める文字を含まない投稿を読み上げると、エラーログが出続ける問題を修正しました。</li>
+            <li>読み上げ可能な文字（英数字・かな・漢字）を含まない本文はスキップし、無音のまま停止しません。</li>
           </ul>
         </div>
       </div>
