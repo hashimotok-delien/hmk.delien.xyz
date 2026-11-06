@@ -368,6 +368,20 @@
         <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
       </div>
 
+      <h3>💌 ひみつ便</h3>
+
+      <div class="command-block">
+        <div class="cmd-name">/ひみつ便設定</div>
+        <div class="cmd-desc">ひみつ便設定を管理します（作成・編集・削除・有効/無効）。</div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
+      <div class="command-block">
+        <div class="cmd-name">/ひみつ便パネル送信</div>
+        <div class="cmd-desc">設定をもとにひみつ便パネルを送信します。チャンネル・所持ロール・ユーザーを指定できます。</div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
       <h3>📅 でりえんカレンダー</h3>
 
       <div class="command-block">

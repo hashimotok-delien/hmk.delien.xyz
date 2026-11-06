@@ -44,6 +44,61 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v1.10.0 — ひみつ便 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.10.0</div>
+        <p class="version-date">2026年12月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature profile">
+        <div class="update-icon">💌</div>
+        <div class="update-body">
+          <div class="update-title">
+            ひみつ便機能を追加
+            <span class="update-date">2026/12/01</span>
+            <span class="tag tag-feature">新機能</span>
+          </div>
+          <ul>
+            <li>
+              メンバーごとの<strong>プロフィールパネル</strong>から、
+              本人へメッセージを送れるようになりました
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <code>/ひみつ便設定</code> で
+              通知方法（DM / スレッド / DM→スレッド）・
+              パネルEmbed・ボタン（絵文字／文字／色）・
+              メッセージ入力の有無などを設定できます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <code>/ひみつ便パネル送信</code> で
+              チャンネル・所持ロール・ユーザーを指定してパネルを送信
+              （未指定時は実行者がいるVCのメンバー全員）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              届いたひみつ便には<strong>送信者情報</strong>
+              （表示名・名前・ID・プロフィールリンク）を添付
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              受け取った側は<strong>削除・返信</strong>が可能。
+              返信後は受信メッセージに結果を追記してボタンを削除
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <a href="features/secret-delivery">
+                詳しい使い方はこちら
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v1.9.1 — プロフ審査 問い合わせスレッド -->
       <!-- ========================================================= -->
 
