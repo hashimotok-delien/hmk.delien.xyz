@@ -44,6 +44,39 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v1.9.1 — プロフ審査 問い合わせスレッド -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.9.1</div>
+        <p class="version-date">2026年11月</p>
+      </div>
+
+      <div class="update-card" data-tags="bug profile">
+        <div class="update-icon">🧑‍⚖️</div>
+        <div class="update-body">
+          <div class="update-title">
+            プロフ審査 — 問い合わせスレッドの招待範囲を修正
+            <span class="update-date">2026/11/06</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>
+              転送メッセージの<strong>「問い合わせ」ボタン</strong>で
+              スレッドを作成した際、<strong>投票相手（対象者）まで
+              招待されてしまう</strong>不具合を修正
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+            <li>
+              スレッドの参加者は
+              <strong>投票者と結果通知ロール（運営）のみ</strong>に変更
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v1.9.0 — 定期メッセージ / でりえんカレンダー / 自動KICK / 裏募集 / ロール同期 / ログ / ランク -->
       <!-- ========================================================= -->
 
