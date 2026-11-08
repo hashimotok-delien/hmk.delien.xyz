@@ -580,8 +580,49 @@ max(100, 50 * L ** 1.5)
           <tr><td>📢 通知CH設定</td><td>レベルアップ通知の送信先CHを設定（Modal）</td></tr>
           <tr><td>🔝 上限Lv設定</td><td>最大到達レベルを設定（Modal）</td></tr>
           <tr><td>📋 ログ機能設定</td><td>ログ出力先をカテゴリ別に設定（下記参照）</td></tr>
+          <tr><td>📥 CSV読み込み/書き出し</td><td>レベル・XPをCSVで入出力（下記参照）</td></tr>
         </tbody>
       </table></div>
+
+      <!-- ============================================================ -->
+      <!-- CSV読み込み/書き出し -->
+      <!-- ============================================================ -->
+      <h3>📥 CSV読み込み/書き出し</h3>
+      <p>
+        設定パネルの「📥 CSV読み込み/書き出し」から、
+        ランクのレベル・XPをCSVで入出力できます。
+      </p>
+      <ul>
+        <li><strong>CSV読み込み</strong>: ModalにCSVファイルを添付し、
+          反映先（VC／チャット／インチャット）をチェックボックスで選択します。
+          <code>user_id,text_level,voice_level</code> を利用し、
+          <code>text_level</code> は選択した系統に反映されます（未選択なら破棄）。</li>
+        <li><strong>CSV書き出し</strong>:
+          <code>user_id,display_name,user_name,chat_level,chat_xp,inchat_level,inchat_xp,voice_level,voice_xp,total_level,total_xp</code>
+          形式で出力します。この形式はそのまま読み込み可能です。</li>
+      </ul>
+
+      <div class="command-block">
+        <div class="cmd-name">/レベル設定 &lt;設定&gt; &lt;メンバー&gt; &lt;レベル&gt; [プリセット]</div>
+        <div class="cmd-desc">
+          指定メンバーの
+          VC／チャット／インチャットのレベルを直接設定します。<br>
+          <strong>設定</strong>: チャット / インチャット / VC<br>
+          <strong>プリセット</strong>: 任意。省略時は⭐メイン設定のプリセットに反映されます。
+        </div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
+      <div class="command-block">
+        <div class="cmd-name">/経験値設定 &lt;設定&gt; &lt;メンバー&gt; &lt;経験値&gt; [プリセット]</div>
+        <div class="cmd-desc">
+          指定メンバーの
+          VC／チャット／インチャットの経験値を直接設定します。<br>
+          <strong>設定</strong>: チャット / インチャット / VC<br>
+          <strong>プリセット</strong>: 任意。省略時は⭐メイン設定のプリセットに反映されます。
+        </div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
 
       <div class="alert alert-warning">
         <p><strong>⚠️ 有効化上限:</strong>

@@ -332,7 +332,30 @@
 
       <div class="command-block">
         <div class="cmd-name">/ランク設定</div>
-        <div class="cmd-desc">ランクシステムの設定パネルを開きます。</div>
+        <div class="cmd-desc">
+          ランクシステムの設定パネルを開きます。
+          各設定の「📥 CSV読み込み/書き出し」からレベル・XPをCSVで入出力できます。
+        </div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
+      <div class="command-block">
+        <div class="cmd-name">/レベル設定 &lt;設定&gt; &lt;メンバー&gt; &lt;レベル&gt; [プリセット]</div>
+        <div class="cmd-desc">
+          指定メンバーのレベルを直接設定します。
+          設定: チャット / インチャット / VC<br>
+          プリセットは任意（省略時は⭐メイン設定）。
+        </div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
+      <div class="command-block">
+        <div class="cmd-name">/経験値設定 &lt;設定&gt; &lt;メンバー&gt; &lt;経験値&gt; [プリセット]</div>
+        <div class="cmd-desc">
+          指定メンバーの経験値を直接設定します。
+          設定: チャット / インチャット / VC<br>
+          プリセットは任意（省略時は⭐メイン設定）。
+        </div>
         <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
       </div>
 
