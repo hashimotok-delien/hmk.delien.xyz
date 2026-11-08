@@ -593,13 +593,16 @@ max(100, 50 * L ** 1.5)
         ランクのレベル・XPをCSVで入出力できます。
       </p>
       <ul>
-        <li><strong>CSV読み込み</strong>: ModalにCSVファイルを添付し、
-          反映先（VC／チャット／インチャット）をチェックボックスで選択します。
-          <code>user_id,text_level,voice_level</code> を利用し、
+        <li><strong>CSV読み込み</strong>: ModalにCSVファイルを添付します。
+          <code>user_id,text_level,voice_level</code> 形式では、
+          反映先（VC／チャット／インチャット）をチェックボックスで選択し、
           <code>text_level</code> は選択した系統に反映されます（未選択なら破棄）。</li>
         <li><strong>CSV書き出し</strong>:
           <code>user_id,display_name,user_name,chat_level,chat_xp,inchat_level,inchat_xp,voice_level,voice_xp,total_level,total_xp</code>
-          形式で出力します。この形式はそのまま読み込み可能です。</li>
+          形式で出力します。</li>
+        <li><strong>書き出しCSVの再読み込み</strong>:
+          <code>chat_*</code>／<code>inchat_*</code> 列を含むCSVは、
+          チェックボックスの状態にかかわらず<strong>チャット・インチャット・VCの全列をそのまま復元</strong>します。</li>
       </ul>
 
       <div class="command-block">
