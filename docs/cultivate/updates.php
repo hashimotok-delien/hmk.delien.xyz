@@ -105,6 +105,62 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v1.9.2 — ランク CSV入出力 / レベル・経験値の直接設定 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.9.2</div>
+        <p class="version-date">2026年11月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature rank">
+        <div class="update-icon">🏆</div>
+        <div class="update-body">
+          <div class="update-title">
+            ランク — CSV読み込み/書き出しとレベル・経験値の直接設定
+            <span class="update-date">2026/11/08</span>
+            <span class="tag tag-feature">新機能</span>
+          </div>
+          <ul>
+            <li>
+              <code>/ランク設定</code> の各設定に
+              <strong>「📥 CSV読み込み/書き出し」</strong>を追加しました
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <strong>CSV読み込み</strong>: ModalにCSVファイルを添付し、
+              <code>text_level</code> の反映先（チャット／インチャット／VC）を
+              チェックボックスで選択できます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <strong>CSV書き出し</strong>:
+              全系統（チャット／インチャット／VC／合計）のレベル・XPを
+              CSVで出力。書き出したCSVはそのまま読み込みでき、
+              <strong>全列がそのまま復元</strong>されます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <code>/レベル設定 &lt;設定&gt; &lt;メンバー&gt; &lt;レベル&gt; [プリセット]</code>
+              を追加しました
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <code>/経験値設定 &lt;設定&gt; &lt;メンバー&gt; &lt;経験値&gt; [プリセット]</code>
+              を追加しました。プリセットは任意で、省略時は⭐メイン設定の
+              プリセットに反映されます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <a href="features/rank">
+                詳しい使い方はこちら
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v1.9.1 — プロフ審査 問い合わせスレッド -->
       <!-- ========================================================= -->
 
