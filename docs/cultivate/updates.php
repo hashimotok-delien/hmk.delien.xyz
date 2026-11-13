@@ -105,6 +105,190 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v1.9.4 — ランク 通知CHスレッド対応・カスタムメッセージ・ログ出力 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.9.4</div>
+        <p class="version-date">2026年11月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature rank">
+        <div class="update-icon">🏆</div>
+        <div class="update-body">
+          <div class="update-title">
+            ランク — 通知CHのスレッド対応・カスタムメッセージ・ログ出力基盤
+            <span class="update-date">2026/11/13</span>
+            <span class="tag tag-feature">新機能</span>
+          </div>
+          <ul>
+            <li>
+              「📢 通知CH設定」で<strong>スレッド</strong>を通知先に
+              指定できるようになりました
+              （レベルアップ通知CH／ランクアップ通知CHの両方）
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              アーカイブ済みのスレッドが指定されている場合は、
+              復帰させてから通知を送信します
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <strong>ランクアップ通知CH</strong>（合算XPのレベルアップ）を
+              実装しました。トラックのレベルは据え置きで
+              ランクだけが上がる場合も通知されます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              「💬 カスタムメッセージ設定」がレベルアップ通知に反映されます
+              （チャット／インチャット／VC／ランク）。
+              <code>{usermention}</code> <code>{username}</code>
+              <code>{old_level}</code> <code>{new_level}</code>
+              <code>{old_rank}</code> <code>{new_rank}</code> が使用できます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              カスタム文面からのメンションはユーザーのみ有効で、
+              <code>@everyone</code> やロールメンションは通知されません
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              「📋 ログ機能設定」の<strong>カテゴリ別チャンネルへ
+              実際にログを出力</strong>する基盤を実装しました。
+              レベルUP／DOWN／上限到達、ロール付与・剥奪（制御・高度制御）、
+              XP上限到達、VC条件不達、プリセット切替、設定変更、
+              エラー／警告、期間ランキングに対応
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              カテゴリ別CHが未設定の場合は
+              <strong>「🌐 グローバルログCH」へ自動でフォールバック</strong>します
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              XP上限到達・VC条件不達のログは、同一日の重複出力を抑止します
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              <code>/レベル設定</code>・<code>/経験値設定</code> による
+              手動変更もレベルUP／DOWNとしてログに記録されます
+              （実行者も併記）
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              <a href="features/rank">
+                詳しい使い方はこちら
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug rank">
+        <div class="update-icon">🩹</div>
+        <div class="update-body">
+          <div class="update-title">
+            通知CH・ログ設定でスレッドが選択済みとして表示されない不具合を修正
+            <span class="update-date">2026/11/13</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>
+              通知CHにスレッドを指定しても通知が送信されない不具合を
+              修正しました
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+            <li>
+              通知CH設定／ログ機能設定を開き直すとスレッドが未選択で表示され、
+              そのまま保存すると設定が消えてしまう不具合を修正しました
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug info">
+        <div class="update-icon">🗄️</div>
+        <div class="update-body">
+          <div class="update-title">
+            データベース接続エラー時の安定性を改善
+            <span class="update-date">2026/11/13</span>
+            <span class="tag tag-info">システム</span>
+          </div>
+          <ul>
+            <li>
+              DBに接続できない場合でも、タイマー／吊り下げ機能の
+              読み込みが失敗せず、処理ループも停止しないようになりました
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+            <li>
+              接続エラーのログは60秒間隔に間引き、
+              DB復旧後は自動で再試行します
+              <span class="tag tag-info">システム</span>
+            </li>
+            <li>
+              <code>/タイマー</code> はDB停止時に登録できなかった旨を
+              利用者へ通知します
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
+      <!-- v1.9.3 — VCカウンター プリセットの複製 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.9.3</div>
+        <p class="version-date">2026年11月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature">
+        <div class="update-icon">📊</div>
+        <div class="update-body">
+          <div class="update-title">
+            VCカウンター — プリセットの複製機能を追加
+            <span class="update-date">2026/11/12</span>
+            <span class="tag tag-feature">新機能</span>
+          </div>
+          <ul>
+            <li>
+              <code>/サーバーカウンター設定</code> のプリセット一覧に
+              <strong>「📄 複製」</strong>ボタンを追加しました
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              現在のページの設定（VC名テンプレート・対象VC・
+              プレースホルダー）をそのまま複製して
+              新しい設定を作成できます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              複製時に<strong>VC・テンプレートのModal</strong>が開き、
+              その場でテンプレートと対象VCを編集できます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              複製した設定は<strong>必ず無効状態</strong>で作成されるため、
+              元の設定が有効でもVC名の更新が競合しません
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              設定名は「〜のコピー」「〜のコピー2」…と
+              重複しないよう自動で採番されます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              <a href="features/vc-counter">
+                詳しい使い方はこちら
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v1.9.2 — ランク CSV入出力 / レベル・経験値の直接設定 -->
       <!-- ========================================================= -->
 
