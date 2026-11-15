@@ -191,6 +191,62 @@
         </div>
       </div>
 
+      <div class="update-card" data-tags="rank feature">
+        <div class="update-icon">🎁</div>
+        <div class="update-body">
+          <div class="update-title">
+            ランク — 初回1人目ボーナスを追加
+            <span class="update-date">2026/11/16</span>
+            <span class="tag tag-feature">新機能</span>
+          </div>
+          <ul>
+            <li>
+              その日<strong>最初のTC投稿／インチャット投稿</strong>、
+              または<strong>VCに0人→1人で入室</strong>した際の獲得XPに
+              倍率を掛けられるようになりました
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              設定は<strong>VC／TC／インチャット</strong>の3項目に分かれ、
+              それぞれ専用のModalで設定できます
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              VC: 倍率／<strong>VC継続時間（分）</strong>／リセット時刻／
+              1日に何人／1日に何VC。
+              TC・インチャット: 倍率／リセット時刻／
+              1日に何人／1日に何TC
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              VCは<strong>1人でもセッションを作成</strong>し、
+              1人で居た時間ぶん（最大: VC継続時間）を精算して付与します。
+              2人目が入室した時点、または退出・移動した時点で
+              それまでの接続時間ぶんを精算し、合計がVC継続時間に
+              達するまで受給できます（例: 8分→精算、さらに2分→合計10分）。
+              1分未満で切断した場合は枠を消費しません
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              人数上限は「1日に何人（全体）」と
+              「1日に何VC/TC（VC・TCごとの人数）」の2種類です
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              リセット時刻を基準に「1日」を判定し、
+              1日あたりの人数・チャンネル数の上限（既定1）を
+              超えた場合は付与しません
+              <span class="tag tag-feature">新機能</span>
+            </li>
+            <li>
+              VC専用設定ではVCのみ、XP集計モードが「全体」の場合は
+              インチャット項目を表示しません
+              <span class="tag tag-feature">新機能</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <!-- ========================================================= -->
       <!-- v1.9.4 — ランク 通知CHスレッド対応・カスタムメッセージ・ログ出力 -->
       <!-- ========================================================= -->
