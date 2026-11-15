@@ -243,6 +243,12 @@
               インチャット項目を表示しません
               <span class="tag tag-feature">新機能</span>
             </li>
+            <li>
+              ONにした時点で<strong>倍率の初期値（2.0）</strong>が入り、
+              各設定を変更してもOFFに戻りません。
+              倍率がすべて1.0の場合はボーナスが付与されない旨を通知します
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
           </ul>
         </div>
       </div>
