@@ -105,6 +105,93 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v1.9.5 — ランク VC経験値の付与間隔変更・期間ランキングログ改善 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.9.5</div>
+        <p class="version-date">2026年11月</p>
+      </div>
+
+      <div class="update-card" data-tags="rank feature">
+        <div class="update-icon">🏆</div>
+        <div class="update-body">
+          <div class="update-title">
+            ランク — VC経験値の付与間隔を5分に変更
+            <span class="update-date">2026/11/16</span>
+            <span class="tag tag-rank">ランク</span>
+          </div>
+          <ul>
+            <li>
+              VC接続中のXP付与が<strong>1分ごと → 5分ごと</strong>に
+              なりました。人数不足時のXP倍率（例: 0.1）を掛けても
+              端数切り捨てでほぼ0にならずに付与されます
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              付与間隔の変更に合わせ、整合性チェックによる
+              時刻リセットを<strong>起動時のみ</strong>に限定しました
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              併せて、<strong>VC最小接続時間</strong>の切断時判定が
+              常に0分扱いになっていた問題も修正しました
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="rank feature">
+        <div class="update-icon">📊</div>
+        <div class="update-body">
+          <div class="update-title">
+            週間・月間ランキングログを期間前後のレベル比較つきに
+            <span class="update-date">2026/11/16</span>
+            <span class="tag tag-rank">ランク</span>
+          </div>
+          <ul>
+            <li>
+              レベルが変わらなかったメンバーも、
+              期間内の獲得XPと併せて表示されるようになりました
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              <code>Lv.34 (112,509 XP) -&gt; Lv.35 (113,915 XP)</code>
+              の形式で、期間前後のレベル・累積XPを併記します
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              右側にレベル推移アイコンを表示
+              （上昇／変化なし／下降）
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              期間終了時に<strong>終了した期間</strong>のデータを参照するよう
+              修正しました（従来は新しい期間を参照していました）
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+            <li>
+              送信間隔・重複送信防止・本文長の上限を追加し、
+              APIレート制限に配慮しました
+              <span class="tag tag-feature">機能改善</span>
+            </li>
+            <li>
+              <code>/ランク設定</code>・<code>/ランキング</code> や
+              プリセット作成／削除／戻る操作で、応答前に <code>defer</code>
+              するよう修正しました（<code>10062 Unknown interaction</code> 対策）
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+            <li>
+              VC XP付与・整合性チェックのループで都度イベントループへ
+              制御を返すようにし、同期DBアクセスによる応答遅延を軽減しました
+              <span class="tag tag-bug">バグ修正</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v1.9.4 — ランク 通知CHスレッド対応・カスタムメッセージ・ログ出力 -->
       <!-- ========================================================= -->
 
