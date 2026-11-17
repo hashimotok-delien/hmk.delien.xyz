@@ -97,26 +97,26 @@
       </ul>
 
       <h4>チャットXPの計算フロー</h4>
-      <pre><code>1. チャット/インチャット ロール要件チェック
-   └── ロール未所持 → 付与なし
+      <pre><code>1. チャット獲得ロールの要件チェック
+   └── 対象ロールを持っていない → 付与なし
 
-2. 基本XP = _calc_random_exp(chat=True)
-   ├── モード0（固定値）: chat_exp × chat_multiplier
-   ├── モード1（一様）: random.uniform(min, max)
-   ├── モード2（三角）: random.triangular(min, max)
-   └── モード3（カスタム）: ユーザー定義式 (lo, hi, R 利用可)
+2. 基本XPを決定
+   ├── 固定値：1メッセージあたりのXP × 倍率
+   ├── 一様：最小値〜最大値の間でランダム
+   ├── 三角：最小値〜最大値の間で中央寄りのランダム
+   └── カスタム：管理者が入力した計算式
 
-3. + メッセージボーナス
+3. ＋ メッセージボーナス
    ├── 文字数ボーナス（設定文字数以上で加算）
    ├── 添付ファイルボーナス（1添付ごとに加算）
    └── スタンプボーナス（1スタンプごとに加算）
 
-4. × イベントブースト倍率（boost_chat_mult）
+4. × イベントブースト倍率
 
 5. × サーバータグボーナス倍率（タグ表示時のみ）
    └── 1回あたり上限XPを超える場合は上限で頭打ち
 
-6. XPキャップ適用（日次上限を超過しないよう調整）</code></pre>
+6. XPキャップ適用（1日の上限を超えないよう調整）</code></pre>
 
       <h4>メッセージボーナス</h4>
       <p>メッセージの質に応じて追加XPが付与されます。管理者が各項目を個別に設定できます。</p>
@@ -226,32 +226,32 @@
       </p>
       <div class="table-wrapper"><table>
         <thead>
-          <tr><th>モード</th><th>表示名</th><th>チャットXPの記録先</th><th>VC XPの記録先</th><th>VC/Stage内チャット</th><th>レベル判定</th></tr>
+          <tr><th>モード</th><th>チャットXP</th><th>VC経験値</th><th>VC/Stage内チャット</th><th>レベル判定</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>combined</code></td><td>🔄 全体</td><td><code>chat_exp</code></td><td><code>vc_exp</code></td><td><code>chat_exp</code></td><td><code>chat_exp + inchat_exp + vc_exp</code>（合算）</td></tr>
-          <tr><td><code>separate</code></td><td>🔀 VC/チャット</td><td><code>chat_exp</code></td><td><code>vc_exp</code></td><td><code>chat_exp</code></td><td>各XPから独立（2系統）</td></tr>
-          <tr><td><code>inchat</code></td><td>🎙️ VC/チャット/インチャット</td><td><code>chat_exp</code></td><td><code>vc_exp</code></td><td><code>inchat_exp</code>（独立）</td><td>各XPから独立（3系統）</td></tr>
+          <tr><td>🔄 全体</td><td>チャットXPとして記録</td><td>VC経験値として記録</td><td>チャットXPとして記録</td><td>すべて合算して1つのレベル</td></tr>
+          <tr><td>🔀 VC/チャット</td><td>チャットXPとして記録</td><td>VC経験値として記録</td><td>チャットXPとして記録</td><td>チャットとVCで独立（2系統）</td></tr>
+          <tr><td>🎙️ VC/チャット/インチャット</td><td>チャットXPとして記録</td><td>VC経験値として記録</td><td>インチャットXPとして記録</td><td>3系統で独立</td></tr>
         </tbody>
       </table></div>
       <ul>
-        <li><strong>全体 (combined)</strong>:
-          <code>chat_exp</code> と <code>inchat_exp</code> と <code>vc_exp</code> を
+        <li><strong>全体</strong>:
+          チャットXP・インチャットXP・VC経験値を
           <strong>合算</strong>して単一レベルを計算します。
           チャットとVCの両方の活動が同じレベルに貢献するシンプルな方式です。</li>
-        <li><strong>VC/チャット (separate)</strong>:
-          チャットXP → <code>chat_exp</code>（+inchat_exp）、
-          VC XP → <code>vc_exp</code> として別々に記録し、
+        <li><strong>VC/チャット</strong>:
+          チャットXP（VC内チャットを含む）と
+          VC経験値を別々に記録し、
           それぞれから独立したレベルを計算します。</li>
-        <li><strong>VC/チャット/インチャット (inchat)</strong>:
-          separate と同様にチャット・VCで独立したレベルを持ちつつ、
+        <li><strong>VC/チャット/インチャット</strong>:
+          VC/チャット と同様にチャット・VCで独立したレベルを持ちつつ、
           VCチャンネル内のテキストチャットやステージチャンネルでの
-          発言のみが別テーブル <code>inchat_exp</code> に記録され、
+          発言は<strong>インチャットXP</strong>として別に記録され、
           <strong>3つ目の独立したレベル</strong>として表示されます。</li>
       </ul>
-      <p><strong>🔑 重要な設計:</strong>
-      レベルは保存されず、全ての表示でXPからその場計算されます。
-      そのため成長曲線の変更が過去のデータに即座に反映され、
+      <p><strong>🔑 ポイント:</strong>
+      レベルは保存されず、すべて表示時にXPから計算されます。
+      そのため成長曲線の変更が過去のデータにも即座に反映され、
       レベルがずれる心配はありません。</p>
 
       <!-- ============================================================ -->
@@ -391,14 +391,14 @@ int(hi * R ** 0.5)</code></pre>
         <li>プリセット一覧がページネーションで表示される</li>
         <li>✅ 選択ボタン → Modalで種別（全て/チャット/VC/インチャット）と期間（全期間/週間/月間）を設定</li>
         <li><strong>0XPのユーザーは表示されません</strong></li>
-        <li>全期間の「全て」は chat_exp + inchat_exp + vc_exp の合計でソート</li>
+        <li>全期間の「全て」はチャットXP＋インチャットXP＋VC経験値の合計で並びます</li>
       </ul>
 
       <h3>期間ランキング</h3>
       <ul>
         <li><strong>週間</strong>: ISO週単位（月曜～日曜）。週替わりで自動リセット＆ログ出力（設定時）</li>
         <li><strong>月間</strong>: 暦月単位（1日～月末）。月替わりで自動リセット＆ログ出力（設定時）</li>
-        <li>集計値は <strong>chat_exp + inchat_exp + vc_exp のその場加算</strong>で算出（DBカラム参照ではない）</li>
+        <li>集計値は <strong>チャットXP＋インチャットXP＋VC経験値の合計</strong>から算出されます</li>
         <li>期間終了時のログは、<strong>期間前後のレベルと累積XP</strong>を併記します
           （例: <code>🥇 **名前** - Lv.34 (112,509 XP) -&gt; Lv.35 (113,915 XP) &lt;絵文字&gt; Lv.2 (1,406 XP)</code>）</li>
         <li>レベルが変化していないメンバーも、期間内にXPを獲得していれば表示されます</li>
@@ -499,10 +499,10 @@ max(100, 50 * L ** 1.5)
           <strong>画像式のランクカード</strong>で表示されます（1100×420）。<br>
           <strong>表示対象:</strong> ⭐ メイン設定されたプリセットのみ表示<br>
           メイン設定がない場合はエラーメッセージが表示されます。<br>
-          <strong>全体モード</strong>: chat_exp + inchat_exp + vc_exp の合算レベル表示（メーター1本）<br>
-          <strong>VC/チャットモード</strong>: チャットXP・VC XPを個別表示（メーター2本）<br>
+          <strong>全体モード</strong>: チャット・インチャット・VCの合算レベル表示（メーター1本）<br>
+          <strong>VC/チャットモード</strong>: チャットXP・VC経験値を個別表示（メーター2本）<br>
           <strong>インチャットモード</strong>: 通常チャット・VC内チャット・VCの3系統を独立表示（メーター3本）<br>
-          <strong>カスタマイズ:</strong> 追加機能「🎴 ランクカード設定」でカラーや表示を変更可能（設定しなくても画像で表示）
+          <strong>カスタマイズ:</strong> 追加機能「🎴 ランクカード設定」で背景画像・パーツごとの色・表示を変更できます（設定しなくても画像で表示）。詳しくは <a href="#rank-card-settings">🎴 ランクカード設定</a> を参照
         </div>
         <div class="cmd-meta"><span class="tag tag-user">全員</span></div>
       </div>
@@ -667,7 +667,7 @@ max(100, 50 * L ** 1.5)
           <tr><td>🎭 ランクロール制御設定</td><td>レベル到達時のロール付与/剥奪を設定（Modal）</td></tr>
           <tr><td>🎭 ランクロール高度制御設定</td><td>複数ロールの段階的付与など高度設定（Modal）</td></tr>
           <tr><td>💬 カスタムメッセージ設定</td><td>レベルアップ時のカスタム通知メッセージを設定（Modal）</td></tr>
-          <tr><td>🎴 ランクカード設定</td><td>ランクカードのカラーコード指定・順位/合計経験値/現在経験値/次レベル必要経験値の表示/非表示を設定（Modal）。設定しなくても `/ランク` は画像式で表示されます</td></tr>
+          <tr><td>🎴 ランクカード設定</td><td>背景画像のアップロード、パーツごとの色（ゲージ・アイコン・文字）、表示/非表示、プレビュー・保存・スタイルのコピー/貼り付けをまとめて設定するパネルを開きます。設定しなくても <code>/ランク</code> は画像式で表示されます</td></tr>
         </tbody>
       </table></div>
 
@@ -757,22 +757,14 @@ max(100, 50 * L ** 1.5)
         <p><strong>💡 ランクカードの内容:</strong></p>
         <ul>
           <li><strong>左上</strong>: 丸抜きアイコン＋カラーリング（色はランクカード設定で変更可能）</li>
-          <li><strong>中央上部</strong>: 表示名・ユーザー名（絵文字はカラーで描画。フォントは <code>data/fonts/NotoColorEmoji.ttf</code>）</li>
-          <li><strong>表示名の文字補完</strong>: 日本語フォントに無い文字は、以下の補完フォントから文字ごとに最適なフォントを自動選択して描画
-            <ul>
-              <li>Yi文字（「꒳」「꒰」など）: <code>MSYI.TTF</code> / <code>NotoSansYi-Regular.ttf</code></li>
-              <li>シンボル文字（「❅」「♔」「⋆」など）: <code>NotoSansSymbols-Regular.ttf</code> / <code>NotoSansSymbols2-Regular.ttf</code></li>
-              <li>数学記号（「⟡」「⫘」など）: <code>NotoSansMath-Regular.ttf</code></li>
-              <li>各種言語文字（「ঌ」など）: <code>NotoSansBengali-Regular.ttf</code></li>
-              <li>その他の記号: <code>NotoSans-Regular.ttf</code></li>
-            </ul>
-          </li>
-          <li><strong>ZWJ合成絵文字</strong>: 「🐈‍⬛」のような複合絵文字もカラーで描画可能</li>
-          <li><strong>アイコン下</strong>: 表示中の各系統レベルの合計（LVL＋数字）</li>
+          <li><strong>中央上部</strong>: 表示名・ユーザー名（絵文字もカラーで表示）</li>
+          <li><strong>表示名の文字補完</strong>: 日本語フォントに無い文字（「꒳」「❅」「⟡」などの記号・各国文字）も自動で判別して表示</li>
+          <li><strong>アイコン下</strong>: 現在のランク名と、表示中の各系統レベルの合計（LVL＋数字）</li>
           <li><strong>各メーター直上</strong>: 系統別の順位・合計EXP</li>
           <li><strong>各メーター左側</strong>: 系統別のレベル（LVL＋数字）</li>
           <li><strong>メーター内</strong>: 現在Lv内XP / 次Lv必要XP（進捗%）</li>
-          <li>背景画像は <code>data/img/rank_default_card.png</code> に置くことでカスタマイズ可能（無い場合は単色背景）</li>
+          <li><strong>右下</strong>: 設定名（<code>/ランク設定</code> のプリセット名）</li>
+          <li><strong>背景画像</strong>: ランクカード設定からアップロードして変更できます（下の「🎴 ランクカード設定」参照）</li>
         </ul>
       </div>
 
@@ -786,6 +778,66 @@ max(100, 50 * L ** 1.5)
           <li><strong>現在経験値と次レベル必要経験値の両方を隠す</strong>: メーター内は進捗%（例: <code>45%</code>）のみ表示されます</li>
         </ul>
       </div>
+
+      <!-- ============================================================ -->
+      <!-- ランクカード設定 -->
+      <!-- ============================================================ -->
+      <h2 id="rank-card-settings">🎴 ランクカード設定</h2>
+      <p>
+        <code>/ランク設定</code> の「設定を選択」から
+        <strong>🎴 ランクカード設定</strong> を選ぶと、
+        カードの見た目を設定するパネルが開きます。
+        パネルには<strong>プレビュー</strong>が表示され、
+        設定を変えるたびに自動で更新されます（保存前の内容も反映）。
+      </p>
+
+      <h3>ボタン一覧</h3>
+      <div class="table-wrapper"><table>
+        <thead>
+          <tr><th>ボタン</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🎚️ ゲージ設定</td><td>レベル文字色／アイコン塗りつぶし色／ゲージ色／ゲージ内文字色／ゲージ背景色</td></tr>
+          <tr><td>🎨 アイコン色</td><td>アイコン縁色／アイコン下レベル色／アイコン下ランク色／中央表示名色／中央名前色</td></tr>
+          <tr><td>⚙️ その他設定</td><td>ゲージ上の順位（順位・合計の文字色）／右下の設定名の色</td></tr>
+          <tr><td>🖼️ 背景・画像</td><td>背景画像のアップロード／背景を既定に戻す／全体文字色</td></tr>
+          <tr><td>🔒 非表示設定</td><td>次レベル必要経験値／順位／合計経験値／現在経験値の表示切り替え</td></tr>
+          <tr><td>📋 コピー</td><td>いまのスタイルをDMへ送信（別のプリセットや別サーバーへ移せます）</td></tr>
+          <tr><td>📥 貼り付け</td><td>DMに届いた文字列を貼り付けて送信すると、まとめて反映</td></tr>
+          <tr><td>💾 保存</td><td>この画面のまま設定を保存</td></tr>
+          <tr><td>↩️ 戻る</td><td>プリセット編集画面へ戻る</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>色の指定ルール</h3>
+      <ul>
+        <li>色は <code>#FFFFFF</code> のような<strong>カラーコード</strong>で入力します</li>
+        <li>空欄にすると<strong>上位の設定</strong>が使われます（全体文字色 → カラーコード）</li>
+        <li>ゲージ背景色を空欄にすると<strong>透明</strong>、アイコン塗りつぶし色を空欄にすると<strong>元の画像の色</strong>のままになります</li>
+      </ul>
+
+      <h3>背景画像</h3>
+      <ul>
+        <li>画像をアップロードすると、その画像が背景になります</li>
+        <li>推奨比率は既定素材と同じ<strong>1100:420</strong>です（それ以外の比率の画像は自動でリサイズされます）</li>
+        <li><strong>♻️ 背景を既定に戻す</strong>で元の背景に戻せます</li>
+        <li>画像以外のファイルや大きすぎるファイルは登録されません</li>
+        <li>アップロードした画像はサーバーごとの保存先チャンネルに保管されます（<code>/基本設定</code> の「🎴 ランクカード保存先」で変更可能。未設定時はグローバル設定 → 既定の保管庫の順で使われます）</li>
+      </ul>
+
+      <h3>スタイルのコピー／貼り付け</h3>
+      <p>
+        <strong>📋 コピー</strong> を押すと、現在のスタイルがDMに届きます。
+        <strong>📥 貼り付け</strong> に張り付けて送信すると、一括で反映されます。
+        別のプリセットや別サーバーへ見た目をそのまま移せます。
+      </p>
+      <pre><code>text=#FFFFFF,accent=#7289DA,gauge=#FF0000,label=#AA00AA,bg=https://...</code></pre>
+      <ul>
+        <li>未設定の項目は省略されます</li>
+        <li>値だけをカンマ区切りで並べた<strong>位置指定</strong>にも対応（順序は <code>text, accent, gauge_level, gauge_icon, gauge, gauge_text, gauge_bg, icon_ring, icon_level, icon_rank, name, username, header, label</code>）</li>
+        <li><code>bg=-</code> で背景を既定素材に戻す／<code>bg=（URL）</code> で背景を差し替え</li>
+        <li>解釈できなかった値は反映されず、件数とともに通知されます</li>
+      </ul>
 
       <!-- ============================================================ -->
       <!-- 注意事項 -->
@@ -802,7 +854,7 @@ max(100, 50 * L ** 1.5)
         <li><strong>VC最小接続時間のデフォルトは1分</strong>です。1分未満のVC接続ではXPが付与されません。0に設定すると比例計算になります</li>
         <li><strong>チャット/インチャット獲得ロール</strong>を設定すると、そのロールを持たないユーザーはXPを獲得できません</li>
         <li><strong>ランキングではXPが0のユーザーは表示されません</strong></li>
-        <li><strong>期間ランキングの集計値</strong>はDBカラムではなく chat_exp + inchat_exp + vc_exp の加算で算出されます</li>
+        <li><strong>期間ランキングの集計値</strong>はチャットXP＋インチャットXP＋VC経験値の合計から算出されます</li>
         <li>レベルは保存されず、全てXPからその場計算されます。数式を変更しても過去データとの整合性は保たれます</li>
       </ul>
 

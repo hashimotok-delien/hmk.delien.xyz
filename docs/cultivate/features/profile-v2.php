@@ -562,13 +562,10 @@
       <h2>⚠️ 注意事項</h2>
       <ul>
         <li>
-          <strong>データベース:</strong> プロフィール v2 は以下のテーブルを使用します。
-          手動で編集しないでください。
-          <ul>
-            <li><code>profile_v2cog_configs</code> — プリセット設定</li>
-            <li><code>profile_v2cog_profiles</code> — 保存されたプロフィールメッセージ</li>
-            <li><code>profile_v2cog_vc_inchat_configs</code> — VCインチャ設定</li>
-          </ul>
+          <strong>データの保存:</strong> プロフィール v2 の設定や保存した
+          プロフィールは Bot が管理するデータベースに記録されます。
+          手動で変更すると表示が崩れるおそれがあるため、必ずコマンドや
+          設定パネルから操作してください。
         </li>
         <li>
           <strong>互換性:</strong> v1 システムとは独立して動作します。

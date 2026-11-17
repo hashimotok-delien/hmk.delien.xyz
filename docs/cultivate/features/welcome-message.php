@@ -139,14 +139,11 @@
         中央にアイコンと「ようこそ」+ 表示名が描画されます。
       </p>
       <ul>
-        <li>デフォルトの背景画像: <code>data/img/welcome_default_card.png</code></li>
+        <li>既定の背景画像が使われます</li>
         <li>カードの文字は背景が明るい場合でも読めるよう黒文字＋白影で描画</li>
-        <li>表示名の絵文字はカラーで描画（<code>data/fonts/NotoColorEmoji.ttf</code>）</li>
-        <li>日本語フォントに無い文字（Yi文字「꒳」など）は、ランクカードと同じ補完フォント群から文字ごとに最適なフォントを自動選択して描画
-          （<code>MSYI.TTF</code> / <code>NotoSansYi-Regular.ttf</code> / <code>NotoSansSymbols*</code> / <code>NotoSansMath-Regular.ttf</code> / <code>NotoSansBengali-Regular.ttf</code> / <code>NotoSans-Regular.ttf</code>）
-        </li>
-        <li>「🐈‍⬛」のようなZWJ合成絵文字もカラーで描画可能</li>
-        <li>テンプレート画像は将来のカスタマイズに対応予定</li>
+        <li>表示名の絵文字はカラーで表示</li>
+        <li>日本語フォントに無い文字（記号「꒳」「❅」や各国文字など）も自動で判別して表示</li>
+        <li>「🐈‍⬛」のような合成絵文字もカラーで表示</li>
       </ul>
 
       <h2>コマンド一覧</h2>

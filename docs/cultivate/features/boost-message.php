@@ -153,8 +153,8 @@
       <p><img src="../assets/img/boost_card_sample.png" alt="ブーストカード（サンプル）" width="840" height="420" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;"></p>
       <ul>
         <li>
-          背景画像は <code>data/img/boost_default_card.png</code> に置くことで
-          カスタマイズ可能（無い場合は紫の単色背景）
+          背景画像は既定の素材が使われます
+          （差し替えたい場合はサポートまでご相談ください）
         </li>
         <li>背景の明るさに応じてテキスト色が自動で切り替わる</li>
         <li>表示名が長い場合はカード幅に収まるよう自動で縮小</li>

@@ -105,6 +105,175 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v1.9.7 — ランクカードのカスタマイズ強化・ロール操作の安定化 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.9.7</div>
+        <p class="version-date">2026年11月</p>
+      </div>
+
+      <div class="update-card" data-tags="feature rank">
+        <div class="update-icon">🎴</div>
+        <div class="update-body">
+          <div class="update-title">
+            ランクカードの見た目を自由にカスタマイズ
+            <span class="update-date">2026/11/18</span>
+            <span class="tag tag-feature">新機能</span>
+          </div>
+          <ul>
+            <li>
+              <code>/ランク設定</code> の「設定を選択」で
+              <strong>🎴 ランクカード設定</strong> を選ぶと、
+              カードの見た目を設定するパネルが開きます
+              <span class="tag tag-rank">ランク</span>
+            </li>
+            <li>
+              <strong>背景画像</strong>をアップロードして差し替えられます
+              （推奨比率は既定素材と同じ <strong>1100:420</strong>。
+              それ以外の比率の画像は自動でリサイズされます）
+            </li>
+            <li>
+              パーツごとに色を指定できます
+              （<code>#FFFFFF</code> のようなカラーコードで入力）
+              <ul>
+                <li>
+                  🎚️ ゲージ設定：レベル文字色／アイコン塗りつぶし色／
+                  ゲージ色／ゲージ内文字色／ゲージ背景色
+                </li>
+                <li>
+                  🎨 アイコン色：アイコン縁色／アイコン下レベル色／
+                  アイコン下ランク色／中央表示名色／中央名前色
+                </li>
+                <li>
+                  ⚙️ その他設定：ゲージ上の順位／右下の設定名
+                </li>
+              </ul>
+            </li>
+            <li>
+              空欄にした項目は上位の設定（全体文字色 → カラーコード）が
+              使われます。ゲージ背景色を空欄にすると透明、
+              アイコン塗りつぶし色を空欄にすると元の画像の色のままになります
+            </li>
+            <li>
+              設定パネルには<strong>プレビュー</strong>が表示され、
+              設定を変えるたびに自動で更新されます
+              （保存前の内容も反映されます）
+            </li>
+            <li>
+              <strong>💾 保存</strong>でその場で保存、
+              <strong>📋 コピー</strong>でいまのスタイルをDMへ送信、
+              <strong>📥 貼り付け</strong>で受け取った文字列を
+              まとめて反映できます
+              （別のプリセットや別サーバーへ見た目を移せます）
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature rank">
+        <div class="update-icon">🏅</div>
+        <div class="update-body">
+          <div class="update-title">
+            ランクカードに現在のランク名と設定名を表示
+            <span class="update-date">2026/11/18</span>
+            <span class="tag tag-feature">新機能</span>
+          </div>
+          <ul>
+            <li>
+              ランクロール制御で設定した<strong>現在のランク名</strong>を
+              アイコンの下に表示します
+            </li>
+            <li>
+              カードの<strong>右下に設定名</strong>
+              （<code>/ランク設定</code> のプリセット名）を表示します
+            </li>
+            <li>
+              どちらも「非表示設定」から隠せます
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature rank">
+        <div class="update-icon">🎤</div>
+        <div class="update-body">
+          <div class="update-title">
+            VCホワリス／ブラリス：「同じ名前」のカテゴリ・VCも対象に
+            <span class="update-date">2026/11/18</span>
+            <span class="tag tag-feature">機能改善</span>
+          </div>
+          <ul>
+            <li>
+              VCホワリス／ブラリス設定に、
+              <strong>同じ名前のカテゴリ・VCも対象にする</strong>
+              オプションを追加しました（4項目・初期設定はすべてOFF）
+            </li>
+            <li>
+              他Botが自動で作るVC
+              （カテゴリ内のチャンネルが増えると新しく作られるもの等）
+              にも対応できます
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="feature info">
+        <div class="update-icon">🛡️</div>
+        <div class="update-body">
+          <div class="update-title">
+            ロールの付与・剥奪を安定化
+            <span class="update-date">2026/11/18</span>
+            <span class="tag tag-info">システム</span>
+          </div>
+          <ul>
+            <li>
+              短時間に大量のロール操作をしても失敗しにくいよう、
+              順番待ちの仕組みを入れました
+            </li>
+            <li>
+              複数ロールはまとめて1回で反映されます
+            </li>
+            <li>
+              Botの権限より上にあるロールなど、
+              <strong>操作できないロールはあらかじめ除外</strong>するため、
+              1つのロールのせいで全部が失敗することがなくなります
+            </li>
+            <li>
+              ボタン操作などは優先的に、
+              ランクによる自動付与は後回しにして処理します
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
+      <!-- v1.9.6 — 全体的なパフォーマンス向上 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.9.6</div>
+        <p class="version-date">2026年11月</p>
+      </div>
+
+      <div class="update-card" data-tags="rank feature">
+        <div class="update-icon">⚙</div>
+        <div class="update-body">
+          <div class="update-title">
+            軽微な修正
+            <span class="update-date">2026/11/17</span>
+            <span class="tag tag-system">システム</span>
+          </div>
+          <ul>
+            <li>
+              全体的な処理を高速化するために軽微な修正
+              <span class="tag tag-system">システム</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v1.9.5 — ランク VC経験値の付与間隔変更・期間ランキングログ改善 -->
       <!-- ========================================================= -->
 
