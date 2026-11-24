@@ -105,6 +105,87 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v1.9.8 — 画像の期限切れ対策・スタンプ座標の一括設定 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.9.8</div>
+        <p class="version-date">2026年11月</p>
+      </div>
+
+      <div class="update-card" data-tags="bug rank">
+        <div class="update-icon">🖼️</div>
+        <div class="update-body">
+          <div class="update-title">
+            期限切れで画像が表示されなくなる問題を修正
+            <span class="update-date">2026/11/23</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>
+              🏆 <strong>ランクカードのカスタム背景</strong>：
+              背景画像のリンクが期限切れになっても、
+              保存先メッセージから自動で取得し直します
+            </li>
+            <li>
+              📢 <strong>サーバー宣伝パネルのサムネイル</strong>：
+              画像リンクが期限切れになると、
+              元の投稿メッセージから自動で取得し直します
+            </li>
+            <li>
+              今後アップロードする画像は、保存先メッセージIDも
+              あわせて記録するため、期限切れ時も復元できます
+              （ランクカード背景・投稿者設定・交流スタンプラリー）
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="info">
+        <div class="update-icon">🧾</div>
+        <div class="update-body">
+          <div class="update-title">
+            エラーログを専用ファイルに保存
+            <span class="update-date">2026/11/23</span>
+            <span class="tag tag-info">システム</span>
+          </div>
+          <ul>
+            <li>
+              警告（WARNING）以上だけを専用ファイルに記録し、
+              通常の情報ログとは分けて確認できるようになりました
+            </li>
+            <li>
+              例外発生時は、原因調査に必要な詳細情報も記録されます
+            </li>
+            <li>
+              日次で自動的に切り替え・圧縮され、
+              古いログは自動削除されます
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="profile feature">
+        <div class="update-icon">🧩</div>
+        <div class="update-body">
+          <div class="update-title">
+            プロフィールv2を単体で運用しやすく
+            <span class="update-date">2026/11/23</span>
+            <span class="tag tag-feature">機能改善</span>
+          </div>
+          <ul>
+            <li>
+              プロフィールv2を単体でも運用できるよう整理しました
+            </li>
+            <li>
+              プロフィールv1を導入していないサーバーでも、
+              プロフィールv2が動作するようになりました
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v1.9.7 — ランクカードのカスタマイズ強化・ロール操作の安定化 -->
       <!-- ========================================================= -->
 
