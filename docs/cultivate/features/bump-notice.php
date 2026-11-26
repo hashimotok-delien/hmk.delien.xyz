@@ -42,6 +42,41 @@
         <li>タイマーメッセージを空欄にすると通知なし（タイマーは消化）</li>
       </ul>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "BUMP通知設定画面のプレビュー",
+  "screens": [
+    {
+      "channel": "BUMP通知設定",
+      "avatar": "🔔",
+      "embed": {
+        "title": "🔔 BUMP通知設定",
+        "desc": "DISBOARD / ディス速のBUMPを検知して<br>日中・深夜メッセージを自動送信します。<br>各ボタンから設定を変更できます。",
+        "color": "green",
+        "fields": [
+          {"name": "DISBOARD", "value": "**チャンネル**: #bump<br>**日中メッセージ**: BUMPありがとう！<br>**深夜メッセージ**: 深夜のBUMPありがとう！<br>**深夜時間帯**: 22:00〜06:00<br>**タイマー日中**: そろそろBUMPの時間だよ<br>**タイマー深夜**: 未設定（通知なし）"},
+          {"name": "ディス速", "value": "**チャンネル**: 未設定<br>**日中メッセージ**: 未設定<br>**深夜メッセージ**: 未設定<br>**深夜時間帯**: 22:00〜06:00<br>**タイマー日中**: 未設定（通知なし）<br>**タイマー深夜**: 未設定（通知なし）"}
+        ],
+        "footer": "サンプルサーバー"
+      },
+      "buttons": [
+        {"label": "📢 DISBOARD通知設定", "style": "primary", "note": "disboard", "active": true},
+        {"label": "⚡ ディス速通知設定", "style": "green", "note": "dissoku"},
+        {"label": "⏰ タイマー設定", "note": "timer"}
+      ],
+      "notes": [
+        {"key": "disboard", "title": "📢 DISBOARD通知設定", "body": "DISBOARD のBUMPチャンネル・日中メッセージ・深夜メッセージ・深夜開始時刻・終了時刻を設定します。"},
+        {"key": "dissoku", "title": "⚡ ディス速通知設定", "body": "ディス速 のBUMPチャンネル・日中メッセージ・深夜メッセージ・深夜開始時刻・終了時刻を設定します。DISBOARD とは独立して設定できます。"},
+        {"key": "timer", "title": "⏰ タイマー設定", "body": "BUMPから2時間後の通知メッセージを、DISBOARD / ディス速 × 日中 / 深夜 の4つに分けて設定します。"}
+      ]
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定方法</h2>
 
       <h3>設定パネルを開く</h3>

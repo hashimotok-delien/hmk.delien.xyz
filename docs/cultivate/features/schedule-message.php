@@ -83,6 +83,58 @@
         </tbody>
       </table></div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "予約投稿設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "設定一覧",
+      "channel": "予約投稿設定",
+      "embed": {
+        "title": "📅 朝の挨拶",
+        "fields": [
+          {"name": "ステータス", "value": "🕐 待機中"},
+          {"name": "📌 投稿先チャンネル", "value": "#general"},
+          {"name": "🔗 メッセージリンク", "value": "https://discord.com/channels/123456789012345678/234567890123456789/345678901234567890"}
+        ],
+        "footer": "ページ 1/1 | 合計: 1件"
+      },
+      "buttons": [
+        {"label": "✏️ 編集", "style": "primary"},
+        {"label": "➕ 新規作成", "style": "green"},
+        {"label": "🗑️ 削除", "style": "danger"}
+      ],
+      "caption": "▲ <code>/予約投稿設定</code> で開く設定一覧。設定はページ送りで1件ずつ表示されます。"
+    },
+    {
+      "tab": "編集画面",
+      "channel": "予約投稿設定",
+      "embed": {
+        "title": "📅 朝の挨拶",
+        "fields": [
+          {"name": "ステータス", "value": "🕐 待機中"},
+          {"name": "予約投稿", "value": "🟢 有効"},
+          {"name": "📌 投稿先チャンネル", "value": "#general"},
+          {"name": "投稿日時", "value": "2026/12/31 23:59"}
+        ]
+      },
+      "buttons": [
+        {"label": "🔗 基本設定", "style": "primary"},
+        {"label": "🟢 有効", "style": "green"},
+        {"label": "📌 投稿先設定"},
+        {"label": "👤 投稿者設定"},
+        {"label": "💾 保存", "style": "green"},
+        {"label": "🔙 戻る"}
+      ],
+      "caption": "▲ 編集画面。有効/無効ボタンは現在の状態を表し、押すと切り替わります。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定項目</h2>
       <div class="table-wrapper"><table>
         <thead>

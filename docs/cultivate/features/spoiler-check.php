@@ -25,6 +25,35 @@
         スポイラーなしで画像が投稿された場合、自動的に削除されます。
       </p>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "スポイラー必須チャンネル設定のプレビュー",
+  "screens": [
+    {
+      "channel": "設定パネル",
+      "avatar": "🖼️",
+      "embed": {
+        "title": "スポイラー必須設定（プレビュー）",
+        "color": "green",
+        "desc": "### スポイラー必須チャンネル設定<br><br>#画像投稿, #スクショ共有",
+        "fields": [
+          {"name": "設定説明", "value": "以下から設定項目を選んでください。<br><br>• スポイラー必須チャンネル設定 — スポイラーを必須にするチャンネルを複数選択<br><br>※ 変更は一旦一時保存され、<strong>保存</strong> を押すまで DB には反映されません。"}
+        ]
+      },
+      "select": "スポイラー必須設定項目を選んでね",
+      "buttons": [
+        {"label": "保存", "style": "green"},
+        {"label": "キャンセル", "style": "danger"}
+      ],
+      "caption": "▲ <code>/設定パネル</code> から「🖼️ 画像投稿スポイラー判定」を開いたときの設定パネル。未保存の変更があると埋め込みの色が赤になります。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定方法</h2>
       <ol class="steps">
         <li>

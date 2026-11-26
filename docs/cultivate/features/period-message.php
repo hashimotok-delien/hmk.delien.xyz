@@ -98,6 +98,69 @@
         </tbody>
       </table></div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "定期メッセージ設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "設定一覧",
+      "channel": "定期メッセージ設定",
+      "avatar": "⏰",
+      "embed": {
+        "title": "⏰ 定期告知",
+        "color": "green",
+        "fields": [
+          {"name": "📌 送信先チャンネル", "value": "#general"},
+          {"name": "⏱️ 送信間隔", "value": "`600`秒"},
+          {"name": "状態", "value": "🟢 有効"}
+        ],
+        "footer": "ページ 1/1 | 合計: 1件"
+      },
+      "buttons": [
+        {"label": "✏️ 編集", "style": "primary"},
+        {"label": "➕ 新規作成", "style": "green"},
+        {"label": "🗑️ 削除", "style": "danger"}
+      ],
+      "caption": "▲ <code>/定期メッセージ設定</code> で開く設定一覧。"
+    },
+    {
+      "tab": "編集画面",
+      "channel": "定期メッセージ設定",
+      "avatar": "⏰",
+      "embed": {
+        "title": "⏰ 定期告知",
+        "fields": [
+          {"name": "📌 送信先チャンネル", "value": "#general"},
+          {"name": "状態", "value": "🟢 有効"},
+          {"name": "⏱️ 送信間隔", "value": "`600`秒"},
+          {"name": "🗑️ 送信後の削除", "value": "`削除しない`"},
+          {"name": "♻️ 再投稿時に元を削除", "value": "`OFF`"},
+          {"name": "👤 投稿者", "value": "`Bot`"},
+          {"name": "🕐 次回送信予定", "value": "2025/01/01 12:00:00"}
+        ],
+        "footer": "ID: 1 | Guild: 123456789"
+      },
+      "buttons": [
+        {"label": "🔗 基本設定"},
+        {"label": "⏱️ 送信オプション"},
+        {"label": "👤 投稿者設定"},
+        {"label": "📝 投稿文設定①"},
+        {"label": "📝 投稿文設定②"},
+        {"label": "📢 投稿設定"},
+        {"label": "🟢 有効/無効", "style": "green"},
+        {"label": "▶️ 今すぐ送信"},
+        {"label": "💾 保存", "style": "green", "disabled": true},
+        {"label": "🔙 戻る"}
+      ],
+      "caption": "▲ 設定の編集画面。「💾 保存」で変更を確定します。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定項目</h2>
       <div class="table-wrapper"><table>
         <thead>

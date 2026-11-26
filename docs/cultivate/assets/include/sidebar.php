@@ -23,6 +23,7 @@
     <a href="<?= $ROOT ?? '.' ?>/features/sticky"><span class="nav-icon">📌</span>吊下げメッセージ</a>
     <a href="<?= $ROOT ?? '.' ?>/features/category-name"><span class="nav-icon">📂</span>カテゴリ名設定</a>
     <a href="<?= $ROOT ?? '.' ?>/features/role-check"><span class="nav-icon">🛂</span>必須ロール確認</a>
+    <a href="<?= $ROOT ?? '.' ?>/features/server-cooperation"><span class="nav-icon">🔗</span>サーバー連携</a>
     <a href="<?= $ROOT ?? '.' ?>/features/role-sync"><span class="nav-icon">🎭</span>ロール同期</a>
     <a href="<?= $ROOT ?? '.' ?>/features/log"><span class="nav-icon">🗂️</span>ログ</a>
     <a href="<?= $ROOT ?? '.' ?>/features/auto-kick"><span class="nav-icon">🦵</span>自動KICK</a>
@@ -30,6 +31,7 @@
     <a href="<?= $ROOT ?? '.' ?>/features/author-settings"><span class="nav-icon">👤</span>投稿者設定</a>
     <!-- <a href="<?= $ROOT ?? '.' ?>/features/ch-role"><span class="nav-icon">📝</span>自動ロール付与</a> -->
     <a href="<?= $ROOT ?? '.' ?>/features/auto-reaction"><span class="nav-icon">😊</span>自動リアクション</a>
+    <a href="<?= $ROOT ?? '.' ?>/features/reaction-notice"><span class="nav-icon">🔔</span>リアクション通知</a>
     <a href="<?= $ROOT ?? '.' ?>/features/category-sync"><span class="nav-icon">📋</span>カテゴリ権限同期</a>
     <a href="<?= $ROOT ?? '.' ?>/features/template-channel"><span class="nav-icon">📂</span>テンプレチャンネル設定</a>
     <a href="<?= $ROOT ?? '.' ?>/features/period-message"><span class="nav-icon">⏰</span>定期メッセージ</a>

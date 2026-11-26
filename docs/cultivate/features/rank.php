@@ -545,6 +545,82 @@ max(100, 50 * L ** 1.5)
       <!-- ============================================================ -->
       <!-- 設定パネル項目一覧 -->
       <!-- ============================================================ -->
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "ランク設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "プリセット一覧",
+      "channel": "ランク設定",
+      "embed": {
+        "title": "🏆 メインプリセット",
+        "desc": "ID: `1` | 🟢 アクティブ",
+        "color": "green",
+        "fields": [
+          {"name": "有効な機能", "value": "💬 チャット計測<br>🎤 VC計測<br>📅 XPキャップ設定"},
+          {"name": "基本設定", "value": "🟢 チャット計測<br>🟢 VC計測"}
+        ],
+        "footer": "1/3 | 有効化 2/3"
+      },
+      "buttons": [
+        {"label": "📋 新規作成"},
+        {"label": "✏️ 編集", "style": "primary"},
+        {"label": "📌 設置", "style": "green"},
+        {"label": "🎭 現在レベルのロール反映", "style": "green"},
+        {"label": "🗑️ 削除", "style": "danger"},
+        {"label": "❌ 閉じる", "style": "danger"}
+      ],
+      "caption": "▲ <code>/ランク設定</code> で開くプリセット一覧。プリセットはページ送りで1件ずつ表示されます。"
+    },
+    {
+      "tab": "設定エディタ",
+      "channel": "ランク設定",
+      "embed": {
+        "title": "📝 メインプリセット を編集中",
+        "desc": "🟢 プリセット有効 | ⭐ メイン設定 | ✅ 保存済み | 🟢 2/3",
+        "fields": [
+          {"name": "基本設定", "value": "🟢 チャット計測<br>🟢 VC計測<br>🔀 XP集計: <strong>全体</strong>"}
+        ]
+      },
+      "select": "🔧 追加機能を選択（複数可）",
+      "buttons": [
+        {"label": "💾 保存", "style": "green", "disabled": true},
+        {"label": "🧮 成長時間を試算"},
+        {"label": "↩️ 戻る"}
+      ],
+      "caption": "▲ プリセットの編集画面。もう一方のSelect「📋 設定を選択」から詳細設定を開きます。"
+    },
+    {
+      "tab": "ランクカード設定",
+      "channel": "ランク設定",
+      "avatar": "🎴",
+      "embed": {
+        "title": "🎴 ランクカード設定",
+        "desc": "### 🖼️ 背景・画像<br>背景画像：<code>未設定</code><br><br>### 🎚️ ゲージ<br>ゲージ色：<code>#00BFFF</code>",
+        "fields": [
+          {"name": "非表示", "value": "<code>なし</code>"}
+        ]
+      },
+      "buttons": [
+        {"label": "🎚️ ゲージ設定", "style": "primary"},
+        {"label": "🎨 アイコン色", "style": "primary"},
+        {"label": "⚙️ その他設定", "style": "primary"},
+        {"label": "🖼️ 背景・画像"},
+        {"label": "🔒 非表示設定"},
+        {"label": "📋 コピー"},
+        {"label": "📥 貼り付け"},
+        {"label": "💾 保存", "style": "green"},
+        {"label": "↩️ 戻る"}
+      ],
+      "caption": "▲ エディタの「🎴 ランクカード設定」から開くパネル。設定変更はプレビューに即時反映されます。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定パネル項目一覧</h2>
       <p>
         <code>/ランク設定</code> で開く設定パネルでは、
@@ -745,13 +821,22 @@ max(100, 50 * L ** 1.5)
       </p>
 
       <h3>全体モード（combined・メーター1本）</h3>
-      <p><img src="../assets/img/rank_card_combined.png" alt="ランクカード（全体モード）" width="1100" height="420" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><picture>
+  <source srcset="../assets/img/rank_card_combined.webp" type="image/webp">
+  <img src="../assets/img/rank_card_combined.png" alt="ランクカード（全体モード）" width="1100" height="420" loading="lazy" decoding="async" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;">
+</picture></p>
 
       <h3>VC/チャットモード（separate・メーター2本）</h3>
-      <p><img src="../assets/img/rank_card_separate.png" alt="ランクカード（VC/チャットモード）" width="1100" height="420" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><picture>
+  <source srcset="../assets/img/rank_card_separate.webp" type="image/webp">
+  <img src="../assets/img/rank_card_separate.png" alt="ランクカード（VC/チャットモード）" width="1100" height="420" loading="lazy" decoding="async" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;">
+</picture></p>
 
       <h3>インチャットモード（inchat・メーター3本）</h3>
-      <p><img src="../assets/img/rank_card_inchat.png" alt="ランクカード（インチャットモード）" width="1100" height="420" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><picture>
+  <source srcset="../assets/img/rank_card_inchat.webp" type="image/webp">
+  <img src="../assets/img/rank_card_inchat.png" alt="ランクカード（インチャットモード）" width="1100" height="420" loading="lazy" decoding="async" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;">
+</picture></p>
 
       <div class="alert alert-info">
         <p><strong>💡 ランクカードの内容:</strong></p>

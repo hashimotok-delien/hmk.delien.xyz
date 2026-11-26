@@ -31,7 +31,7 @@
         界隈サーバー運営に必要な機能を1つにまとめて提供します。
       </p>
       <p>
-        バージョン <strong>1.9.8</strong>
+        バージョン <strong>1.9.9</strong>
         <span style="display: inline-block; margin-left: 16px;">
           <a href="updates" style="font-size: 0.9rem;">📋 更新履歴を見る</a>
         </span>
@@ -105,6 +105,12 @@
           <h3>😊 自動リアクション</h3>
           <p>メッセージ投稿時に自動でリアクションを追加。コミュニケーションを活性化します。</p>
           <a href="features/auto-reaction">詳しく見る →</a>
+        </div>
+
+        <div class="card">
+          <h3>🔔 リアクション通知</h3>
+          <p>対象チャンネルでリアクションが押されたら、押したメンバーのプロフィールカードと通知本文を送信。リアクションだけの絵文字・送信先チャンネル・本文を設定できます。</p>
+          <a href="features/reaction-notice">詳しく見る →</a>
         </div>
 
         <div class="card">

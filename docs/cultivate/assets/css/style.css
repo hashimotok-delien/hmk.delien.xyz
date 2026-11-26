@@ -12,14 +12,6 @@
 
 @font-face {
   font-family: 'Noto Sans JP';
-  src: url("../../../assets/fonts/noto-sans-jp-600.woff2?v=1") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Noto Sans JP';
   src: url("../../../assets/fonts/noto-sans-jp-700.woff2?v=1") format("woff2");
   font-weight: 700;
   font-style: normal;
@@ -56,6 +48,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -89,7 +85,7 @@ body {
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: all 0.3s;
+  transition: color 0.3s, text-shadow 0.3s;
 }
 a:hover {
   text-shadow: 0 0 8px var(--accent-glow);
@@ -150,7 +146,7 @@ a:hover {
   color: var(--text-secondary);
   font-size: 0.9rem;
   border-left: 3px solid transparent;
-  transition: all 0.2s;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
 
 .sidebar-nav a:hover {
@@ -175,9 +171,13 @@ a:hover {
 .main-content {
   margin-left: var(--sidebar-width);
   flex: 1;
+  min-width: 0;
   min-height: 100vh;
   padding: 0;
+  /* clip にすることでスクロールコンテナを作らず、
+     中の position: sticky（トップバー）が有効になる */
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Top bar */
@@ -185,8 +185,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(10, 10, 15, 0.92);
-  backdrop-filter: blur(12px);
+  background: var(--bg-primary);
   border-bottom: 1px solid var(--border);
   padding: 12px 40px;
   display: flex;
@@ -196,7 +195,7 @@ a:hover {
 
 .topbar .page-title {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
 }
 
@@ -234,7 +233,7 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 48px;
   margin-bottom: 12px;
   color: var(--accent);
@@ -244,10 +243,17 @@ h2 {
 
 h3 {
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 32px;
   margin-bottom: 8px;
   color: var(--text-primary);
+}
+
+/* 固定トップバーの下にアンカー先が隠れないようにする */
+h1,
+h2,
+h3 {
+  scroll-margin-top: 72px;
 }
 
 p {
@@ -322,7 +328,7 @@ blockquote p {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
-  transition: all 0.3s;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
 }
@@ -372,7 +378,7 @@ blockquote p {
   border-radius: var(--radius);
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
   border: none;
   cursor: pointer;
   font-size: 0.9rem;
@@ -433,7 +439,7 @@ th, td {
 th {
   background: var(--bg-card);
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 th code, td code {
@@ -456,7 +462,7 @@ tr:hover td {
   padding: 2px 10px;
   border-radius: 12px;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .tag-admin {
@@ -606,7 +612,7 @@ tr:hover td {
   font-family: var(--font-mono);
   color: var(--accent);
   font-size: 1.05rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .command-block .cmd-desc {
@@ -747,7 +753,7 @@ tr:hover td {
 
   .table-wrapper:has(thead th:first-child:nth-last-child(2))
     tbody td:first-child {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--accent);
     font-size: 0.8rem;
     padding-bottom: 0;
@@ -806,6 +812,9 @@ tr:hover td {
   padding: 20px 24px;
   margin-bottom: 16px;
   transition: border-color 0.3s;
+  /* 画面外のカードは描画をスキップして初期表示を軽くする */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 160px;
 }
 
 .update-card:hover {
@@ -827,7 +836,7 @@ tr:hover td {
 
 .update-card .update-title {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 10px;
   display: flex;
@@ -871,7 +880,7 @@ tr:hover td {
 .tag {
   display: inline-block;
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 2px 10px;
   border-radius: 12px;
   letter-spacing: 0.3px;
@@ -917,7 +926,7 @@ tr:hover td {
 
 .filter-label {
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-secondary);
   margin-right: 4px;
 }
@@ -930,10 +939,10 @@ tr:hover td {
   border-radius: 20px;
   padding: 4px 14px;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 }
 
 .filter-tag:hover {
@@ -955,6 +964,12 @@ tr:hover td {
 
 .update-card.hidden-by-filter {
   display: none;
+}
+
+/* ===== Load more / 更新履歴の追加表示 ===== */
+.load-more {
+  margin: 8px 0 40px;
+  text-align: center;
 }
 
 /* ===== Update date badge ===== */
@@ -1037,21 +1052,395 @@ tr:hover td {
   animation: fadeIn 0.4s ease;
 }
 
-/* ===== Grid background (homepage style) ===== */
+/* ===== Grid background (homepage style) =====
+   常時アニメーションするとGPU負荷とメモリ消費が大きいため静的化。
+   ビューポートサイズに固定し、巨大な合成レイヤーを作らない。 */
 body::before {
   content: '';
   position: fixed;
-  width: 200%;
-  height: 200%;
+  inset: 0;
   background:
     linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
   background-size: 40px 40px;
-  animation: gridMove 20s linear infinite;
   z-index: -1;
   pointer-events: none;
 }
 
-@keyframes gridMove {
-  to { transform: translate(-40px, -40px); }
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ===== 設定画面プレビュー ===== */
+.preview {
+  margin: 24px 0 32px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary));
+}
+
+.preview-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.preview-tab {
+  appearance: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 7px 14px;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+.preview-tab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.preview-tab.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #000;
+}
+
+.preview-tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.preview-screen {
+  display: none;
+}
+
+.preview-screen.is-active {
+  display: block;
+  animation: fadeIn 0.25s ease;
+}
+
+.preview-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.preview-body.no-notes {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.preview-main {
+  min-width: 0;
+}
+
+/* --- Discord 風モック --- */
+.dc-frame {
+  background: #313338;
+  border: 1px solid #3f4147;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  font-family: 'gg sans', 'Noto Sans JP', 'Segoe UI', sans-serif;
+  line-height: 1.55;
+}
+
+.dc-frame-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: #2b2d31;
+  border-bottom: 1px solid #1e1f22;
+}
+
+.dc-frame-bar .dc-hash {
+  color: #80848e;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.dc-frame-bar b {
+  color: #f2f3f5;
+  font-size: 0.85rem;
+}
+
+.dc-frame-badge {
+  margin-left: auto;
+  padding: 2px 8px;
+  border: 1px solid #4b4d69;
+  border-radius: 999px;
+  color: #a9b0d0;
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+
+.dc-body {
+  padding: 14px 12px 16px;
+}
+
+.dc-message {
+  display: flex;
+  gap: 12px;
+}
+
+.dc-avatar {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #5865f2;
+  font-size: 1rem;
+}
+
+.dc-message-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.dc-message-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 5px;
+}
+
+.dc-message-head b {
+  color: #f2f3f5;
+  font-size: 0.85rem;
+}
+
+.dc-bot-tag {
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: #5865f2;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.dc-time {
+  color: #949ba4;
+  font-size: 0.68rem;
+}
+
+.dc-embed {
+  padding: 12px 14px;
+  border-left: 4px solid #00bfff;
+  border-radius: 0 6px 6px 0;
+  background: #2b2d31;
+}
+
+.dc-embed.dc-green {
+  border-left-color: #57f287;
+}
+
+.dc-embed.dc-red {
+  border-left-color: #ed4245;
+}
+
+.dc-embed-title {
+  margin-bottom: 8px;
+  color: #f2f3f5;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.dc-embed-desc {
+  margin-bottom: 8px;
+  color: #dbdee1;
+  font-size: 0.78rem;
+  line-height: 1.7;
+}
+
+.dc-embed-field + .dc-embed-field {
+  margin-top: 9px;
+}
+
+.dc-field-name {
+  color: #f2f3f5;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.dc-field-value {
+  color: #dbdee1;
+  font-size: 0.78rem;
+  line-height: 1.75;
+}
+
+.dc-frame code {
+  padding: 0 4px;
+  border: none;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.32);
+  color: #e6e9f5;
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  letter-spacing: 0;
+}
+
+.dc-embed-footer {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: #949ba4;
+  font-size: 0.68rem;
+}
+
+.dc-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.dc-button {
+  appearance: none;
+  min-width: 34px;
+  height: 30px;
+  padding: 0 9px;
+  border: none;
+  border-radius: 4px;
+  background: #4e5058;
+  color: #fff;
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: filter 0.15s, box-shadow 0.15s;
+}
+
+.dc-button:hover {
+  filter: brightness(1.18);
+}
+
+.dc-button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.dc-button[aria-pressed='true'],
+.dc-button.green {
+  background: #248046;
+}
+
+.dc-button[aria-pressed='true'] {
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.6);
+}
+
+.dc-button.danger {
+  background: #da373c;
+}
+
+.dc-button.primary {
+  background: #5865f2;
+}
+
+.dc-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.dc-select {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid #1e1f22;
+  border-radius: 4px;
+  background: #1e1f22;
+  color: #949ba4;
+  font-size: 0.78rem;
+}
+
+.dc-select .dc-select-caret {
+  color: #b5bac1;
+}
+
+/* --- 説明カラム --- */
+.preview-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preview-note {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.preview-note.is-active {
+  border-left-color: var(--accent);
+  box-shadow: 0 0 16px var(--accent-dim);
+}
+
+.preview-note[hidden] {
+  display: none;
+}
+
+.preview-note h3 {
+  margin: 0 0 6px;
+  font-size: 0.9rem;
+}
+
+.preview-note p {
+  margin: 0 0 8px;
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
+.preview-note p:last-child {
+  margin-bottom: 0;
+}
+
+.preview-note a {
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.preview-caption {
+  margin: 10px 2px 0;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .preview-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  /* 固定トップバーが縦に伸びないよう、外部リンクは隠す */
+  .topbar .topbar-links {
+    display: none;
+  }
 }

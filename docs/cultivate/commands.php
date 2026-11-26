@@ -186,6 +186,12 @@
         <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
       </div>
 
+      <div class="command-block">
+        <div class="cmd-name">/リアクション通知設定</div>
+        <div class="cmd-desc">リアクション通知の設定を管理します。対象チャンネルでリアクションが押されると、押したメンバーのプロフィールカードと通知本文を送信します。</div>
+        <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
+      </div>
+
       <!-- <h3>📝 チャンネルロール</h3>
 
       <div class="command-block">

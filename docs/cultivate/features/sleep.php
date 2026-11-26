@@ -63,6 +63,75 @@
         （「必須」は未入力のまま送信できません）。</p>
       </div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "寝落ち送り設定のプレビュー",
+  "screens": [
+    {
+      "tab": "プリセット一覧",
+      "channel": "寝落ち送り設定",
+      "avatar": "💤",
+      "embed": {
+        "title": "💤 寝落ち送り設定 (1/2)",
+        "color": "green",
+        "fields": [
+          {"name": "📛 プリセット名", "value": "```メイン用```"},
+          {"name": "状態", "value": "✅ 有効"},
+          {"name": "デフォルト動作", "value": "📤 寝落ち送り"},
+          {"name": "💬 コメント入力", "value": "💬 任意"},
+          {"name": "💬 送信チャンネル", "value": "#寝落ち連絡"},
+          {"name": "🔉 送り先VC", "value": "#寝落ち部屋"},
+          {"name": "👥 寝落ち送りロール", "value": "@一般"},
+          {"name": "🔌 寝落ち切断ロール", "value": "未設定"},
+          {"name": "🚫 送信拒否ロール", "value": "@運営"},
+          {"name": "📋 ホワイトリスト (CAT/VC)", "value": "カテゴリ: 1件 / VC: 未設定"},
+          {"name": "📋 ブラックリスト (CAT/VC)", "value": "カテゴリ: 未設定 / VC: 未設定"}
+        ]
+      },
+      "buttons": [
+        {"label": "➕ 新規作成", "style": "green"},
+        {"label": "✏️ 編集"},
+        {"label": "🗑️ 削除", "style": "danger"}
+      ],
+      "caption": "▲ <code>/寝落ち送り設定</code> を実行すると表示されるプリセット一覧（1ページ1プリセット）。"
+    },
+    {
+      "tab": "プリセット編集",
+      "channel": "寝落ち送り設定",
+      "avatar": "💤",
+      "embed": {
+        "title": "⚙️ メイン用 の編集",
+        "color": "green",
+        "fields": [
+          {"name": "状態", "value": "✅ 有効"},
+          {"name": "デフォルト動作", "value": "📤 寝落ち送り"},
+          {"name": "💬 コメント入力", "value": "💬 任意"},
+          {"name": "📺 チャンネル設定", "value": "💬 送信: #寝落ち連絡<br>🔉 送り先: #寝落ち部屋"},
+          {"name": "👥 ロール設定", "value": "👥 送り: @一般<br>🔌 切断: 未設定<br>🚫 拒否: @運営"},
+          {"name": "📋 ホワイトリスト", "value": "カテゴリ: 1件<br>VC: 0件"},
+          {"name": "📋 ブラックリスト", "value": "カテゴリ: 0件<br>VC: 0件"}
+        ]
+      },
+      "buttons": [
+        {"label": "📛 名前変更"},
+        {"label": "✅ 有効/無効切替"},
+        {"label": "📺👥 チャンネル・ロール設定"},
+        {"label": "💬 コメント入力"},
+        {"label": "⚙️ デフォルト動作"},
+        {"label": "📋 ホワイトリスト"},
+        {"label": "📋 ブラックリスト"},
+        {"label": "💾 保存", "style": "green", "disabled": true},
+        {"label": "🔙 戻る", "style": "danger"}
+      ],
+      "caption": "▲ 「✏️ 編集」から開くプリセット編集パネル。変更するまで「💾 保存」は押せません。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定方法</h2>
 
       <h3>設定パネルを開く</h3>

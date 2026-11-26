@@ -25,6 +25,34 @@
         新規開拓 VC パネルを設置できる機能です。コミュニティ内の交流促進に役立ちます。
       </p>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "MBTI診断設定画面のプレビュー",
+  "screens": [
+    {
+      "channel": "MBTI診断設定",
+      "embed": {
+        "title": "MBTI診断設定（プレビュー）",
+        "desc": "<strong>ベースロールとマッチングロール（順位付き）</strong><br><br><strong>@MBTIベース</strong><br>【順位 1】<br>- @INFJ<br>- @ENFP",
+        "fields": [
+          {"name": "設定説明", "value": "以下から設定項目を選んでください。<br><br>• ベースロール設定 — ベースとなるロールを複数選択（ページング対応）<br>• マッチング設定 — ベースを選び、サーバーロールを選択<br>• 順位設定 — マッチングロールを 1..N の順位へ割り当て<br><br>※ 変更は <strong>保存</strong> を押すまで DB には反映されません。"}
+        ],
+        "footer": "Cultivate"
+      },
+      "select": "MBTI診断設定項目を選んでね",
+      "buttons": [
+        {"label": "保存", "style": "green"},
+        {"label": "キャンセル", "style": "danger"}
+      ],
+      "caption": "▲ MBTI 診断パネル設置後に開く設定画面。セレクトで項目を選び、<strong>保存</strong> で確定します。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>コマンド</h2>
 
       <h3>MBTI新規開拓パネル設置</h3>

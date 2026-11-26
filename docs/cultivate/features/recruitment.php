@@ -55,6 +55,64 @@
         </tbody>
       </table></div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "裏募集の設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "プリセット一覧",
+      "channel": "裏募集設定",
+      "embed": {
+        "title": "🔞 裏募集設定 プリセット一覧",
+        "desc": "登録済みの募集プリセットをページ送りで表示します。",
+        "fields": [
+          {"name": "1. 春の裏募集", "value": "通知対象 3件 / 立候補 1件"}
+        ],
+        "footer": "Cultivate"
+      },
+      "buttons": [
+        {"label": "✏️ 編集", "style": "primary"},
+        {"label": "📋 新規作成", "style": "green"},
+        {"label": "🗑️ 削除", "style": "danger"},
+        {"label": "❌ 閉じる"}
+      ],
+      "caption": "▲ <code>/裏募集設定</code> のプリセット一覧画面。"
+    },
+    {
+      "tab": "募集設定の編集",
+      "channel": "裏募集設定",
+      "embed": {
+        "title": "🔞 春の裏募集",
+        "fields": [
+          {"name": "基本設定", "value": "通知方式: DM→スレッド"},
+          {"name": "ロール登録", "value": "性別ロール 2件 / 必須ロール 1件"},
+          {"name": "通知メンション設定", "value": "深夜 0:00〜7:00"}
+        ],
+        "footer": "Cultivate"
+      },
+      "buttons": [
+        {"label": "📝 基本設定", "note": "basic", "active": true},
+        {"label": "🎭 ロール登録", "note": "role"},
+        {"label": "🔔 通知対象設定", "note": "notify"},
+        {"label": "🌙 通知メンション設定", "note": "mention"},
+        {"label": "↩️ 戻る"},
+        {"label": "💾 保存", "style": "green"}
+      ],
+      "notes": [
+        {"key": "basic", "title": "📝 基本設定", "body": "通知方式や選択式募集・匿名募集などのオプションを設定します。"},
+        {"key": "role", "title": "🎭 ロール登録", "body": "性別ロール、投稿者必須ロール、立候補必須ロールを登録します。"},
+        {"key": "notify", "title": "🔔 通知対象設定", "body": "対象ラベル・性別ロール・対象ロール・投稿チャンネルを1件ずつ登録します。"},
+        {"key": "mention", "title": "🌙 通知メンション設定", "body": "日中／深夜のメンションロールと、深夜とみなす時間帯を設定します。"}
+      ],
+      "caption": "▲ 募集プリセットの編集画面。<strong>保存</strong> を押すまで DB には反映されません。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>機能詳細</h2>
 
       <h3>裏募集設定（募集プリセット）</h3>

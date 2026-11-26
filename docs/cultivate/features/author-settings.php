@@ -41,6 +41,59 @@
         手間を解消できます。
       </p>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "投稿者設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "一覧パネル",
+      "channel": "投稿者設定",
+      "avatar": "👤",
+      "embed": {
+        "title": "👤 公式BOT通知",
+        "desc": "ID: `official_bot`",
+        "fields": [
+          {"name": "📛 設定名", "value": "公式BOT通知"},
+          {"name": "👤 表示名", "value": "公式BOT"},
+          {"name": "🔗 アイコンURL", "value": "[リンク](https://example.com/icon.png)"},
+          {"name": "📤 アップロード画像", "value": "`未設定`"}
+        ],
+        "footer": "プリセットID: 1 | 1/3 | 合計: 3件"
+      },
+      "buttons": [
+        {"label": "➕ 新規作成", "style": "green"},
+        {"label": "✏️ 編集"},
+        {"label": "🗑️ 削除", "style": "danger"}
+      ],
+      "caption": "▲ <code>/投稿者設定</code> を実行したときの一覧パネル。1ページにつき1プリセット表示されます。"
+    },
+    {
+      "tab": "編集画面",
+      "channel": "投稿者設定",
+      "avatar": "👤",
+      "embed": {
+        "title": "👤 公式BOT通知",
+        "fields": [
+          {"name": "🆔 ID", "value": "`official_bot`"},
+          {"name": "📛 設定名", "value": "公式BOT通知"},
+          {"name": "👤 表示名", "value": "公式BOT"}
+        ],
+        "footer": "プリセットID: 1 | Guild: 123456789"
+      },
+      "buttons": [
+        {"label": "⚙️ 設定"},
+        {"label": "💾 保存", "style": "green", "disabled": true},
+        {"label": "🔙 戻る"}
+      ],
+      "caption": "▲ 編集画面。変更するとタイトルが赤くなり「💾 保存」が押せるようになります。「⚙️ 設定」でID・設定名・表示名・アイコンURL・画像ファイルの入力モーダルを開きます。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>使い方</h2>
 
       <h3>スラッシュコマンド</h3>

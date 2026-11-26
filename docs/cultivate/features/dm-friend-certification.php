@@ -221,6 +221,67 @@
         DM・フレンドの許可済みにはサーバー名も表示されます。
       </p>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "DM/フレンド許可設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "許可設定",
+      "channel": "DM/フレンド許可設定",
+      "avatar": "💬",
+      "embed": {
+        "title": "💬 DM許可設定",
+        "desc": "この許可設定は固定です。<br>下のボタンから各項目を設定できます。<br>変更は **保存** ボタンで確定されます。",
+        "color": "blue",
+        "fields": [
+          {"name": "🔖 種別", "value": "DM"},
+          {"name": "✅ 許可ロール", "value": "@Member"},
+          {"name": "🚫 不許可ロール", "value": "`未設定`"},
+          {"name": "🤔 判定", "value": "許可ロール所持者のみ"}
+        ],
+        "footer": "1/4"
+      },
+      "buttons": [
+        {"label": "✏️ 編集", "style": "primary"},
+        {"label": "❌ 閉じる", "style": "danger"}
+      ],
+      "caption": "▲ <code>/dmフレンド許可設定</code> で開く許可設定。種別は DM / フレンド / 鯖内DM / 鯖内フレンド の4種別固定です。"
+    },
+    {
+      "tab": "パネル設定",
+      "channel": "DM/フレンド許可パネル設定",
+      "avatar": "📋",
+      "embed": {
+        "title": "📋 サークル募集パネル",
+        "desc": "パネルID: `1`<br>下のボタンから各項目を設定できます。<br>変更は **保存** ボタンで確定されます。",
+        "fields": [
+          {"name": "🔗 許可種別", "value": "DM、フレンド"},
+          {"name": "🔘 ボタン", "value": "💬 DM許可（🟢 緑）<br>🤝 フレンド許可（🔵 青）"},
+          {"name": "📍 設置状態", "value": "✅ 送信済み"},
+          {"name": "⚙️ 基本設定", "value": "**通知方法**: 📨 DM<br>**スレッド通知用TC**: `未選択（パネル設置TC）`<br>**ログ通知TC**: #dm-log<br>**オプション**: なし"},
+          {"name": "🏷️ タイプラベル", "value": "`dm`: **DM**<br>`friend`: **フレンド**<br>`guild_dm`: 鯖内DM<br>`guild_friend`: 鯖内フレンド"}
+        ]
+      },
+      "buttons": [
+        {"label": "⚙️ 基本設定"},
+        {"label": "🖼️ パネル設定"},
+        {"label": "🔘 ボタン設定"},
+        {"label": "🏷️ タイプラベル設定"},
+        {"label": "📝 テンプレ文設定"},
+        {"label": "📍 設置"},
+        {"label": "🔄 パネル更新"},
+        {"label": "💾 保存", "style": "green", "disabled": true},
+        {"label": "↩️ 戻る"}
+      ],
+      "caption": "▲ <code>/dmフレンド許可パネル設定</code> で開くパネル設定。「📍 設置」で送信先チャンネルへパネルを送信します。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定手順</h2>
 
       <ol class="steps">

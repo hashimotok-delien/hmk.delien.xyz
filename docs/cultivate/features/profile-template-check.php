@@ -65,6 +65,61 @@
         </tbody>
       </table></div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "テンプレートチェック設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "設定一覧",
+      "channel": "テンプレチェック設定",
+      "embed": {
+        "title": "📋 自己紹介テンプレ",
+        "desc": "ID: `1`",
+        "fields": [
+          {"name": "🔘 状態", "value": "✅"},
+          {"name": "📋 プロフ設定", "value": "1個"}
+        ],
+        "footer": "サーバー: 123456789012345678 | 1/1"
+      },
+      "buttons": [
+        {"label": "➕ 新規作成", "style": "green"},
+        {"label": "✏️ 編集"},
+        {"label": "🗑️ 削除", "style": "danger"}
+      ],
+      "caption": "▲ <code>/プロフィールv2設定</code> →「🔍 テンプレチェック」で開く設定一覧。"
+    },
+    {
+      "tab": "設定編集（基本設定タブ）",
+      "channel": "テンプレチェック設定",
+      "embed": {
+        "title": "📋 基本設定 - 自己紹介テンプレ",
+        "fields": [
+          {"name": "🔘 状態", "value": "✅ 有効"},
+          {"name": "📝 テンプレート", "value": "<code>名前<br>&amp;{required}<br>趣味<br>&amp;{required}<br>ひとこと<br>&amp;{required}</code>"},
+          {"name": "🎭 合格付与ロール", "value": "@自己紹介済み"},
+          {"name": "🎭 合格剥奪ロール", "value": "<code>未設定</code>"}
+        ]
+      },
+      "buttons": [
+        {"label": "📋 基本設定", "style": "primary"},
+        {"label": "📋 プロフ設定"},
+        {"label": "📋 項目設定"},
+        {"label": "🟢 有効にする", "style": "green"},
+        {"label": "⚙️ 基本設定", "style": "primary"},
+        {"label": "🎭 ロール制御", "style": "primary"},
+        {"label": "🔔 通知設定", "style": "primary"},
+        {"label": "💾 保存", "style": "green", "disabled": true},
+        {"label": "🔙 戻る"}
+      ],
+      "caption": "▲ 編集画面は「📋 基本設定」「📋 プロフ設定」「📋 項目設定」の3タブ構成です。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定の開き方</h2>
 
       <h3>スラッシュコマンド</h3>

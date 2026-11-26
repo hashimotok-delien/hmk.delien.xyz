@@ -32,6 +32,35 @@
         <p><strong>💡 補足:</strong> スラッシュコマンド（<code>/</code>）は接頭辞の影響を受けません。接頭辞は従来のテキストコマンドのみに適用されます。</p>
       </div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "コマンド接頭辞設定画面のプレビュー",
+  "screens": [
+    {
+      "channel": "設定パネル",
+      "avatar": "⌨️",
+      "embed": {
+        "title": "コマンド接頭辞: 保存済み",
+        "desc": "吊り下げコマンドなどの接頭辞(prefix)を変更可能です。<br>他Botと競合する場合は変更ください。",
+        "color": "green",
+        "fields": [
+          {"name": "現在値", "value": "`!?`"}
+        ]
+      },
+      "buttons": [
+        {"label": "設定", "style": "green"},
+        {"label": "✅ 保存", "style": "green", "disabled": true},
+        {"label": "キャンセル", "style": "danger"}
+      ],
+      "caption": "▲ <code>/設定パネル</code> →「⌨️ 接頭辞変更(デフォルト<code>!?</code>)」で表示される設定画面。「設定」からモーダル（入力例: <code>!?</code> / <code>c!</code>）を開き、確定すると「✅ 保存」が押せるようになります。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定手順</h2>
       <ol class="steps">
         <li>

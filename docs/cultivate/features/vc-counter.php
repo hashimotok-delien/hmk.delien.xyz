@@ -71,6 +71,64 @@
         </tbody>
       </table></div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "VCカウンター設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "プリセット一覧",
+      "channel": "サーバーカウンター設定",
+      "avatar": "📊",
+      "embed": {
+        "title": "📊 本男本女カウンター",
+        "desc": "🟢 プリセット (ID: 1)",
+        "fields": [
+          {"name": "🎯 対象VC", "value": "総合カウンター"},
+          {"name": "📝 VC名テンプレート", "value": "```本男：{main_men}人 本女：{main_women}人```"},
+          {"name": "🔧 プレースホルダー", "value": "2個設定"},
+          {"name": "▶️ 自動更新(毎時10分間隔)", "value": "🟢 有効"}
+        ],
+        "footer": "サーバーID: 123456789 | 1/1"
+      },
+      "buttons": [
+        {"label": "✏️ 編集"},
+        {"label": "📄 複製", "style": "primary"},
+        {"label": "➕ 新規作成", "style": "green"},
+        {"label": "🗑️ 削除", "style": "danger"}
+      ],
+      "caption": "▲ <code>/vcカウンター設定</code> で表示されるプリセット一覧（1ページ1プリセット）。"
+    },
+    {
+      "tab": "プリセット編集",
+      "channel": "サーバーカウンター設定",
+      "avatar": "📊",
+      "embed": {
+        "title": "📊 本男本女カウンター",
+        "fields": [
+          {"name": "🎯 対象VC", "value": "#総合カウンター"},
+          {"name": "📝 VC名テンプレート", "value": "```本男：{main_men}人 本女：{main_women}人```"},
+          {"name": "🔧 プレースホルダー", "value": "・<code>{main_men}</code> (本男) → ロール(いずれか保持)<br>　@男性<br>・<code>{main_women}</code> (本女) → ロール(いずれか保持)<br>　@女性"},
+          {"name": "▶️ 自動更新(毎時10分間隔)", "value": "🟢 有効"}
+        ],
+        "footer": "123456789 / プリセットID: 1"
+      },
+      "buttons": [
+        {"label": "🎯📝 VC・テンプレート"},
+        {"label": "📛 名前変更"},
+        {"label": "🔧 プレースホルダー管理"},
+        {"label": "▶️ ON/OFF", "style": "primary"},
+        {"label": "💾 保存", "style": "green", "disabled": true},
+        {"label": "🔙 戻る"}
+      ],
+      "caption": "▲ 「✏️ 編集」から開くプリセット編集パネル。変更するまで「💾 保存」は押せません。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>プリセット機能</h2>
       <p>
         複数のカウンター設定（プリセット）を作成できます。

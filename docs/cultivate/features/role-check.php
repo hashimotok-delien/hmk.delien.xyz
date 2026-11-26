@@ -70,6 +70,44 @@
         <li>パネル送信後も内容を更新可能（🔄 パネル更新）</li>
       </ul>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "必須ロール確認設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "設定パネル",
+      "channel": "必須ロール確認設定",
+      "embed": {
+        "title": "⚙️ サポートサーバー確認",
+        "fields": [
+          {"name": "📛 設定名", "value": "<code>サポートサーバー確認</code>"},
+          {"name": "🖼️ Embedタイトル", "value": "<code>必須ロール確認</code>"},
+          {"name": "📝 Embed説明", "value": "<code>参加に必要なロールを持っているか確認できます</code>"},
+          {"name": "🎨 Embed色", "value": "`#00BFFF`"},
+          {"name": "🔘 ボタンラベル", "value": "<code>✅ ロールを確認</code>"},
+          {"name": "🎨 ボタン色", "value": "緑"},
+          {"name": "👥 ロールグループ", "value": "<strong>本男</strong>: 2個のロール"}
+        ]
+      },
+      "buttons": [
+        {"label": "📛 設定名変更"},
+        {"label": "🖼️ Embed設定"},
+        {"label": "🔘 ボタン設定"},
+        {"label": "👥 ロールグループ"},
+        {"label": "📨 パネル送信"},
+        {"label": "🔄 パネル更新"},
+        {"label": "🎁 合格時ロール操作"},
+        {"label": "💾 保存", "style": "green"}
+      ],
+      "caption": "▲ <code>/必須ロール確認設定</code> で開く設定パネル。各ボタンからModalで内容を編集します。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定手順</h2>
 
       <ol class="steps">

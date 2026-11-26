@@ -53,6 +53,58 @@
         <div class="cmd-meta"><span class="tag tag-admin">管理者専用</span></div>
       </div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "インチャ掃除設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "設定一覧",
+      "channel": "インチャ掃除設定",
+      "avatar": "🧹",
+      "embed": {
+        "title": "🧹 メインVC掃除",
+        "desc": "🟢 設定 (ID: 1)",
+        "fields": [
+          {"name": "📌 対象チャンネル", "value": "🔊 雑談VC"},
+          {"name": "🤖 Botを含む", "value": "❌ OFF"},
+          {"name": "⏱️ 削除遅延", "value": "0秒"}
+        ],
+        "footer": "サーバーID: 123456789 | 1/1"
+      },
+      "buttons": [
+        {"label": "✏️ 編集", "style": "primary"},
+        {"label": "➕ 新規作成", "style": "green"},
+        {"label": "🗑️ 削除", "style": "danger"}
+      ],
+      "caption": "▲ <code>/インチャ掃除設定</code> で開く設定一覧。"
+    },
+    {
+      "tab": "編集パネル",
+      "channel": "設定の編集",
+      "avatar": "🧹",
+      "embed": {
+        "title": "🧹 メインVC掃除",
+        "desc": "🔴 **無効**",
+        "fields": [
+          {"name": "📌 対象チャンネル", "value": "🔊 雑談VC"},
+          {"name": "🤖 Botを含む", "value": "✅ ON"},
+          {"name": "⏱️ 削除遅延", "value": "30秒"}
+        ]
+      },
+      "buttons": [
+        {"label": "⚙️ 基本設定", "style": "primary"},
+        {"label": "🟢 有効化", "style": "green"},
+        {"label": "◀️ 戻る"}
+      ],
+      "caption": "▲ 「✏️ 編集」で開く編集パネル。基本設定モーダルで項目をまとめて変更できます。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定方法</h2>
 
       <h3>設定一覧を開く</h3>

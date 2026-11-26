@@ -103,6 +103,46 @@
         <li><strong>メッセージ</strong>: 削除・編集前後の本文（最大500文字）と添付ファイル名</li>
       </ul>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "ログ設定パネルのプレビュー",
+  "screens": [
+    {
+      "tab": "設定パネル",
+      "channel": "ログ設定",
+      "avatar": "📋",
+      "embed": {
+        "title": "📋 ログ設定",
+        "desc": "各種操作ログの送信先を設定します。<br>送信先は `個別設定 > グループ設定 > 全体設定` の順で適用されます。",
+        "color": "blue",
+        "fields": [
+          {"name": "🔘 状態", "value": "✅ 有効"},
+          {"name": "🌐 全ログ送信先", "value": "#logs"},
+          {"name": "📂 グループ別送信先", "value": "🔊 VC: 共通設定を使用<br>🛡️ モデレーション: #mod-log<br>💬 メッセージ: 共通設定を使用"},
+          {"name": "🎯 個別送信先", "value": "なし"},
+          {"name": "🚫 無効イベント", "value": "なし"},
+          {"name": "🙈 除外チャンネル", "value": "なし"},
+          {"name": "🙈 除外ロール", "value": "なし"}
+        ],
+        "footer": "Webhookの作成には「Webhookの管理」権限が必要です。"
+      },
+      "buttons": [
+        {"label": "⚙️ 全般設定"},
+        {"label": "📂 グループ設定"},
+        {"label": "🎯 個別設定"},
+        {"label": "🚫 除外設定"},
+        {"label": "🔄 更新", "style": "primary"},
+        {"label": "🗑️ 設定リセット", "style": "danger"}
+      ],
+      "caption": "▲ <code>/ログ設定</code> で開く設定パネル。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定方法</h2>
 
       <h3>1. 設定パネルを開く</h3>

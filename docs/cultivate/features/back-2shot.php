@@ -26,6 +26,54 @@
         ノック機能により、安全なコミュニケーションを実現します。
       </p>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "裏2shot設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "設定パネル",
+      "channel": "裏2shot設定",
+      "avatar": "🔒",
+      "embed": {
+        "title": "裏2shot設定「昼2shot」 - 保存済み",
+        "color": "green",
+        "fields": [
+          {"name": "📝 文字列系設定", "value": "**プリセット名**：`昼2shot`<br>**パネル名**：`裏2shot 作成パネル`"},
+          {"name": "パネル説明:", "value": "```[作成]ボタンを押下すると裏2shotが作成できます。```<br>**パネル色**：`#5865F2`"},
+          {"name": "🎭 ロール設定", "value": "**ベースロール**<br>- @男性<br>- @女性"},
+          {"name": "必須ロール", "value": "- @本メンバー"},
+          {"name": "マッチングロール", "value": "- @男性<br>&nbsp;&nbsp;↳ @女性, @その他"},
+          {"name": "🗂 カテゴリ指定", "value": "- 2shot (`123456789012345678`)"},
+          {"name": "🔊VC設定", "value": "**初期VC名**：`🔒2shot-&(display_name)`<br>**ロールVC名**：`未設定`<br>**ロールVC名(正規表現)**：`未設定`<br>**ノックボタン名**：`ノック`"}
+        ]
+      },
+      "select": "変更したい項目を選択してください",
+      "buttons": [
+        {"label": "保存", "style": "green"},
+        {"label": "キャンセル", "style": "danger"}
+      ],
+      "caption": "▲ <code>/裏2shot 設定変更 &lt;プリセット名&gt;</code> を実行したときの設定パネル。セレクトで項目を選ぶと専用の設定画面が開きます。"
+    },
+    {
+      "tab": "作成パネル",
+      "channel": "裏2shot 作成パネル",
+      "avatar": "🔒",
+      "embed": {
+        "title": "裏2shot 作成パネル",
+        "desc": "[作成]ボタンを押下すると裏2shotが作成できます。"
+      },
+      "buttons": [
+        {"label": "作成", "style": "green"}
+      ],
+      "caption": "▲ <code>/裏2shot パネル設置 &lt;プリセット名&gt;</code> でチャンネルに設置されるパネル。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定方法</h2>
 
       <h3>新規作成</h3>

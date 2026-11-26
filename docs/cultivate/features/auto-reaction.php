@@ -43,6 +43,31 @@
         <li>Bot のメッセージには自動リアクションを付与しません</li>
       </ul>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "自動リアクション設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "設定パネル",
+      "channel": "自動リアクション設定",
+      "embed": {
+        "title": "⚙️ 自動リアクション設定",
+        "desc": "対象チャンネル: #general<br><br><strong>登録絵文字</strong><br>- 👍<br>- 👎<br><br><strong>メッセージ内に絵文字がある場合のみ付与</strong>: 無効",
+        "footer": "Cultivate"
+      },
+      "buttons": [
+        {"label": "🗑️ 設定解除", "style": "danger"},
+        {"label": "➕ 再付与", "style": "primary"}
+      ],
+      "caption": "▲ 引数なしで <code>/自動リアクション設定</code> を実行したときの設定パネル。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定方法</h2>
 
       <h3>設定パネルを開く</h3>

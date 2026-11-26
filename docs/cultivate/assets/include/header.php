@@ -30,6 +30,10 @@ $escapeMeta = static fn(string $value): string =>
 <meta name="twitter:image" content="<?= $escapeMeta($pageImage) ?>">
 <link rel="icon" type="image/svg+xml"
       href="<?= $ROOT ?? '.' ?>/assets/img/favicon.svg">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="<?= $ROOT ?? '.' ?>/../assets/fonts/noto-sans-jp-400.woff2?v=1">
+<link rel="preload" as="font" type="font/woff2" crossorigin
+      href="<?= $ROOT ?? '.' ?>/../assets/fonts/noto-sans-jp-700.woff2?v=1">
 <link rel="stylesheet"
       href="<?= $ROOT ?? '.' ?>/assets/css/style.css?v=<?= @filemtime(__DIR__ . '/../css/style.css') ?: time() ?>">
 <script src="<?= $ROOT ?? '.' ?>/assets/js/main.js?v=<?= @filemtime(__DIR__ . '/../js/main.js') ?: time() ?>"

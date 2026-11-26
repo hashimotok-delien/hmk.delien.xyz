@@ -112,6 +112,51 @@
         </tbody>
       </table></div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "テンプレチャンネル設定のプレビュー",
+  "screens": [
+    {
+      "tab": "グループ一覧",
+      "channel": "テンプレチャンネル設定",
+      "avatar": "📂",
+      "embed": {
+        "title": "📂 メイン用テンプレ",
+        "desc": "**登録チャンネル数**: 3/20<br><br>1. **雑談** (text/default)<br>2. **お知らせ** (text/default) 📢<br>3. **VC①** (vc/default)",
+        "footer": "グループID: 1 | 1/1"
+      },
+      "buttons": [
+        {"label": "➕ 新規作成", "style": "green"},
+        {"label": "✏️ 編集"},
+        {"label": "🗑️ 削除", "style": "danger"}
+      ],
+      "caption": "▲ <code>/テンプレチャンネル設定</code> で表示されるグループ一覧（1ページ1グループ）。"
+    },
+    {
+      "tab": "編集画面",
+      "channel": "テンプレチャンネル設定",
+      "avatar": "📂",
+      "embed": {
+        "title": "📂 メイン用テンプレ の編集",
+        "desc": "**登録チャンネル数**: 3/20<br><br>1. **雑談** (text/default)<br>2. **お知らせ** (text/default) 📢<br>3. **VC①** (vc/default)<br><br>「📝 基本設定」「📄 テンプレ設定」から編集できます。<br>「🚀 作成」でカテゴリを選んでチャンネルを作成します。<br>変更は **保存** ボタンで確定されます。",
+        "footer": "グループID: 1"
+      },
+      "buttons": [
+        {"label": "📝 基本設定", "style": "primary"},
+        {"label": "📄 テンプレ設定", "style": "primary"},
+        {"label": "🚀 作成", "style": "green"},
+        {"label": "💾 保存", "style": "green", "disabled": true},
+        {"label": "↩️ 戻る"}
+      ],
+      "caption": "▲ 「✏️ 編集」から開く編集画面。チャンネル構成を変更するまで「💾 保存」は押せません。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定の流れ</h2>
 
       <h3>1. グループ一覧</h3>

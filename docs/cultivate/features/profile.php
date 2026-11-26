@@ -25,6 +25,37 @@
         これにより、VC に入るたびにプロフィールを送信する手間を省けます。
       </p>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "プロフィール設定パネルのプレビュー",
+  "screens": [
+    {
+      "tab": "設定パネル",
+      "channel": "設定パネル",
+      "avatar": "🖼️",
+      "embed": {
+        "title": "プロフィール関連 設定パネル（PREVIEW）",
+        "desc": "📺 プロフ自動保存: 🟢ON<br>　 チャンネル: #profile<br><br>**ロール紐づけ:**<br>- #profile: @Member<br><br>🔊 VCプロフィール: 🟢ON",
+        "color": "green",
+        "fields": [
+          {"name": "⚙️ 機能の状態", "value": "📺 プロフ自動保存: 🟢ON<br>🔊 VCプロフィール: 🟢ON"},
+          {"name": "📝 VCﾌﾟﾛﾌ - メッセージ内容", "value": "`未設定`"}
+        ]
+      },
+      "select": "設定項目を選択...",
+      "buttons": [
+        {"label": "保存", "style": "green", "disabled": true},
+        {"label": "キャンセル"}
+      ],
+      "caption": "▲ <code>/設定パネル</code> → <strong>プロフィールv1設定</strong> で開く設定パネル。選択メニューから「プロフィールチャンネル登録」「プロフィールロール紐づけ」「VCプロフィール設定」を選びます。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>プロフィールチャンネル（自動記録）</h2>
       <p>
         管理者が<strong>設定パネル</strong>（<code>/設定パネル</code> → プロフィールv1設定）から

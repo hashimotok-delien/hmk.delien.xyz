@@ -78,6 +78,60 @@
         <li>既存メンバーへまとめて反映したい場合は「🔄 今すぐ同期」を使用</li>
       </ul>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "ロール同期設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "連携元グループ管理",
+      "channel": "ロール同期グループ（連携元）",
+      "embed": {
+        "title": "🎭 ロール同期グループ（連携元）",
+        "desc": "他サーバーへ同期するロールをグループ単位で管理します。<br>作成時に発行されるトークンを連携先サーバーの管理者へ渡してください。",
+        "fields": [
+          {"name": "#1 本館ロール連携", "value": "<strong>状態</strong>: 🟢 有効<br><strong>対象ロール</strong>: 3 / 60 個<br>・@本男<br>・@本女<br>・@ゲスト"}
+        ],
+        "footer": "サーバー: 123456789012345678 | 1/1"
+      },
+      "buttons": [
+        {"label": "➕ 新規作成", "style": "green"},
+        {"label": "✏️ 名前変更"},
+        {"label": "🎭 対象ロール"},
+        {"label": "🔑 トークン再発行"},
+        {"label": "🔘 有効/無効"},
+        {"label": "🗑️ 削除", "style": "danger"}
+      ],
+      "caption": "▲ <code>/ロール同期グループ</code> で開く連携元サーバーの管理パネル。"
+    },
+    {
+      "tab": "連携先リンク管理",
+      "channel": "ロール同期リンク（連携先）",
+      "avatar": "🔗",
+      "embed": {
+        "title": "🔗 ロール同期リンク（連携先）",
+        "desc": "連携元サーバーのグループとロールを紐づけます。相互にサーバー連携が有効な相手のみ指定できます。",
+        "fields": [
+          {"name": "#1 本館 / 本館ロール連携", "value": "<strong>状態</strong>: 🟢 有効<br><strong>連携元グループ</strong>: `a1b2c3d4`<br><strong>紐づけ</strong>: 3 / 60 個<br><strong>優先付与</strong>: 1 / 5 個<br><strong>連携元サーバー</strong>: 参加中 ✅"}
+        ],
+        "footer": "サーバー: 987654321098765432 | 1/1"
+      },
+      "buttons": [
+        {"label": "➕ 新規リンク", "style": "green"},
+        {"label": "🔗 紐づけ"},
+        {"label": "⭐ 優先ロール"},
+        {"label": "🔘 有効/無効"},
+        {"label": "🔄 今すぐ同期"},
+        {"label": "🗑️ 削除", "style": "danger"}
+      ],
+      "caption": "▲ <code>/ロール同期設定</code> で開く連携先サーバーの管理パネル。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定手順（連携元サーバー）</h2>
 
       <ol class="steps">
@@ -99,6 +153,21 @@
           コピーしたトークンを、連携先サーバーの管理者へ共有します
         </li>
       </ol>
+
+      <div class="alert alert-warning">
+        <p><strong>⚠️ サーバー連携が必須です:</strong>
+        この機能は、<strong>連携元サーバーと連携先サーバーの両方</strong>で
+        設定が完了して初めて動作します。まず
+        <a href="server-cooperation"><code>/サーバー連携設定</code></a>
+        で両サーバーの<strong>相互連携</strong>を成立させてください
+        （片側だけの設定では連携は成立しません）。そのうえで、
+        連携元でグループを作成してトークンを発行し、連携先でその
+        <span class="tag tag-info">連携元サーバーID</span> と
+        <span class="tag tag-info">グループトークン</span> を登録して
+        ロールを紐づけるまで、ロールは同期されません。
+        どちらのサーバーにも Cultivate の導入と、
+        ロールを管理する権限が必要です。</p>
+      </div>
 
       <h2>設定手順（連携先サーバー）</h2>
 

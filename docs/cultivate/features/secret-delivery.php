@@ -103,6 +103,61 @@
         </tbody>
       </table></div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "ひみつ便の設定画面と送信パネルのプレビュー",
+  "screens": [
+    {
+      "tab": "設定パネル",
+      "channel": "ひみつ便設定",
+      "embed": {
+        "title": "💌 DM便",
+        "fields": [
+          {"name": "状態", "value": "🟢 有効"},
+          {"name": "通知方法", "value": "`DM`"},
+          {"name": "embedカラー", "value": "`fdef56`"},
+          {"name": "色に使うロール", "value": "`なし`"},
+          {"name": "ひみつ便ボタン", "value": "💌 送る / グレー<br>メッセージ入力: `任意`"},
+          {"name": "削除ボタン", "value": "表示: `ON`<br>🗑️ 削除"},
+          {"name": "返信ボタン", "value": "表示: `ON`<br>↩️ 返信 / メッセージ入力: `任意`"},
+          {"name": "プロフィール設定", "value": "メイン設定のプロフ"},
+          {"name": "📍 送信先チャンネル", "value": "未固定（コマンドで指定）"}
+        ],
+        "footer": "1/1"
+      },
+      "buttons": [
+        {"label": "⚙️ 基本設定", "style": "primary"},
+        {"label": "🖼️ パネル設定", "style": "primary"},
+        {"label": "💌 ひみつ便ボタン", "style": "primary"},
+        {"label": "🗑️ 削除ボタン"},
+        {"label": "↩️ 返信ボタン"},
+        {"label": "👤 プロフィール設定"},
+        {"label": "📍 送信先設定"},
+        {"label": "📨 自動送信設定"}
+      ],
+      "caption": "▲ <code>/ひみつ便設定</code> で開く設定パネル。各ボタンからModalで項目を編集します。"
+    },
+    {
+      "tab": "送信パネル",
+      "channel": "ひみつ便",
+      "avatar": "💌",
+      "embed": {
+        "title": "DM便",
+        "desc": "**ほげほげ**<br>**[プロフィールはコチラ](https://discord.com/channels/123456789012345678/234567890123456789/345678901234567890)**",
+        "color": "green"
+      },
+      "buttons": [
+        {"label": "💌 送る", "style": "green"}
+      ],
+      "caption": "▲ <code>/ひみつ便パネル送信</code> で設置されるパネル。ボタンからひみつ便を送信できます。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定項目</h2>
 
       <h3>基本設定</h3>

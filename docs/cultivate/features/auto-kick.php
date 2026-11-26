@@ -165,6 +165,46 @@
         全角数字・全角記号で入力しても自動で半角に変換されます。
       </p>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "自動KICK設定画面のプレビュー",
+  "screens": [
+    {
+      "channel": "自動KICK設定",
+      "avatar": "🦵",
+      "embed": {
+        "title": "🦵 自動KICK設定",
+        "desc": "サーバー参加から指定日数以上経過しても<br>必須ロールを所持していないメンバーを自動でKICKします。",
+        "color": "red",
+        "fields": [
+          {"name": "⚙️ 状態", "value": "🟢 有効"},
+          {"name": "📅 経過日数", "value": "30日以上"},
+          {"name": "🗓️ 導入日時", "value": "`なし`（参加日基準）"},
+          {"name": "✉️ KICK前DM通知", "value": "🔴 OFF"},
+          {"name": "✅ 必須ロール（いずれか）", "value": "@本メンバー"},
+          {"name": "🛡️ 免除ロール", "value": "@運営"},
+          {"name": "📋 実行ログチャンネル", "value": "#kick-log"}
+        ],
+        "footer": "サンプルサーバー"
+      },
+      "buttons": [
+        {"label": "⚙️ 基本設定", "note": "basic", "active": true},
+        {"label": "🎭 ロール設定", "note": "roles"},
+        {"label": "🔍 対象者プレビュー", "note": "preview", "style": "primary"}
+      ],
+      "notes": [
+        {"key": "basic", "title": "⚙️ 基本設定", "body": "有効 / 無効、KICK前のDM通知、経過日数（1〜3650日）、導入日時、実行ログチャンネルを1つのモーダルでまとめて設定します。"},
+        {"key": "roles", "title": "🎭 ロール設定", "body": "必須ロール（いずれか）と免除ロールを設定します（各25件まで）。免除ロールは必須ロールより<strong>優先</strong>されます。"},
+        {"key": "preview", "title": "🔍 対象者プレビュー", "body": "現在の条件でKICK対象となるメンバーを確認できます（実際にはKICKしません）。"}
+      ]
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定方法</h2>
 
       <h3>設定パネルを開く</h3>
@@ -317,7 +357,7 @@
 
       <h2>メインサーバー退出時キック</h2>
       <p>
-        サーバー連携設定で<strong>相互連携が成立しているサーバー</strong>を
+        <a href="server-cooperation">サーバー連携設定</a>で<strong>相互連携が成立しているサーバー</strong>を
         「メインサーバー」として登録すると、そのメインサーバーから
         メンバーが退出したときに、このサーバー（サブサーバー）から
         <strong>自動でKICK</strong>します。
@@ -345,8 +385,8 @@
       </div>
 
       <div class="alert alert-warning">
-        <p><strong>⚠️ サーバー連携機能が必要です</strong>
-        サーバー連携機能が有効になっていない場合、
+        <p><strong>⚠️ サーバー連携が必要です</strong>
+        <a href="server-cooperation">サーバー連携</a>が成立していない場合、
         この機能は使用できません。</p>
       </div>
 
@@ -354,8 +394,8 @@
       <ol class="steps">
         <li>
           <strong>サーバー連携を成立させる</strong>
-          両方のサーバーで <code>/サーバー連携設定</code> の
-          プリセットを作成・有効化し、相互連携を成立させる
+          両方のサーバーで <a href="server-cooperation"><code>/サーバー連携設定</code></a>
+          のプリセットを作成・有効化し、相互連携を成立させる
         </li>
         <li>
           <strong>KICKされるサーバーでコマンドを実行</strong>

@@ -74,6 +74,56 @@
         （<code>{size}</code> はチャンネル数に置換）</li>
       </ul>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "カテゴリ名設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "プリセット一覧",
+      "channel": "カテゴリ名設定",
+      "avatar": "📂",
+      "embed": {
+        "title": "📂 メインカテゴリ",
+        "desc": "**対象カテゴリ**: メイン<br>**チャンネル数**: 12",
+        "fields": [
+          {"name": "🏷️ カテゴリ名テンプレート", "value": "```メイン({size})```"}
+        ],
+        "footer": "サーバーID: 123456789 | 1/3"
+      },
+      "buttons": [
+        {"label": "➕ 新規作成", "style": "green"},
+        {"label": "✏️ 編集"},
+        {"label": "🗑️ 削除", "style": "danger"}
+      ],
+      "caption": "▲ <code>/カテゴリ名設定</code> を実行したときのプリセット一覧。1ページにつき1プリセット表示されます。"
+    },
+    {
+      "tab": "編集画面",
+      "channel": "カテゴリ名設定",
+      "avatar": "📂",
+      "embed": {
+        "title": "📂 メインカテゴリ の編集",
+        "desc": "**対象カテゴリ**: メイン（チャンネル数: 12）<br><br>「📝 基本設定」「🏷️ カテゴリ名設定」から編集できます。<br>変更は **保存** ボタンで確定されます。",
+        "fields": [
+          {"name": "🏷️ カテゴリ名テンプレート", "value": "```メイン({size})```"}
+        ],
+        "footer": "ID: 1 | 5分間隔で自動更新"
+      },
+      "buttons": [
+        {"label": "📝 基本設定"},
+        {"label": "🏷️ カテゴリ名設定"},
+        {"label": "↩️ 戻る"},
+        {"label": "💾 保存", "style": "primary", "disabled": true}
+      ],
+      "caption": "▲ 編集画面。未保存の変更があると色が変わり「💾 保存」が押せるようになります。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定の流れ</h2>
 
       <h3>1. プリセット一覧</h3>

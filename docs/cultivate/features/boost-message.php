@@ -44,6 +44,42 @@
         <li>Bot アカウントのブーストは対象外です</li>
       </ul>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "ブーストメッセージ設定画面のプレビュー",
+  "screens": [
+    {
+      "channel": "ブーストメッセージ設定",
+      "avatar": "🚀",
+      "embed": {
+        "title": "🚀 ブーストメッセージ設定",
+        "desc": "サーバーメンバーのブースト時にメッセージを送信します。",
+        "fields": [
+          {"name": "📌 送信チャンネル", "value": "#boost"},
+          {"name": "🎉 ブーストメッセージ", "value": "```{usermention} さん、ブーストありがとう！```"},
+          {"name": "🌙 深夜メッセージ", "value": "```深夜のブーストありがとう！```"},
+          {"name": "🌃 深夜時間帯", "value": "22:00 〜 06:00"},
+          {"name": "📈 ブースト数増加通知", "value": "🟢 ON"},
+          {"name": "🎴 カード表示", "value": "🟢 ON"}
+        ],
+        "footer": "サンプルサーバー"
+      },
+      "buttons": [
+        {"label": "⚙️ 基本設定", "note": "basic", "active": true},
+        {"label": "🎛️ 通知・カード設定", "note": "option"}
+      ],
+      "notes": [
+        {"key": "basic", "title": "⚙️ 基本設定", "body": "送信チャンネル（1つだけ）、ブーストメッセージ、深夜ブーストメッセージ、深夜開始時間・終了時間（<code>HH:MM</code>）を設定します。"},
+        {"key": "option", "title": "🎛️ 通知・カード設定", "body": "「ブースト数増加を通知」「カード画像を送信」をチェックボックスで切り替えます。"}
+      ]
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定方法</h2>
 
       <h3>設定パネルを開く</h3>
@@ -150,7 +186,10 @@
         中央にアイコンと「🎉 ブーストありがとう！」+ 表示名、
         現在のブースト数が描画されます。
       </p>
-      <p><img src="../assets/img/boost_card_sample.png" alt="ブーストカード（サンプル）" width="840" height="420" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;"></p>
+      <p><picture>
+  <source srcset="../assets/img/boost_card_sample.webp" type="image/webp">
+  <img src="../assets/img/boost_card_sample.png" alt="ブーストカード（サンプル）" width="840" height="420" loading="lazy" decoding="async" style="max-width:100%;height:auto;border:1px solid #ccc;border-radius:8px;">
+</picture></p>
       <ul>
         <li>
           背景画像は既定の素材が使われます

@@ -42,6 +42,38 @@
         <li>Bot アカウントの参加は対象外です</li>
       </ul>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "ウェルカムメッセージ設定のプレビュー",
+  "screens": [
+    {
+      "channel": "ウェルカムメッセージ設定",
+      "avatar": "👋",
+      "embed": {
+        "title": "👋 ウェルカムメッセージ設定",
+        "desc": "新規参加者にメッセージを送信します。<br>日中と深夜で内容を切り替えられます。",
+        "fields": [
+          {"name": "📌 送信チャンネル", "value": "#ようこそ"},
+          {"name": "☀️ 日中メッセージ", "value": "```ようこそ！{usermention} さん🎉```"},
+          {"name": "🌙 深夜メッセージ", "value": "```こんばんは、{usermention} さん。ゆっくりしていってね🌙```"},
+          {"name": "🌃 深夜時間帯", "value": "22:00 〜 06:00"},
+          {"name": "🎴 カード表示", "value": "🟢 ON"}
+        ],
+        "footer": "サンプルサーバー"
+      },
+      "buttons": [
+        {"label": "⚙️ 基本設定"},
+        {"label": "🎴 カード設定"}
+      ],
+      "caption": "▲ <code>/ウェルカムメッセージ設定</code> で表示される設定パネル。「⚙️ 基本設定」「🎴 カード設定」から Modal で編集します。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定方法</h2>
 
       <h3>設定パネルを開く</h3>

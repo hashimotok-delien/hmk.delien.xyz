@@ -105,6 +105,57 @@
       </div>
 
       <!-- ========================================================= -->
+      <!-- v1.9.9 — VCインチャのプロフィールカードが残る問題・フォーラム作成エラーを修正 -->
+      <!-- ========================================================= -->
+
+      <div class="update-version">
+        <div class="version-badge">v1.9.9</div>
+        <p class="version-date">2026年11月</p>
+      </div>
+
+      <div class="update-card" data-tags="bug profile">
+        <div class="update-icon">🧩</div>
+        <div class="update-body">
+          <div class="update-title">
+            VCインチャのプロフィールカードが残る問題を修正
+            <span class="update-date">2026/11/26</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>
+              VCへの<strong>入室と退出がほぼ同時</strong>に起きたとき、
+              プロフィールカードが削除されずに残ることがある問題を修正しました
+            </li>
+            <li>
+              退出やVCの移動が先に処理された場合は、
+              あとから表示されたカードを自動で削除します
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="update-card" data-tags="bug info">
+        <div class="update-icon">📂</div>
+        <div class="update-body">
+          <div class="update-title">
+            テンプレチャンネル設定でフォーラムチャンネルを作成できない問題を修正
+            <span class="update-date">2026/11/26</span>
+            <span class="tag tag-bug">バグ修正</span>
+          </div>
+          <ul>
+            <li>
+              「📄 テンプレ設定」で<strong>フォーラム</strong>タイプのチャンネルを登録し、
+              「🚀 作成」を実行するとエラーになり作成できなかった問題を修正しました
+            </li>
+            <li>
+              テキスト／VC／フォーラム／ステージの
+              すべてのタイプで一括作成できるようになりました
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ========================================================= -->
       <!-- v1.9.8 — 画像の期限切れ対策・スタンプ座標の一括設定 -->
       <!-- ========================================================= -->
 
@@ -2801,6 +2852,13 @@
             </li>
           </ul>
         </div>
+      </div>
+
+      <div class="load-more">
+        <button type="button" class="btn btn-outline"
+                id="updates-load-more" hidden>
+          もっと見る（残り <span data-remaining>0</span> バージョン）
+        </button>
       </div>
 
       <!-- ========================================================= -->

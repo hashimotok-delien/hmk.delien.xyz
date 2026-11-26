@@ -191,6 +191,63 @@
         ただし、Webhook モードではプロフィールボタンは使用できません。</p>
       </div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "吊下げメッセージ編集画面のプレビュー",
+  "screens": [
+    {
+      "tab": "編集パネル",
+      "channel": "スティッキー編集",
+      "avatar": "📌",
+      "embed": {
+        "title": "🛠️ スティッキーメッセージ編集",
+        "fields": [
+          {"name": "対象チャンネル", "value": "#雑談"},
+          {"name": "🔄 更新条件", "value": "メッセージ回数: `5`<br>秒数: `5`秒<br>Bot反応OFF: `OFF`"},
+          {"name": "📢 投稿設定", "value": "通知OFF: `OFF`<br>メンション通知OFF: `OFF`"},
+          {"name": "👤 投稿者", "value": "名前: `デフォルト`<br>アイコン: `デフォルト`"},
+          {"name": "📝 投稿文", "value": "本文: `設定あり`<br>埋め込み: `設定あり`"},
+          {"name": "⚙️ 機能設定", "value": "プロフ目次: ❌ OFF<br>自分のプロフ取得: ❌ OFF<br>プロフ検索: ❌ OFF"}
+        ]
+      },
+      "buttons": [
+        {"label": "🔄 更新条件設定"},
+        {"label": "📢 投稿設定"},
+        {"label": "👤 投稿者設定"},
+        {"label": "📝 投稿文設定"},
+        {"label": "⚙️ 機能設定"},
+        {"label": "🗑️ 削除", "style": "danger"},
+        {"label": "💾 保存して再送", "style": "green"},
+        {"label": "❌ キャンセル", "style": "danger"}
+      ],
+      "caption": "▲ <code>/sticky edit</code> で表示される編集パネル。設定を変更すると「⚠️ 現在は未保存です。」の注意書きが出ます。"
+    },
+    {
+      "tab": "投稿文設定",
+      "channel": "スティッキー編集",
+      "avatar": "📌",
+      "embed": {
+        "title": "🛠️ スティッキーメッセージ編集",
+        "fields": [
+          {"name": "📝 投稿文", "value": "本文: `設定あり`<br>埋め込み: `設定あり`"}
+        ]
+      },
+      "buttons": [
+        {"label": "📝 投稿文設定①"},
+        {"label": "📝 投稿文設定②"},
+        {"label": "🔙 戻る"},
+        {"label": "💾 保存して再送", "style": "green"},
+        {"label": "❌ キャンセル", "style": "danger"}
+      ],
+      "caption": "▲ 「📝 投稿文設定」を押すと本文・埋め込み系の項目を編集するパネルに切り替わります。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>編集 UI（設定パネル）</h2>
       <p><code>/sticky edit</code> を実行すると、ボタン形式の設定
       パネルが表示されます。</p>

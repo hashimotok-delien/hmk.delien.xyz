@@ -31,6 +31,37 @@
         本来のユーザー収容数を維持します。
       </p>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "設定パネル（VC設定）のプレビュー",
+  "screens": [
+    {
+      "channel": "設定パネル",
+      "embed": {
+        "title": "どの設定を変更しますか？",
+        "fields": [
+          {"name": "コマンド設定", "value": "⌨️接頭辞変更(デフォルト`!?`)"},
+          {"name": "VC設定", "value": "🤖Bot接続時自動人数調整"},
+          {"name": "投稿設定", "value": "🖼️画像投稿スポイラー判定"},
+          {"name": "パネル更新", "value": "🔄 パネル更新"}
+        ],
+        "footer": "Cultivate"
+      },
+      "buttons": [
+        {"label": "⌨️", "title": "接頭辞変更"},
+        {"label": "🤖", "style": "green", "title": "Bot接続時自動人数調整"},
+        {"label": "🖼️", "title": "画像投稿スポイラー判定"},
+        {"label": "🔄", "title": "パネル更新"}
+      ],
+      "caption": "▲ <code>/設定パネル</code> の 🤖 ボタンを押すと「Bot接続時自動人数調整」の ON / OFF が切り替わり、結果が実行者だけに表示されます。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>設定方法</h2>
       <ol class="steps">
         <li>

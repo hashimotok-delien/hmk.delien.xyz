@@ -57,6 +57,89 @@
         </div>
       </div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "プロフィール v2 設定画面のプレビュー",
+  "screens": [
+    {
+      "tab": "設定メニュー",
+      "channel": "プロフィール v2 設定",
+      "embed": {
+        "title": "⚙️ プロフィール v2 設定",
+        "desc": "設定したい項目を選択してください。",
+        "fields": [
+          {"name": "📋 プリセット", "value": "3個"},
+          {"name": "🔊 VCインチャプロフ", "value": "1個（✅1有効）"},
+          {"name": "🔍 テンプレチェック", "value": "2個（✅1有効）"},
+          {"name": "📦 v1 状態", "value": "📋 1ch / 🔊 無効"}
+        ],
+        "footer": "サーバーID: 123456789012345678"
+      },
+      "buttons": [
+        {"label": "📋 プリセット管理", "style": "primary"},
+        {"label": "🔊 VCインチャプロフ管理"},
+        {"label": "🔍 テンプレチェック"},
+        {"label": "🔄 v1から移行", "style": "green"}
+      ],
+      "caption": "▲ <code>/プロフィールv2設定</code> を実行したときのメニュー。"
+    },
+    {
+      "tab": "プリセット編集",
+      "channel": "プリセット編集",
+      "embed": {
+        "title": "⚙️ メインプロフ",
+        "fields": [
+          {"name": "📛 設定名", "value": "<code>メインプロフ</code>"},
+          {"name": "🔘 状態", "value": "✅ 有効"},
+          {"name": "⭐ メイン設定", "value": "⭐ メイン"},
+          {"name": "📺 対象チャンネル", "value": "2個"},
+          {"name": "🖼️ Embedタイトル", "value": "<code>{usernickname} のプロフ</code>"},
+          {"name": "🎨 色モード", "value": "固定色"}
+        ],
+        "footer": "ID: 1 | サーバー: 123456789012345678"
+      },
+      "buttons": [
+        {"label": "📛 設定名変更"},
+        {"label": "⭐ メイン設定"},
+        {"label": "🔘 有効/無効"},
+        {"label": "📺 チャンネル設定"},
+        {"label": "🎨 カードデザイン"},
+        {"label": "💾 保存", "style": "green"}
+      ],
+      "caption": "▲ プリセット管理で「✏️ 編集」を押したときの編集画面。"
+    },
+    {
+      "tab": "VCインチャプロフ編集",
+      "channel": "VCインチャプロフ編集",
+      "avatar": "🔊",
+      "embed": {
+        "title": "🔊 VCメインプロフ",
+        "fields": [
+          {"name": "📛 設定名", "value": "<code>VCメインプロフ</code>"},
+          {"name": "🔘 状態", "value": "✅ 有効"},
+          {"name": "📋 使用プリセット", "value": "1個"}
+        ]
+      },
+      "buttons": [
+        {"label": "✅ 有効/無効", "style": "green"},
+        {"label": "📝 content表示切替"},
+        {"label": "📛 設定名変更"},
+        {"label": "📂 許可カテゴリ"},
+        {"label": "🚫 拒否カテゴリ"},
+        {"label": "🔊 許可VC"},
+        {"label": "🚫 拒否VC"},
+        {"label": "📋 使用プリセット"},
+        {"label": "💾 保存", "style": "green"}
+      ],
+      "caption": "▲ 「🔊 VCインチャプロフ管理」から開くVCインチャ設定の編集画面。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>セットアップ</h2>
       <ol class="steps">
         <li>
@@ -303,6 +386,9 @@
             <td>
               このVC設定で使用するプロフィールプリセットを選択（複数可）。
               最初に見つかったプロフが表示されます。
+              連携先サーバーのプリセットも選べます（
+              <a href="server-cooperation">サーバー連携</a>が成立している
+              サーバーの「メイン」かつ有効な設定のみ）。
             </td>
           </tr>
           <tr>

@@ -34,6 +34,42 @@
         <p><strong>💡 対象:</strong> 審査の設定・管理は管理者が行います。審査への投票はサーバーメンバー誰でも可能です（ロール制限も設定可）。</p>
       </div>
 
+      <h2>設定画面プレビュー</h2>
+      <div class="preview" data-screen-preview>
+        <script type="application/json">
+{
+  "ariaLabel": "プロフ審査設定の編集画面プレビュー",
+  "screens": [
+    {
+      "tab": "設定の編集",
+      "channel": "プロフ審査設定",
+      "avatar": "🖼️",
+      "embed": {
+        "title": "プロフ審査設定 - メイン審査",
+        "desc": "### ﾌﾟﾛﾌ投稿TC<br>#profile-post<br>### ﾌﾟﾛﾌ転送TC<br>#judging<br>### 自動転送<br>🟢 `自動転送する`<br>### ｻｰﾊﾞｰ連携転送<br>🔴 `無効`<br>### 転送対象ﾛｰﾙ<br>　※いずれかを持つ人のみ転送<br>`未設定`（全員が対象）<br>### 転送非対象ﾛｰﾙ<br>　※いずれかを持つ人は転送しない（優先）<br>`未設定`（除外なし）<br>### 結果通知ﾛｰﾙ<br>@Reviewer<br>### 結果通知ﾀｲﾐﾝｸﾞ<br>`毎回`<br>### 自動締切日時<br>`7日後 23:00`",
+        "color": "green",
+        "fields": [
+          {"name": "機能", "value": "✅ 有効"}
+        ],
+        "footer": "ID: 1"
+      },
+      "buttons": [
+        {"label": "💾 保存", "style": "green"},
+        {"label": "無効化", "style": "danger"},
+        {"label": "基本設定"},
+        {"label": "転送設定"},
+        {"label": "入力フォーム設定"},
+        {"label": "🧩 管理メニュー設定"},
+        {"label": "🗑️ 設定削除", "style": "danger"},
+        {"label": "戻る"}
+      ],
+      "caption": "▲ <code>/設定パネル</code> → <strong>プロフィール設定</strong> → <strong>プロフ審査設定</strong> から開く編集画面。未保存の変更があると枠が赤くなります。"
+    }
+  ]
+}
+        </script>
+      </div>
+
       <h2>導入手順</h2>
       <ol class="steps">
         <li>
